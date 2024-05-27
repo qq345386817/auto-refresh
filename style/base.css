@@ -4,3 +4,9 @@ img {
   margin: auto;
   max-width: 1440px;
 }
+
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
