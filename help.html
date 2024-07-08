@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/help.css">
+  <title>Auto Refresh & Click</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <h2>Auto Refresh & Click</h2>
+  
+    <button class="accordion">How to use "Refresh & Click"?</button>
+    <div class="panel">
+      <p>1. Input the time intervals and keywords;</p>
+      <p>2. Click "Start";</p>
+      <p>3. If you want to "Refresh & Click" with other intervals and keywords, click "Stop", then repeat step 1 and 2.</p>
+    </div>
+
+    <button class="accordion">How to use "Auto Refresh"?</button>
+    <div class="panel">
+      <p>1. Input the time intervals;</p>
+      <p>2. Click "Start";</p>
+      <p>3. If you want to "Auto Refresh" with other intervals, click "Stop", then repeat step 1 and 2.</p>
+    </div>
+
+    <button class="accordion">How to use "Refresh & Find"?</button>
+    <div class="panel">
+      <p>1. Input the time intervals and keywords;</p>
+      <p>2. Click "Start";</p>
+      <p>3. If you want to "Refresh & Find" with other intervals and keywords, click "Stop", then repeat step 1 and 2.</p>
+    </div>
+    
+      <br />
+      <div class="footer">If you have any questions, don’t hesitate to contact our Support service -
+        cameoshell09@gmail.com</div>
+  </div>
+
+  <script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+    }
+
+    acc[0].click();
+  </script>
+</body>
+
+</html>
