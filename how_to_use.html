@@ -13,13 +13,21 @@
   <link rel="stylesheet" href="style/help.css">
   <style>
     .panel {
-      padding: 18px;
+      padding: 8px;
+      background-color: #F5F5F5;
       max-height: none;
       display: flex;
       flex-direction: row;
       justify-content: space-around;
       align-items: center;
+      flex-wrap: wrap;
       overflow: scroll;
+    }
+    .panel img {
+      padding: 6px;
+    }
+    .accordion {
+      background-color: #ddd;
     }
     .accordion::after {
       display: none;
