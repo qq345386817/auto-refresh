@@ -10,11 +10,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
   <link rel="manifest" href="favicon/site.webmanifest">
   
+  <link rel="stylesheet" href="style/base.css">
   <link rel="stylesheet" href="style/help.css">
   <style>
     .panel {
       padding: 8px;
-      background-color: #F5F5F5;
+      background-color: var(--panel-bg-color);
       max-height: none;
       display: flex;
       flex-direction: row;
@@ -27,7 +28,7 @@
       padding: 6px;
     }
     .accordion {
-      background-color: #ddd;
+      background-color: var(--accordion-bg-color);
     }
     .accordion::after {
       display: none;
@@ -37,7 +38,7 @@
 </head>
 
 <body>
-  <div class="wrapper" style="max-width: 1280px;">
+  <div class="wrapper">
     <h2>How to use "Auto Refresh & Clicker"</h2>
   
     <button class="accordion">In iPhone iOS 18's Safari</button>
