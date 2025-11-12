@@ -17,4 +17,8 @@ body {
     --bg-color: #121212;
     --text-color: #ffffff;
   }
+
+  a {
+    color: lightblue;
+  }
 }
