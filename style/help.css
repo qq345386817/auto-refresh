@@ -1,30 +1,60 @@
-:root {
-  --panel-bg-color: white;
-  --accordion-bg-color: #eee;
-  --accordion-text-color: #444;
-  --accordion-hover-bg-color: #ccc;
-  --accordion-icon-color: #777;
-}
+/* Global variables are now defined in base.css */
+/* :root variables removed to avoid redundancy */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --panel-bg-color: #121212;
-    --accordion-bg-color: #333;
-    --accordion-text-color: #fff;
-    --accordion-hover-bg-color: #555;
-    --accordion-icon-color: #ddd;
-  }
-}
+/* @media (prefers-color-scheme: dark) variables removed */
 
 .wrapper {
   margin: auto;
   max-width: 1280px;
 }
 
+/* Language Selector Styles */
+.header-controls {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+#language-selector {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background-color: var(--secondary-bg);
+  color: var(--primary-text);
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  /* Custom arrow for better cross-browser look. In dark mode, filter can be used or separate image, but for now we keep the image logic or simplify */
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%238e8e93%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px top 50%;
+  background-size: 10px auto;
+  padding-right: 30px;
+}
+
+#language-selector:hover {
+  border-color: var(--icon-color);
+}
+
+#language-selector:focus {
+  border-color: var(--link-color);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  #language-selector {
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2398989d%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-color: var(--secondary-bg);
+    color: var(--primary-text);
+  }
+}
+
 /* Style the buttons that are used to open and close the accordion panel */
 .accordion {
-  background-color: var(--accordion-bg-color);
-  color: var(--accordion-text-color);
+  background-color: var(--secondary-bg);
+  color: var(--panel-text);
   cursor: pointer;
   padding: 18px;
   width: 100%;
@@ -33,35 +63,50 @@
   border: none;
   outline: none;
   transition: 0.4s;
+  border-radius: 4px;
+  /* Slight rounded corners */
+  margin-bottom: 2px;
+  /* Separation between items */
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.active, .accordion:hover {
-  background-color: var(--accordion-hover-bg-color);
+.active,
+.accordion:hover {
+  background-color: var(--hover-bg);
 }
 
 .accordion:after {
-  content: '\02795'; /* Unicode character for "plus" sign (+) */
-  font-size: 13px;
-  color: var(--accordion-icon-color);
+  content: '\002B';
+  /* Unicode for plus sign */
+  font-size: 16px;
+  color: var(--icon-color);
   float: right;
   margin-left: 5px;
+  font-weight: bold;
 }
 
 .active:after {
-  content: "\2796"; /* Unicode character for "minus" sign (-) */
+  content: "\2212";
+  /* Unicode for minus sign */
 }
 
 /* Style the accordion panel. Note: hidden by default */
 .panel {
   padding: 0 18px;
-  background-color: var(--panel-bg-color);
+  background-color: var(--panel-bg);
+  color: var(--panel-text);
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 
 .footer {
   width: 100%;
   text-align: center;
+  padding: 20px 0;
+  color: var(--icon-color);
+  opacity: 0.8;
+  font-size: 0.9em;
 }

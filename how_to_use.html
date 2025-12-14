@@ -4,18 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
   <link rel="manifest" href="favicon/site.webmanifest">
-  
+
   <link rel="stylesheet" href="style/base.css">
   <link rel="stylesheet" href="style/help.css">
+  <script src="script/i18n.js"></script>
   <style>
     .panel {
       padding: 8px;
-      background-color: var(--panel-bg-color);
+      background-color: var(--panel-bg);
       max-height: none;
       display: flex;
       flex-direction: row;
@@ -24,12 +25,15 @@
       flex-wrap: wrap;
       overflow: scroll;
     }
+
     .panel img {
       padding: 6px;
     }
+
     .accordion {
-      background-color: var(--accordion-bg-color);
+      background-color: var(--secondary-bg);
     }
+
     .accordion::after {
       display: none;
     }
@@ -39,32 +43,46 @@
 
 <body>
   <div class="wrapper">
-    <h2>How to use "Auto Refresh & Clicker"</h2>
-  
-    <button class="accordion">In iPhone iOS 18's Safari</button>
+    <div class="header-controls">
+      <select id="language-selector">
+        <option value="en">English</option>
+        <option value="ar">العربية</option>
+        <option value="de">Deutsch</option>
+        <option value="es">Español</option>
+        <option value="fr">Français</option>
+        <option value="ja">日本語</option>
+        <option value="ko">한국어</option>
+        <option value="zh-CN">简体中文</option>
+        <option value="zh-TW">繁體中文</option>
+      </select>
+    </div>
+
+    <h2 data-i18n="how_to_title">How to use "Auto Refresh & Clicker"</h2>
+
+    <button class="accordion" data-i18n="guide_ios18">In iPhone iOS 18's Safari</button>
     <div class="panel">
       <img src="./images/how_to_001.png" />
       <img src="./images/how_to_002.png" />
     </div>
-  
-    <button class="accordion">In iPhone's Safari</button>
+
+    <button class="accordion" data-i18n="guide_iphone">In iPhone's Safari</button>
     <div class="panel">
       <img src="./images/how_to_01.jpg" />
       <img src="./images/how_to_02.jpg" />
     </div>
-  
-    <button class="accordion">In iPad's Safari</button>
+
+    <button class="accordion" data-i18n="guide_ipad">In iPad's Safari</button>
     <div class="panel">
       <img src="./images/how_to_03.png" />
       <img src="./images/how_to_04.png" />
     </div>
-  
-    <button class="accordion">In Mac's Safari</button>
+
+    <button class="accordion" data-i18n="guide_mac">In Mac's Safari</button>
     <div class="panel">
       <img src="./images/how_to_05.png" />
       <img src="./images/how_to_06.png" />
     </div>
-    
+
     <br />
     <div class="footer">Have questions or need custom web automation scripts? Contact us at cameoshell09@gmail.com</div>
   </div>

@@ -4,92 +4,128 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
   <link rel="manifest" href="favicon/site.webmanifest">
-  
+
   <link rel="stylesheet" href="style/base.css">
   <link rel="stylesheet" href="style/help.css">
   <title>Auto Refresh & Clicker</title>
 </head>
 
 <body>
+  <div class="header-controls" style="text-align: right; padding: 10px 20px;">
+    <select id="language-selector">
+      <option value="en">English</option>
+      <option value="ar">العربية</option>
+      <option value="de">Deutsch</option>
+      <option value="es">Español</option>
+      <option value="fr">Français</option>
+      <option value="ja">日本語</option>
+      <option value="ko">한국어</option>
+      <option value="zh-CN">简体中文</option>
+      <option value="zh-TW">繁體中文</option>
+    </select>
+  </div>
   <div class="wrapper">
-    <h2>Auto Refresh & Clicker</h2>
-  
-    <button class="accordion">How to use "Auto Refresh & Clicker"?</button>
+    <h2 data-i18n="title">Auto Refresh & Clicker</h2>
+
+    <button class="accordion" data-i18n="q1">How to use "Auto Refresh & Clicker"?</button>
     <div class="panel">
-      <p>Please have a look at this: <a href="http://luopeike.com/auto-refresh/how_to_use.html">How to use "Auto Refresh & Clicker"</a></p>
+      <p data-i18n="a1">Please have a look at this: <a href="http://luopeike.com/auto-refresh/how_to_use.html">How to
+          use "Auto Refresh
+          & Clicker"</a></p>
     </div>
-  
-    <button class="accordion">How can I run this extension on iPhone or iPad?</button>
+
+    <button class="accordion" data-i18n="q2">How can I run this extension on iPhone or iPad?</button>
     <div class="panel">
-      <p>• Chrome or Edge on iPhone and iPad cannot install extensions, you need to use Safari.</p>
-      <p>• There is a Safari version of this extension. Search “Auto Refresh & Clicker” in App Store, or find it here <a href="https://apps.apple.com/app/id6502815806">Auto Refresh & Clicker</a>, pay $2.99 to get it, then you can use it on your iOS and macOS devices.</p>
+      <p data-i18n="a2_1">• Chrome or Edge on iPhone and iPad cannot install extensions, you need to use Safari.</p>
+      <p data-i18n="a2_2">• There is a Safari version of this extension. Search “Auto Refresh & Clicker” in App Store,
+        or find it here <a href="https://apps.apple.com/app/id6502815806">Auto Refresh & Clicker</a>, pay $2.99 to get
+        it, then you can
+        use it on your iOS and macOS devices.</p>
     </div>
-  
-    <button class="accordion">The extension doesn't work on the <b>Chrome Web Store</b>?</button>
+
+    <button class="accordion" data-i18n="q3">Why does the "Refresh & Click" take so long?</button>
     <div class="panel">
-      <p>• It's a built-in Chrome browser security feature. Google intentionally blocks all extensions from running on sensitive pages like "chrome://settings" and "https://chromewebstore.google.com".</p>
+      <p data-i18n="a3">• The countdown only starts once the page finishes loading. If the website is slow to load
+        (e.g., 15s), the app
+        must wait for it to finish before starting the timer.</p>
     </div>
-  
-    <button class="accordion">It seems like the extension doesn't work when click on "Start" on the iPhone?</button>
+
+    <button class="accordion" data-i18n="q4">The extension doesn't work on the <b>Chrome Web Store</b>?</button>
     <div class="panel">
-      <p>• This might be a Safari issue on some iOS versions. You can try quitting and restarting Safari, and then relaunch the Extension.</p>
-      <p>• After clicking "Start", you can click "OK" or "Done" on the upper right to minimize the extension, and then you should be able to see the progress bar while the page refreshes.</p>
-      <p>• Remember to click the "Stop" button after the task is completed, otherwise the extension will keep running.</p>
+      <p data-i18n="a4">• It's a built-in Chrome browser security feature. Google intentionally blocks all extensions
+        from running on
+        sensitive pages like "chrome://settings" and "https://chromewebstore.google.com".</p>
     </div>
-  
-    <button class="accordion">Why doesn't this extension work in background mode?</button>
+
+    <button class="accordion" data-i18n="q5">It seems like the extension doesn't work when click on "Start" on the
+      iPhone?</button>
     <div class="panel">
-      <p>• Due to the iOS system limitations, Safari Extensions can only run for a very short time in background mode.</p>
-      <p>• It is recommended that you run it in the foreground for best results. You can set your iPhone screen to stay on while the Safari Extension is open, so that it can run continuously.</p>
+      <p data-i18n="a5_1">• This might be a Safari issue on some iOS versions. You can try quitting and restarting
+        Safari, and then
+        relaunch the Extension.</p>
+      <p data-i18n="a5_2">• After clicking "Start", you can click "OK" or "Done" on the upper right to minimize the
+        extension, and then
+        you should be able to see the progress bar while the page refreshes.</p>
+      <p data-i18n="a5_3">• Remember to click the "Stop" button after the task is completed, otherwise the extension
+        will keep running.
+      </p>
     </div>
-  
-    <button class="accordion">It seems like the extension has stopped working?</button>
+
+    <button class="accordion" data-i18n="q6">Why doesn't this extension work in background mode?</button>
     <div class="panel">
-      <p>• Maybe the extension is still running, but it's just not visible in the UI. You can try clicking the "Stop" button and then the "Start" button, the extension will re-run.</p>
+      <p data-i18n="a6_1">• Due to the iOS system limitations, Safari Extensions can only run for a very short time in
+        background mode.
+      </p>
+      <p data-i18n="a6_2">• It is recommended that you run it in the foreground for best results. You can set your
+        iPhone screen to stay
+        on while the Safari Extension is open, so that it can run continuously.</p>
     </div>
-  
-    <button class="accordion">How to minimize the size of this extension on the iPhone Safari?</button>
+
+    <button class="accordion" data-i18n="q7">It seems like the extension has stopped working?</button>
     <div class="panel">
-      <p>• In the iPhone's Safari browser, the height of the extension is fixed by the iOS system. </p>
-      <p>• But, you can click the "OK" or "Done" button as shown in the picture below and the extension will minimize and continue running.</p>
+      <p data-i18n="a7">• Maybe the extension is still running, but it's just not visible in the UI. You can try
+        clicking the "Stop"
+        button and then the "Start" button, the extension will re-run.</p>
+    </div>
+
+    <button class="accordion" data-i18n="q8">How to minimize the size of this extension on the iPhone Safari?</button>
+    <div class="panel">
+      <p data-i18n="a8_1">• In the iPhone's Safari browser, the height of the extension is fixed by the iOS system. </p>
+      <p data-i18n="a8_2">• But, you can click the "OK" or "Done" button as shown in the picture below and the extension
+        will minimize
+        and continue running.</p>
       <img src="./images/show_done_btn.jpeg" />
     </div>
-  
-    <button class="accordion">I purchased it on the iOS App Store, but when I go to the Mac App Store, it still prompts me to purchase it?</button>
+
+    <button class="accordion" data-i18n="q9">I purchased it on the iOS App Store, but when I go to the Mac App Store, it
+      still prompts
+      me to purchase it?</button>
     <div class="panel">
-      <p>• It may be a problem with the App Store cache. Wait a while and then open the Mac App Store again and it may be normal.</p>
-    </div>
-  
-    <button class="accordion">How to use "Refresh & Click"?</button>
-    <div class="panel">
-      <p>1. Input the time intervals and keywords;</p>
-      <p>2. Click "Start";</p>
-      <p>3. If you want to "Refresh & Click" with other intervals and keywords, click "Stop", then repeat step 1 and 2.</p>
+      <p data-i18n="a9">• It may be a problem with the App Store cache. Wait a while and then open the Mac App Store
+        again and it may
+        be normal.</p>
     </div>
 
-    <button class="accordion">How to use "Auto Refresh"?</button>
+    <button class="accordion" data-i18n="q10">How to use "Refresh & Click"?</button>
     <div class="panel">
-      <p>1. Input the time intervals;</p>
-      <p>2. Click "Start";</p>
-      <p>3. If you want to "Auto Refresh" with other intervals, click "Stop", then repeat step 1 and 2.</p>
+      <p data-i18n="a10_1">1. Input the time intervals and keywords;</p>
+      <p data-i18n="a10_2">2. Click "Start";</p>
+      <p data-i18n="a10_3">3. If you want to "Refresh & Click" with other intervals and keywords, click "Stop", then
+        repeat step 1 and 2.
+      </p>
     </div>
 
-    <button class="accordion">How to use "Refresh & Find"?</button>
-    <div class="panel">
-      <p>1. Input the time intervals and keywords;</p>
-      <p>2. Click "Start";</p>
-      <p>3. If you want to "Refresh & Find" with other intervals and keywords, click "Stop", then repeat step 1 and 2.</p>
-    </div>
-    
     <br />
-    <div class="footer">Have questions or need custom web automation scripts? Contact us at cameoshell09@gmail.com</div>
+    <div class="footer" data-i18n="footer">Have questions or need custom web automation scripts? Contact us at
+      cameoshell09@gmail.com</div>
   </div>
 
+  <script src="script/i18n.js"></script>
   <script>
     var acc = document.getElementsByClassName("accordion");
     var i;
