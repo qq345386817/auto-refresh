@@ -439,11 +439,39 @@ function setLanguage(lang) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const savedLang = localStorage.getItem('help_page_language') || 'en';
+  let initialLang = localStorage.getItem('help_page_language');
+
+  if (!initialLang) {
+    // Auto-detect language
+    const browserLang = navigator.language || navigator.userLanguage;
+    const supportedLangs = Object.keys(translations);
+
+    if (browserLang === 'zh-HK' || browserLang === 'zh-SG') {
+      // Map specific Chinese locales
+      initialLang = (browserLang === 'zh-HK') ? 'zh-TW' : 'zh-CN';
+    } else {
+      // Try strict match first
+      if (supportedLangs.includes(browserLang)) {
+        initialLang = browserLang;
+      } else {
+        // Try prefix match (e.g. fr-CA -> fr)
+        const prefix = browserLang.split('-')[0];
+        if (supportedLangs.includes(prefix)) {
+          initialLang = prefix;
+        }
+      }
+    }
+  }
+
+  // Default to English if detection failed or no match
+  if (!initialLang || !translations[initialLang]) {
+    initialLang = 'en';
+  }
+
   const selector = document.getElementById('language-selector');
 
   if (selector) {
-    selector.value = savedLang;
+    selector.value = initialLang;
     selector.addEventListener('change', (e) => {
       const newLang = e.target.value;
       setLanguage(newLang);
@@ -451,5 +479,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  setLanguage(savedLang);
+  setLanguage(initialLang);
 });
