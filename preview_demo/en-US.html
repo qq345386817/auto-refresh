@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Auto Refresh Console</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f6f8fb;
+      --panel: #ffffff;
+      --text: #172033;
+      --muted: #667085;
+      --line: #d7dee8;
+      --accent: #0a84ff;
+      --good: #0f8f5f;
+      --warn: #b65c00;
+      --bad: #c92a2a;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #10141c;
+        --panel: #181f2b;
+        --text: #f6f8fb;
+        --muted: #a4adba;
+        --line: #313b4b;
+        --accent: #4aa3ff;
+        --good: #32d583;
+        --warn: #fdb022;
+        --bad: #ff6b5f;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; background: var(--bg); color: var(--text); }
+    header {
+      position: sticky;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--line);
+      background: var(--panel);
+    }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; }
+    .mark {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      background: var(--accent);
+      color: white;
+      font-weight: 700;
+    }
+    .meta, .sub { color: var(--muted); }
+    .meta { font-size: 14px; white-space: nowrap; }
+    main { width: min(1120px, calc(100vw - 32px)); margin: 24px auto; }
+    .summary { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-bottom: 16px; }
+    .metric, .table { border: 1px solid var(--line); border-radius: 10px; background: var(--panel); }
+    .metric { padding: 16px; }
+    .label { color: var(--muted); font-size: 13px; font-weight: 700; }
+    .value { margin-top: 8px; font-size: 30px; font-weight: 700; }
+    .table { overflow: hidden; }
+    .row {
+      display: grid;
+      grid-template-columns: 42px 1.8fr 0.8fr 0.7fr 0.7fr;
+      gap: 12px;
+      align-items: center;
+      min-height: 58px;
+      padding: 10px 16px;
+      border-top: 1px solid var(--line);
+    }
+    .row:first-child { border-top: 0; }
+    .head { min-height: 46px; color: var(--muted); font-size: 12px; font-weight: 700; }
+    .name { font-weight: 700; }
+    .sub { margin-top: 4px; font-size: 13px; }
+    .status {
+      justify-self: start;
+      padding: 5px 9px;
+      border-radius: 999px;
+      color: var(--good);
+      border: 1px solid var(--good);
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .status.warn { color: var(--warn); border-color: var(--warn); }
+    .status.bad { color: var(--bad); border-color: var(--bad); }
+    @media (max-width: 700px) {
+      header { padding: 14px 16px; }
+      main { width: calc(100vw - 20px); margin: 14px auto; }
+      .summary { grid-template-columns: 1fr; }
+      .row { grid-template-columns: 30px 1fr 56px; gap: 8px; }
+      .row > :nth-child(4), .row > :nth-child(5) { display: none; }
+      .value { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand"><span class="mark">A</span><span>Auto Refresh Console</span></div>
+    <div class="meta">Updated just now</div>
+  </header>
+  <main>
+    <section class="summary">
+      <div class="metric"><div class="label">Watched pages</div><div class="value">24</div></div>
+      <div class="metric"><div class="label">Changes found</div><div class="value">8</div></div>
+      <div class="metric"><div class="label">Next refresh</div><div class="value">00:05</div></div>
+    </section>
+    <section class="table" aria-label="Auto refresh watch list">
+      <div class="row head"><div>#</div><div>Page</div><div>Status</div><div>Keyword</div><div>Updated</div></div>
+      <div class="row"><div>1</div><div><div class="name">Conference tickets</div><div class="sub">Keep checking for newly opened seats</div></div><div><span class="status warn">Changed</span></div><div>Ticket</div><div class="sub">1 min</div></div>
+      <div class="row"><div>2</div><div><div class="name">Limited restock</div><div class="sub">Refresh until the selected size appears</div></div><div><span class="status">Ready</span></div><div>Size</div><div class="sub">3 min</div></div>
+      <div class="row"><div>3</div><div><div class="name">Developer docs</div><div class="sub">Find updated API references</div></div><div><span class="status warn">Changed</span></div><div>API</div><div class="sub">7 min</div></div>
+      <div class="row"><div>4</div><div><div class="name">Order status page</div><div class="sub">Check shipment status updates</div></div><div><span class="status">Ready</span></div><div>Shipped</div><div class="sub">12 min</div></div>
+      <div class="row"><div>5</div><div><div class="name">Price tracker</div><div class="sub">Spot discounts and price changes</div></div><div><span class="status bad">Review</span></div><div>Price</div><div class="sub">18 min</div></div>
+      <div class="row"><div>6</div><div><div class="name">Support queue</div><div class="sub">Auto-click matching action buttons</div></div><div><span class="status">Ready</span></div><div>Assign</div><div class="sub">21 min</div></div>
+      <div class="row"><div>7</div><div><div class="name">Launch notes</div><div class="sub">Watch for release keywords</div></div><div><span class="status warn">Changed</span></div><div>Live</div><div class="sub">26 min</div></div>
+      <div class="row"><div>8</div><div><div class="name">Inventory monitor</div><div class="sub">Refresh warehouse availability</div></div><div><span class="status">Ready</span></div><div>Stock</div><div class="sub">31 min</div></div>
+    </section>
+  </main>
+</body>
+</html>

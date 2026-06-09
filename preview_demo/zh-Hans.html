@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>自动刷新监控台</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f6f8fb;
+      --panel: #ffffff;
+      --text: #172033;
+      --muted: #667085;
+      --line: #d7dee8;
+      --accent: #0a84ff;
+      --good: #0f8f5f;
+      --warn: #b65c00;
+      --bad: #c92a2a;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #10141c;
+        --panel: #181f2b;
+        --text: #f6f8fb;
+        --muted: #a4adba;
+        --line: #313b4b;
+        --accent: #4aa3ff;
+        --good: #32d583;
+        --warn: #fdb022;
+        --bad: #ff6b5f;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; background: var(--bg); color: var(--text); }
+    header {
+      position: sticky;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--line);
+      background: var(--panel);
+    }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; }
+    .mark {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      background: var(--accent);
+      color: white;
+      font-weight: 700;
+    }
+    .meta, .sub { color: var(--muted); }
+    .meta { font-size: 14px; white-space: nowrap; }
+    main { width: min(1120px, calc(100vw - 32px)); margin: 24px auto; }
+    .summary { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-bottom: 16px; }
+    .metric, .table { border: 1px solid var(--line); border-radius: 10px; background: var(--panel); }
+    .metric { padding: 16px; }
+    .label { color: var(--muted); font-size: 13px; font-weight: 700; }
+    .value { margin-top: 8px; font-size: 30px; font-weight: 700; }
+    .table { overflow: hidden; }
+    .row {
+      display: grid;
+      grid-template-columns: 42px 1.8fr 0.8fr 0.7fr 0.7fr;
+      gap: 12px;
+      align-items: center;
+      min-height: 58px;
+      padding: 10px 16px;
+      border-top: 1px solid var(--line);
+    }
+    .row:first-child { border-top: 0; }
+    .head { min-height: 46px; color: var(--muted); font-size: 12px; font-weight: 700; }
+    .name { font-weight: 700; }
+    .sub { margin-top: 4px; font-size: 13px; }
+    .status {
+      justify-self: start;
+      padding: 5px 9px;
+      border-radius: 999px;
+      color: var(--good);
+      border: 1px solid var(--good);
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .status.warn { color: var(--warn); border-color: var(--warn); }
+    .status.bad { color: var(--bad); border-color: var(--bad); }
+    @media (max-width: 700px) {
+      header { padding: 14px 16px; }
+      main { width: calc(100vw - 20px); margin: 14px auto; }
+      .summary { grid-template-columns: 1fr; }
+      .row { grid-template-columns: 30px 1fr 56px; gap: 8px; }
+      .row > :nth-child(4), .row > :nth-child(5) { display: none; }
+      .value { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand"><span class="mark">A</span><span>自动刷新监控台</span></div>
+    <div class="meta">刚刚更新</div>
+  </header>
+  <main>
+    <section class="summary">
+      <div class="metric"><div class="label">监控网页</div><div class="value">24</div></div>
+      <div class="metric"><div class="label">发现变化</div><div class="value">8</div></div>
+      <div class="metric"><div class="label">下次刷新</div><div class="value">00:05</div></div>
+    </section>
+    <section class="table" aria-label="自动刷新监控列表">
+      <div class="row head"><div>#</div><div>网页</div><div>状态</div><div>关键词</div><div>更新时间</div></div>
+      <div class="row"><div>1</div><div><div class="name">会议门票放票</div><div class="sub">持续查看是否开放新座位</div></div><div><span class="status warn">有变化</span></div><div>门票</div><div class="sub">1 分钟</div></div>
+      <div class="row"><div>2</div><div><div class="name">限量商品补货</div><div class="sub">刷新直到指定尺码出现</div></div><div><span class="status">可用</span></div><div>尺码</div><div class="sub">3 分钟</div></div>
+      <div class="row"><div>3</div><div><div class="name">开发者文档</div><div class="sub">查找更新后的 API 说明</div></div><div><span class="status warn">有变化</span></div><div>API</div><div class="sub">7 分钟</div></div>
+      <div class="row"><div>4</div><div><div class="name">订单状态页面</div><div class="sub">检查物流状态更新</div></div><div><span class="status">可用</span></div><div>已发货</div><div class="sub">12 分钟</div></div>
+      <div class="row"><div>5</div><div><div class="name">商品价格跟踪</div><div class="sub">发现折扣和价格变化</div></div><div><span class="status bad">需检查</span></div><div>价格</div><div class="sub">18 分钟</div></div>
+      <div class="row"><div>6</div><div><div class="name">客服队列看板</div><div class="sub">自动点击匹配操作按钮</div></div><div><span class="status">可用</span></div><div>分配</div><div class="sub">21 分钟</div></div>
+      <div class="row"><div>7</div><div><div class="name">发布公告页面</div><div class="sub">查找上线关键词</div></div><div><span class="status warn">有变化</span></div><div>上线</div><div class="sub">26 分钟</div></div>
+      <div class="row"><div>8</div><div><div class="name">库存监控页面</div><div class="sub">刷新仓库可用状态</div></div><div><span class="status">可用</span></div><div>有货</div><div class="sub">31 分钟</div></div>
+    </section>
+  </main>
+</body>
+</html>
