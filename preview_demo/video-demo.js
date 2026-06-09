@@ -455,7 +455,34 @@ const locale = detectLocale();
 const data = I18N[locale] || I18N[FALLBACK];
 if (!data.pages.length) data.pages = translatedPages(locale, data.comments);
 
-let pageIndex = 0;
+function initialPageIndex() {
+  try {
+    const url = new URL(window.location.href);
+    const value = Number.parseInt(url.searchParams.get("autoRefreshPreviewPage") || "1", 10);
+    if (Number.isFinite(value)) {
+      return Math.min(Math.max(value - 1, 0), data.pages.length - 1);
+    }
+  } catch (error) {
+    return 0;
+  }
+  return 0;
+}
+
+function updatePreviewPageUrl() {
+  try {
+    const url = new URL(window.location.href);
+    if (pageIndex > 0) {
+      url.searchParams.set("autoRefreshPreviewPage", String(pageIndex + 1));
+    } else {
+      url.searchParams.delete("autoRefreshPreviewPage");
+    }
+    window.history.replaceState({}, "", url);
+  } catch (error) {
+    // Keep the demo usable even when history updates are unavailable.
+  }
+}
+
+let pageIndex = initialPageIndex();
 const storyList = document.getElementById("storyList");
 const moreButton = document.getElementById("moreButton");
 const pageCount = document.getElementById("pageCount");
@@ -503,6 +530,7 @@ function showToast() {
 moreButton.addEventListener("click", () => {
   if (pageIndex >= data.pages.length - 1) return;
   pageIndex += 1;
+  updatePreviewPageUrl();
   renderPage(true);
   showToast();
 });
