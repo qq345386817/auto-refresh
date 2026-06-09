@@ -483,6 +483,12 @@ function updatePreviewPageUrl() {
 }
 
 let pageIndex = initialPageIndex();
+let keepTargetAvailable = false;
+try {
+  keepTargetAvailable = new URL(window.location.href).searchParams.get("autoRefreshPreviewKeepTarget") === "1";
+} catch (error) {
+  keepTargetAvailable = false;
+}
 const storyList = document.getElementById("storyList");
 const moreButton = document.getElementById("moreButton");
 const pageCount = document.getElementById("pageCount");
@@ -518,8 +524,9 @@ function renderPage(isNew) {
       </div>
     </article>
   `).join("");
-  moreButton.textContent = pageIndex >= data.pages.length - 1 ? data.done : data.more;
-  moreButton.disabled = pageIndex >= data.pages.length - 1;
+  const isLastPage = pageIndex >= data.pages.length - 1;
+  moreButton.textContent = isLastPage && !keepTargetAvailable ? data.done : data.more;
+  moreButton.disabled = isLastPage && !keepTargetAvailable;
 }
 
 function showToast() {
