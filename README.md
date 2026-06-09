@@ -15,6 +15,7 @@ Static website for Auto Refresh & Clicker, a Safari extension for automatic page
 | Deutsch | https://auto-rc.luopeike.com/de-DE/ | https://auto-rc.luopeike.com/de-DE/help.html | https://auto-rc.luopeike.com/de-DE/support.html | https://auto-rc.luopeike.com/de-DE/privacy-policy.html |
 | Français | https://auto-rc.luopeike.com/fr-FR/ | https://auto-rc.luopeike.com/fr-FR/help.html | https://auto-rc.luopeike.com/fr-FR/support.html | https://auto-rc.luopeike.com/fr-FR/privacy-policy.html |
 | Español | https://auto-rc.luopeike.com/es-ES/ | https://auto-rc.luopeike.com/es-ES/help.html | https://auto-rc.luopeike.com/es-ES/support.html | https://auto-rc.luopeike.com/es-ES/privacy-policy.html |
+| Português | https://auto-rc.luopeike.com/pt-PT/ | https://auto-rc.luopeike.com/pt-PT/help.html | https://auto-rc.luopeike.com/pt-PT/support.html | https://auto-rc.luopeike.com/pt-PT/privacy-policy.html |
 | العربية | https://auto-rc.luopeike.com/ar-SA/ | https://auto-rc.luopeike.com/ar-SA/help.html | https://auto-rc.luopeike.com/ar-SA/support.html | https://auto-rc.luopeike.com/ar-SA/privacy-policy.html |
 
 Sitemap: https://auto-rc.luopeike.com/sitemap.xml
