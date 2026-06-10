@@ -144,8 +144,8 @@ const I18N = {
   "zh-Hant": {
     lang: "zh-Hant",
     dir: "ltr",
-    title: "北辰資訊",
-    mark: "北",
+    title: "今日快訊",
+    mark: "今",
     sectionsLabel: "欄目",
     sections: ["熱門", "發布", "設計", "AI", "市場", "工具"],
     kicker: "即時報導",
@@ -457,17 +457,21 @@ if (!data.pages.length) data.pages = translatedPages(locale, data.comments);
 
 const EXTRA_PAGE_COPY = {
   "en-US": {
-    counts: ["Page 4 of 30", "Page 5 of 30", "Page 6 of 30"],
-    lives: ["Updated 15 sec ago", "Updated 20 sec ago", "Updated 25 sec ago"],
+    counts: ["Page 4 of 30", "Page 5 of 30", "Page 6 of 30", "Page 7 of 30", "Page 8 of 30"],
+    lives: ["Updated 15 sec ago", "Updated 20 sec ago", "Updated 25 sec ago", "Updated 30 sec ago", "Updated 35 sec ago"],
     headlines: [
       "Another update brings more field notes from small teams.",
       "Fresh activity appears as the page keeps moving.",
-      "The live feed keeps adding useful follow-up stories."
+      "The live feed keeps adding useful follow-up stories.",
+      "More reports arrive as the queue keeps moving.",
+      "A final preview page shows the loop continuing."
     ],
     summaries: [
       "New reports continue to arrive while Safari keeps the feed moving.",
       "The next page shows more launches, product notes, and user updates.",
-      "Repeated refresh and click actions can keep browsing through matching pages."
+      "Repeated refresh and click actions can keep browsing through matching pages.",
+      "Each automatic click advances to the next matching result in the feed.",
+      "The demo keeps enough pages available for a clean preview recording."
     ],
     stories: [
       "A small product team shares its launch checklist",
@@ -479,17 +483,21 @@ const EXTRA_PAGE_COPY = {
     ]
   },
   "zh-Hans": {
-    counts: ["第 4 / 30 页", "第 5 / 30 页", "第 6 / 30 页"],
-    lives: ["15 秒前更新", "20 秒前更新", "25 秒前更新"],
+    counts: ["第 4 / 30 页", "第 5 / 30 页", "第 6 / 30 页", "第 7 / 30 页", "第 8 / 30 页"],
+    lives: ["15 秒前更新", "20 秒前更新", "25 秒前更新", "30 秒前更新", "35 秒前更新"],
     headlines: [
       "新的动态继续带来小团队的一线记录。",
       "页面持续前进时，又出现了新的内容。",
-      "实时信息流继续加入有用的后续报道。"
+      "实时信息流继续加入有用的后续报道。",
+      "队列持续变化时，更多报道继续出现。",
+      "最后一页预览展示循环仍在继续。"
     ],
     summaries: [
       "Safari 持续刷新和点击时，新的报道会继续进入信息流。",
       "下一页展示更多发布、产品记录和用户反馈。",
-      "重复刷新和点击可以帮助用户继续浏览匹配页面。"
+      "重复刷新和点击可以帮助用户继续浏览匹配页面。",
+      "每次自动点击都会前进到信息流里的下一个匹配结果。",
+      "Demo 保留足够的页面，让预览视频录制更干净。"
     ],
     stories: [
       "小型产品团队分享发布检查清单",
@@ -501,17 +509,21 @@ const EXTRA_PAGE_COPY = {
     ]
   },
   "zh-Hant": {
-    counts: ["第 4 / 30 頁", "第 5 / 30 頁", "第 6 / 30 頁"],
-    lives: ["15 秒前更新", "20 秒前更新", "25 秒前更新"],
+    counts: ["第 4 / 30 頁", "第 5 / 30 頁", "第 6 / 30 頁", "第 7 / 30 頁", "第 8 / 30 頁"],
+    lives: ["15 秒前更新", "20 秒前更新", "25 秒前更新", "30 秒前更新", "35 秒前更新"],
     headlines: [
       "新的動態繼續帶來小團隊的一線記錄。",
       "頁面持續前進時，又出現了新的內容。",
-      "即時資訊流繼續加入有用的後續報導。"
+      "即時資訊流繼續加入有用的後續報導。",
+      "佇列持續變化時，更多報導繼續出現。",
+      "最後一頁預覽展示循環仍在繼續。"
     ],
     summaries: [
       "Safari 持續刷新和點擊時，新的報導會繼續進入資訊流。",
       "下一頁展示更多發布、產品記錄和用戶回饋。",
-      "重複刷新和點擊可以幫助用戶繼續瀏覽匹配頁面。"
+      "重複刷新和點擊可以幫助用戶繼續瀏覽匹配頁面。",
+      "每次自動點擊都會前進到資訊流裡的下一個匹配結果。",
+      "Demo 保留足夠的頁面，讓預覽影片錄製更乾淨。"
     ],
     stories: [
       "小型產品團隊分享發布檢查清單",
@@ -529,43 +541,43 @@ function extraPageCopy(locale) {
   const base = EXTRA_PAGE_COPY[FALLBACK];
   const labels = {
     "ja": {
-      counts: ["30ページ中4ページ", "30ページ中5ページ", "30ページ中6ページ"],
-      lives: ["15秒前に更新", "20秒前に更新", "25秒前に更新"]
+      counts: ["30ページ中4ページ", "30ページ中5ページ", "30ページ中6ページ", "30ページ中7ページ", "30ページ中8ページ"],
+      lives: ["15秒前に更新", "20秒前に更新", "25秒前に更新", "30秒前に更新", "35秒前に更新"]
     },
     "ko": {
-      counts: ["30쪽 중 4쪽", "30쪽 중 5쪽", "30쪽 중 6쪽"],
-      lives: ["15초 전 업데이트됨", "20초 전 업데이트됨", "25초 전 업데이트됨"]
+      counts: ["30쪽 중 4쪽", "30쪽 중 5쪽", "30쪽 중 6쪽", "30쪽 중 7쪽", "30쪽 중 8쪽"],
+      lives: ["15초 전 업데이트됨", "20초 전 업데이트됨", "25초 전 업데이트됨", "30초 전 업데이트됨", "35초 전 업데이트됨"]
     },
     "de-DE": {
-      counts: ["Seite 4 von 30", "Seite 5 von 30", "Seite 6 von 30"],
-      lives: ["Vor 15 Sek. aktualisiert", "Vor 20 Sek. aktualisiert", "Vor 25 Sek. aktualisiert"]
+      counts: ["Seite 4 von 30", "Seite 5 von 30", "Seite 6 von 30", "Seite 7 von 30", "Seite 8 von 30"],
+      lives: ["Vor 15 Sek. aktualisiert", "Vor 20 Sek. aktualisiert", "Vor 25 Sek. aktualisiert", "Vor 30 Sek. aktualisiert", "Vor 35 Sek. aktualisiert"]
     },
     "fr-FR": {
-      counts: ["Page 4 sur 30", "Page 5 sur 30", "Page 6 sur 30"],
-      lives: ["Mis à jour il y a 15 s", "Mis à jour il y a 20 s", "Mis à jour il y a 25 s"]
+      counts: ["Page 4 sur 30", "Page 5 sur 30", "Page 6 sur 30", "Page 7 sur 30", "Page 8 sur 30"],
+      lives: ["Mis à jour il y a 15 s", "Mis à jour il y a 20 s", "Mis à jour il y a 25 s", "Mis à jour il y a 30 s", "Mis à jour il y a 35 s"]
     },
     "es-ES": {
-      counts: ["Página 4 de 30", "Página 5 de 30", "Página 6 de 30"],
-      lives: ["Actualizado hace 15 s", "Actualizado hace 20 s", "Actualizado hace 25 s"]
+      counts: ["Página 4 de 30", "Página 5 de 30", "Página 6 de 30", "Página 7 de 30", "Página 8 de 30"],
+      lives: ["Actualizado hace 15 s", "Actualizado hace 20 s", "Actualizado hace 25 s", "Actualizado hace 30 s", "Actualizado hace 35 s"]
     },
     "pt-PT": {
-      counts: ["Página 4 de 30", "Página 5 de 30", "Página 6 de 30"],
-      lives: ["Atualizado há 15 s", "Atualizado há 20 s", "Atualizado há 25 s"]
+      counts: ["Página 4 de 30", "Página 5 de 30", "Página 6 de 30", "Página 7 de 30", "Página 8 de 30"],
+      lives: ["Atualizado há 15 s", "Atualizado há 20 s", "Atualizado há 25 s", "Atualizado há 30 s", "Atualizado há 35 s"]
     },
     "ar-SA": {
-      counts: ["الصفحة 4 من 30", "الصفحة 5 من 30", "الصفحة 6 من 30"],
-      lives: ["تم التحديث قبل 15 ثانية", "تم التحديث قبل 20 ثانية", "تم التحديث قبل 25 ثانية"]
+      counts: ["الصفحة 4 من 30", "الصفحة 5 من 30", "الصفحة 6 من 30", "الصفحة 7 من 30", "الصفحة 8 من 30"],
+      lives: ["تم التحديث قبل 15 ثانية", "تم التحديث قبل 20 ثانية", "تم التحديث قبل 25 ثانية", "تم التحديث قبل 30 ثانية", "تم التحديث قبل 35 ثانية"]
     }
   }[locale] || {};
   return { ...base, ...labels };
 }
 
-function ensureSixPages(locale) {
-  if (data.pages.length >= 6) return;
+function ensureEightPages(locale) {
+  if (data.pages.length >= 8) return;
   const copy = extraPageCopy(locale);
   const points = ["82", "69", "57", "44", "36", "28"];
   const comments = ["23", "16", "11", "8", "5", "3"];
-  while (data.pages.length < 6) {
+  while (data.pages.length < 8) {
     const extraIndex = data.pages.length - 3;
     data.pages.push({
       count: copy.counts[extraIndex],
@@ -581,7 +593,7 @@ function ensureSixPages(locale) {
   }
 }
 
-ensureSixPages(locale);
+ensureEightPages(locale);
 
 function initialPageIndex() {
   try {
