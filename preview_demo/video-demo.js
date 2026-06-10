@@ -455,6 +455,134 @@ const locale = detectLocale();
 const data = I18N[locale] || I18N[FALLBACK];
 if (!data.pages.length) data.pages = translatedPages(locale, data.comments);
 
+const EXTRA_PAGE_COPY = {
+  "en-US": {
+    counts: ["Page 4 of 30", "Page 5 of 30", "Page 6 of 30"],
+    lives: ["Updated 15 sec ago", "Updated 20 sec ago", "Updated 25 sec ago"],
+    headlines: [
+      "Another update brings more field notes from small teams.",
+      "Fresh activity appears as the page keeps moving.",
+      "The live feed keeps adding useful follow-up stories."
+    ],
+    summaries: [
+      "New reports continue to arrive while Safari keeps the feed moving.",
+      "The next page shows more launches, product notes, and user updates.",
+      "Repeated refresh and click actions can keep browsing through matching pages."
+    ],
+    stories: [
+      "A small product team shares its launch checklist",
+      "A booking tool adds faster confirmation screens",
+      "Creators compare notes from a live feedback session",
+      "A dashboard highlights changes in active queues",
+      "Design teams simplify a crowded mobile workflow",
+      "A new report tracks early customer reactions"
+    ]
+  },
+  "zh-Hans": {
+    counts: ["第 4 / 30 页", "第 5 / 30 页", "第 6 / 30 页"],
+    lives: ["15 秒前更新", "20 秒前更新", "25 秒前更新"],
+    headlines: [
+      "新的动态继续带来小团队的一线记录。",
+      "页面持续前进时，又出现了新的内容。",
+      "实时信息流继续加入有用的后续报道。"
+    ],
+    summaries: [
+      "Safari 持续刷新和点击时，新的报道会继续进入信息流。",
+      "下一页展示更多发布、产品记录和用户反馈。",
+      "重复刷新和点击可以帮助用户继续浏览匹配页面。"
+    ],
+    stories: [
+      "小型产品团队分享发布检查清单",
+      "预约工具加入更快的确认页面",
+      "创作者交流现场反馈经验",
+      "看板突出显示活跃队列变化",
+      "设计团队简化拥挤的移动流程",
+      "新的报告追踪早期用户反馈"
+    ]
+  },
+  "zh-Hant": {
+    counts: ["第 4 / 30 頁", "第 5 / 30 頁", "第 6 / 30 頁"],
+    lives: ["15 秒前更新", "20 秒前更新", "25 秒前更新"],
+    headlines: [
+      "新的動態繼續帶來小團隊的一線記錄。",
+      "頁面持續前進時，又出現了新的內容。",
+      "即時資訊流繼續加入有用的後續報導。"
+    ],
+    summaries: [
+      "Safari 持續刷新和點擊時，新的報導會繼續進入資訊流。",
+      "下一頁展示更多發布、產品記錄和用戶回饋。",
+      "重複刷新和點擊可以幫助用戶繼續瀏覽匹配頁面。"
+    ],
+    stories: [
+      "小型產品團隊分享發布檢查清單",
+      "預約工具加入更快的確認頁面",
+      "創作者交流現場回饋經驗",
+      "儀表板突出顯示活躍佇列變化",
+      "設計團隊簡化擁擠的行動流程",
+      "新的報告追蹤早期用戶回饋"
+    ]
+  }
+};
+
+function extraPageCopy(locale) {
+  if (EXTRA_PAGE_COPY[locale]) return EXTRA_PAGE_COPY[locale];
+  const base = EXTRA_PAGE_COPY[FALLBACK];
+  const labels = {
+    "ja": {
+      counts: ["30ページ中4ページ", "30ページ中5ページ", "30ページ中6ページ"],
+      lives: ["15秒前に更新", "20秒前に更新", "25秒前に更新"]
+    },
+    "ko": {
+      counts: ["30쪽 중 4쪽", "30쪽 중 5쪽", "30쪽 중 6쪽"],
+      lives: ["15초 전 업데이트됨", "20초 전 업데이트됨", "25초 전 업데이트됨"]
+    },
+    "de-DE": {
+      counts: ["Seite 4 von 30", "Seite 5 von 30", "Seite 6 von 30"],
+      lives: ["Vor 15 Sek. aktualisiert", "Vor 20 Sek. aktualisiert", "Vor 25 Sek. aktualisiert"]
+    },
+    "fr-FR": {
+      counts: ["Page 4 sur 30", "Page 5 sur 30", "Page 6 sur 30"],
+      lives: ["Mis à jour il y a 15 s", "Mis à jour il y a 20 s", "Mis à jour il y a 25 s"]
+    },
+    "es-ES": {
+      counts: ["Página 4 de 30", "Página 5 de 30", "Página 6 de 30"],
+      lives: ["Actualizado hace 15 s", "Actualizado hace 20 s", "Actualizado hace 25 s"]
+    },
+    "pt-PT": {
+      counts: ["Página 4 de 30", "Página 5 de 30", "Página 6 de 30"],
+      lives: ["Atualizado há 15 s", "Atualizado há 20 s", "Atualizado há 25 s"]
+    },
+    "ar-SA": {
+      counts: ["الصفحة 4 من 30", "الصفحة 5 من 30", "الصفحة 6 من 30"],
+      lives: ["تم التحديث قبل 15 ثانية", "تم التحديث قبل 20 ثانية", "تم التحديث قبل 25 ثانية"]
+    }
+  }[locale] || {};
+  return { ...base, ...labels };
+}
+
+function ensureSixPages(locale) {
+  if (data.pages.length >= 6) return;
+  const copy = extraPageCopy(locale);
+  const points = ["82", "69", "57", "44", "36", "28"];
+  const comments = ["23", "16", "11", "8", "5", "3"];
+  while (data.pages.length < 6) {
+    const extraIndex = data.pages.length - 3;
+    data.pages.push({
+      count: copy.counts[extraIndex],
+      live: copy.lives[extraIndex],
+      headline: copy.headlines[extraIndex],
+      summary: copy.summaries[extraIndex],
+      stories: copy.stories.map((title, storyIndex) => [
+        title,
+        `${points[storyIndex]} ${locale === "en-US" ? "points" : locale.startsWith("zh") ? "分" : I18N[locale].points || "points"}`,
+        `${comments[storyIndex]} ${data.comments}`
+      ])
+    });
+  }
+}
+
+ensureSixPages(locale);
+
 function initialPageIndex() {
   try {
     const url = new URL(window.location.href);
