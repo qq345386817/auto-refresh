@@ -679,7 +679,6 @@ moreButton.addEventListener("click", () => {
   pageIndex += 1;
   updatePreviewPageUrl();
   renderPage(true);
-  showToast();
 });
 
 renderPage(false);
