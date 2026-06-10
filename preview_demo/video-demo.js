@@ -84,7 +84,7 @@ const I18N = {
     ]
   },
   "zh-Hans": {
-    lang: "zh-Hans",
+    lang: "zh-CN",
     dir: "ltr",
     title: "北辰资讯",
     mark: "北",
