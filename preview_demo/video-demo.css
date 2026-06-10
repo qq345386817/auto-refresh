@@ -34,11 +34,6 @@ body {
   min-height: 100vh;
   background: var(--bg);
   color: var(--text);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-}
-
-html[dir="rtl"] body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 header {
