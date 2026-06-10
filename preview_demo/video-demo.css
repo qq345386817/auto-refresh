@@ -36,6 +36,11 @@ body {
   color: var(--text);
 }
 
+html[lang^="zh"] *,
+html[lang^="zh"] button {
+  font-weight: 400 !important;
+}
+
 header {
   position: sticky;
   top: 0;
