@@ -38,6 +38,7 @@ body {
 
 html[lang^="zh"] *,
 html[lang^="zh"] button {
+  font-family: "PingFang SC", "Hiragino Sans GB", sans-serif !important;
   font-weight: 400 !important;
 }
 
