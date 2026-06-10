@@ -86,8 +86,8 @@ const I18N = {
   "zh-Hans": {
     lang: "zh-CN",
     dir: "ltr",
-    title: "北辰资讯",
-    mark: "北",
+    title: "今日快讯",
+    mark: "今",
     sectionsLabel: "栏目",
     sections: ["热门", "发布", "设计", "AI", "市场", "工具"],
     kicker: "实时报道",
