@@ -36,6 +36,31 @@ body {
   color: var(--text);
 }
 
+html.force-mobile-viewport {
+  overflow-x: hidden;
+}
+
+html.force-mobile-viewport body {
+  width: var(--force-mobile-width);
+  min-width: var(--force-mobile-width);
+  max-width: var(--force-mobile-width);
+  overflow-x: hidden;
+  zoom: var(--force-mobile-scale);
+}
+
+html.force-mobile-viewport .topbar,
+html.force-mobile-viewport nav {
+  width: var(--force-mobile-width);
+}
+
+html.force-mobile-viewport main {
+  width: calc(var(--force-mobile-width) - 22px);
+}
+
+html.force-mobile-viewport .toast {
+  width: calc(var(--force-mobile-width) - 34px);
+}
+
 html[lang^="zh"] *,
 html[lang^="zh"] button {
   font-family: "PingFang SC", "Hiragino Sans GB", sans-serif !important;

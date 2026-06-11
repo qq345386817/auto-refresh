@@ -1,3 +1,26 @@
+function applyMobileViewportFallback() {
+  const physicalWidth = Math.min(window.screen.width || 0, window.screen.height || 0);
+  const viewportWidth = window.innerWidth || 0;
+  if (!physicalWidth || physicalWidth >= 768 || viewportWidth < 760) {
+    document.documentElement.classList.remove("force-mobile-viewport");
+    return;
+  }
+
+  const scale = Math.min(3, Math.max(1, viewportWidth / physicalWidth));
+  if (scale < 1.35) {
+    document.documentElement.classList.remove("force-mobile-viewport");
+    return;
+  }
+
+  document.documentElement.classList.add("force-mobile-viewport");
+  document.documentElement.style.setProperty("--force-mobile-width", `${physicalWidth}px`);
+  document.documentElement.style.setProperty("--force-mobile-scale", scale.toFixed(4));
+}
+
+applyMobileViewportFallback();
+window.addEventListener("resize", applyMobileViewportFallback);
+window.addEventListener("orientationchange", applyMobileViewportFallback);
+
 const LOCALE_ALIASES = {
   "en": "en-US",
   "en-us": "en-US",
