@@ -557,6 +557,110 @@ const EXTRA_PAGE_COPY = {
       "新的報告追蹤早期用戶回饋"
     ]
   },
+  "de-DE": {
+    counts: ["Seite 4 von 30", "Seite 5 von 30", "Seite 6 von 30", "Seite 7 von 30", "Seite 8 von 30"],
+    lives: ["Vor 15 Sek. aktualisiert", "Vor 20 Sek. aktualisiert", "Vor 25 Sek. aktualisiert", "Vor 30 Sek. aktualisiert", "Vor 35 Sek. aktualisiert"],
+    headlines: [
+      "Ein weiteres Update bringt neue Notizen kleiner Teams.",
+      "Neue Aktivität erscheint, während der Feed weiterläuft.",
+      "Der Live-Feed ergänzt nützliche Folgegeschichten.",
+      "Weitere Berichte treffen ein, während die Warteschlange läuft.",
+      "Eine letzte Vorschauseite zeigt, dass die Schleife weitergeht."
+    ],
+    summaries: [
+      "Neue Berichte erscheinen, während Safari den Feed automatisch voranbringt.",
+      "Die nächste Seite zeigt weitere Launches, Produktnotizen und Nutzerupdates.",
+      "Wiederholtes Aktualisieren und Klicken kann passende Seiten automatisch weiter öffnen.",
+      "Jeder automatische Klick springt zum nächsten passenden Ergebnis im Feed.",
+      "Die Demo bietet genug Seiten für eine saubere Vorschauaufnahme."
+    ],
+    stories: [
+      "Ein kleines Produktteam teilt seine Launch-Checkliste",
+      "Ein Buchungstool ergänzt schnellere Bestätigungsseiten",
+      "Creator vergleichen Notizen aus einer Live-Feedbackrunde",
+      "Ein Dashboard zeigt Änderungen in aktiven Warteschlangen",
+      "Designteams vereinfachen einen überladenen mobilen Ablauf",
+      "Ein neuer Bericht verfolgt frühe Kundenreaktionen"
+    ]
+  },
+  "fr-FR": {
+    counts: ["Page 4 sur 30", "Page 5 sur 30", "Page 6 sur 30", "Page 7 sur 30", "Page 8 sur 30"],
+    lives: ["Mis à jour il y a 15 s", "Mis à jour il y a 20 s", "Mis à jour il y a 25 s", "Mis à jour il y a 30 s", "Mis à jour il y a 35 s"],
+    headlines: [
+      "Une autre mise à jour ajoute des notes de terrain.",
+      "De nouvelles activités apparaissent pendant que le fil avance.",
+      "Le fil en direct ajoute des suivis utiles.",
+      "D'autres rapports arrivent pendant que la file progresse.",
+      "Une dernière page montre que la boucle continue."
+    ],
+    summaries: [
+      "De nouveaux rapports arrivent pendant que Safari fait avancer le fil automatiquement.",
+      "La page suivante affiche plus de lancements, de notes produit et de retours utilisateurs.",
+      "Les actions répétées d'actualisation et de clic peuvent parcourir les pages correspondantes.",
+      "Chaque clic automatique avance vers le résultat correspondant suivant.",
+      "La démo garde assez de pages pour un enregistrement propre."
+    ],
+    stories: [
+      "Une petite équipe partage sa liste de contrôle de lancement",
+      "Un outil de réservation ajoute des confirmations plus rapides",
+      "Des créateurs comparent les notes d'une session de retours",
+      "Un tableau de bord met en avant les files actives",
+      "Des équipes design simplifient un parcours mobile chargé",
+      "Un nouveau rapport suit les premières réactions clients"
+    ]
+  },
+  "es-ES": {
+    counts: ["Página 4 de 30", "Página 5 de 30", "Página 6 de 30", "Página 7 de 30", "Página 8 de 30"],
+    lives: ["Actualizado hace 15 s", "Actualizado hace 20 s", "Actualizado hace 25 s", "Actualizado hace 30 s", "Actualizado hace 35 s"],
+    headlines: [
+      "Otra actualización añade notas de campo de equipos pequeños.",
+      "Aparece nueva actividad mientras el feed sigue avanzando.",
+      "El feed en directo añade historias de seguimiento útiles.",
+      "Llegan más informes mientras la cola continúa.",
+      "Una última página muestra que el ciclo sigue activo."
+    ],
+    summaries: [
+      "Llegan nuevos informes mientras Safari mueve el feed automáticamente.",
+      "La página siguiente muestra más lanzamientos, notas de producto y novedades de usuarios.",
+      "Las acciones repetidas de actualizar y hacer clic pueden recorrer páginas coincidentes.",
+      "Cada clic automático avanza al siguiente resultado coincidente del feed.",
+      "La demo mantiene páginas suficientes para grabar una vista previa limpia."
+    ],
+    stories: [
+      "Un equipo pequeño comparte su lista de lanzamiento",
+      "Una herramienta de reservas añade confirmaciones más rápidas",
+      "Creadores comparan notas de una sesión de comentarios",
+      "Un panel destaca cambios en colas activas",
+      "Equipos de diseño simplifican un flujo móvil cargado",
+      "Un nuevo informe sigue las primeras reacciones de clientes"
+    ]
+  },
+  "pt-PT": {
+    counts: ["Página 4 de 30", "Página 5 de 30", "Página 6 de 30", "Página 7 de 30", "Página 8 de 30"],
+    lives: ["Atualizado há 15 s", "Atualizado há 20 s", "Atualizado há 25 s", "Atualizado há 30 s", "Atualizado há 35 s"],
+    headlines: [
+      "Outra atualização traz notas de campo de pequenas equipas.",
+      "Nova atividade aparece enquanto o feed continua a avançar.",
+      "O feed em direto acrescenta histórias úteis de seguimento.",
+      "Chegam mais relatórios enquanto a fila continua a mover-se.",
+      "Uma última página mostra que o ciclo continua."
+    ],
+    summaries: [
+      "Novos relatórios continuam a chegar enquanto o Safari avança o feed automaticamente.",
+      "A página seguinte mostra mais lançamentos, notas de produto e atualizações de utilizadores.",
+      "Atualizações e cliques repetidos podem continuar a abrir páginas correspondentes.",
+      "Cada clique automático avança para o próximo resultado correspondente no feed.",
+      "A demo mantém páginas suficientes para uma gravação de pré-visualização limpa."
+    ],
+    stories: [
+      "Uma pequena equipa de produto partilha a lista de lançamento",
+      "Uma ferramenta de reservas adiciona confirmações mais rápidas",
+      "Criadores comparam notas de uma sessão de feedback ao vivo",
+      "Um painel destaca alterações em filas ativas",
+      "Equipas de design simplificam um fluxo mobile carregado",
+      "Um novo relatório acompanha as primeiras reações de clientes"
+    ]
+  },
   "ar-SA": {
     counts: ["الصفحة 4 من 30", "الصفحة 5 من 30", "الصفحة 6 من 30", "الصفحة 7 من 30", "الصفحة 8 من 30"],
     lives: ["تم التحديث قبل 15 ثانية", "تم التحديث قبل 20 ثانية", "تم التحديث قبل 25 ثانية", "تم التحديث قبل 30 ثانية", "تم التحديث قبل 35 ثانية"],
