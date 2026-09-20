@@ -6,17 +6,17 @@ Static website for Auto Refresh & Clicker, a Safari extension for automatic page
 
 | Language | Home | Help | Support | Privacy |
 | --- | --- | --- | --- | --- |
-| Default | https://auto-rc.luopeike.com/ | https://auto-rc.luopeike.com/help.html | https://auto-rc.luopeike.com/support.html | https://auto-rc.luopeike.com/privacy-policy.html |
-| English | https://auto-rc.luopeike.com/en-US/ | https://auto-rc.luopeike.com/en-US/help.html | https://auto-rc.luopeike.com/en-US/support.html | https://auto-rc.luopeike.com/en-US/privacy-policy.html |
-| 简体中文 | https://auto-rc.luopeike.com/zh-Hans/ | https://auto-rc.luopeike.com/zh-Hans/help.html | https://auto-rc.luopeike.com/zh-Hans/support.html | https://auto-rc.luopeike.com/zh-Hans/privacy-policy.html |
-| 繁體中文 | https://auto-rc.luopeike.com/zh-Hant/ | https://auto-rc.luopeike.com/zh-Hant/help.html | https://auto-rc.luopeike.com/zh-Hant/support.html | https://auto-rc.luopeike.com/zh-Hant/privacy-policy.html |
-| 日本語 | https://auto-rc.luopeike.com/ja/ | https://auto-rc.luopeike.com/ja/help.html | https://auto-rc.luopeike.com/ja/support.html | https://auto-rc.luopeike.com/ja/privacy-policy.html |
-| 한국어 | https://auto-rc.luopeike.com/ko/ | https://auto-rc.luopeike.com/ko/help.html | https://auto-rc.luopeike.com/ko/support.html | https://auto-rc.luopeike.com/ko/privacy-policy.html |
-| Deutsch | https://auto-rc.luopeike.com/de-DE/ | https://auto-rc.luopeike.com/de-DE/help.html | https://auto-rc.luopeike.com/de-DE/support.html | https://auto-rc.luopeike.com/de-DE/privacy-policy.html |
-| Français | https://auto-rc.luopeike.com/fr-FR/ | https://auto-rc.luopeike.com/fr-FR/help.html | https://auto-rc.luopeike.com/fr-FR/support.html | https://auto-rc.luopeike.com/fr-FR/privacy-policy.html |
-| Español | https://auto-rc.luopeike.com/es-ES/ | https://auto-rc.luopeike.com/es-ES/help.html | https://auto-rc.luopeike.com/es-ES/support.html | https://auto-rc.luopeike.com/es-ES/privacy-policy.html |
-| Português | https://auto-rc.luopeike.com/pt-PT/ | https://auto-rc.luopeike.com/pt-PT/help.html | https://auto-rc.luopeike.com/pt-PT/support.html | https://auto-rc.luopeike.com/pt-PT/privacy-policy.html |
-| العربية | https://auto-rc.luopeike.com/ar-SA/ | https://auto-rc.luopeike.com/ar-SA/help.html | https://auto-rc.luopeike.com/ar-SA/support.html | https://auto-rc.luopeike.com/ar-SA/privacy-policy.html |
+| Default | https://auto-rc.luopeike.com/ | https://auto-rc.luopeike.com/help | https://auto-rc.luopeike.com/support | https://auto-rc.luopeike.com/privacy-policy |
+| English | https://auto-rc.luopeike.com/en-US/ | https://auto-rc.luopeike.com/en-US/help | https://auto-rc.luopeike.com/en-US/support | https://auto-rc.luopeike.com/en-US/privacy-policy |
+| 简体中文 | https://auto-rc.luopeike.com/zh-Hans/ | https://auto-rc.luopeike.com/zh-Hans/help | https://auto-rc.luopeike.com/zh-Hans/support | https://auto-rc.luopeike.com/zh-Hans/privacy-policy |
+| 繁體中文 | https://auto-rc.luopeike.com/zh-Hant/ | https://auto-rc.luopeike.com/zh-Hant/help | https://auto-rc.luopeike.com/zh-Hant/support | https://auto-rc.luopeike.com/zh-Hant/privacy-policy |
+| 日本語 | https://auto-rc.luopeike.com/ja/ | https://auto-rc.luopeike.com/ja/help | https://auto-rc.luopeike.com/ja/support | https://auto-rc.luopeike.com/ja/privacy-policy |
+| 한국어 | https://auto-rc.luopeike.com/ko/ | https://auto-rc.luopeike.com/ko/help | https://auto-rc.luopeike.com/ko/support | https://auto-rc.luopeike.com/ko/privacy-policy |
+| Deutsch | https://auto-rc.luopeike.com/de-DE/ | https://auto-rc.luopeike.com/de-DE/help | https://auto-rc.luopeike.com/de-DE/support | https://auto-rc.luopeike.com/de-DE/privacy-policy |
+| Français | https://auto-rc.luopeike.com/fr-FR/ | https://auto-rc.luopeike.com/fr-FR/help | https://auto-rc.luopeike.com/fr-FR/support | https://auto-rc.luopeike.com/fr-FR/privacy-policy |
+| Español | https://auto-rc.luopeike.com/es-ES/ | https://auto-rc.luopeike.com/es-ES/help | https://auto-rc.luopeike.com/es-ES/support | https://auto-rc.luopeike.com/es-ES/privacy-policy |
+| Português | https://auto-rc.luopeike.com/pt-PT/ | https://auto-rc.luopeike.com/pt-PT/help | https://auto-rc.luopeike.com/pt-PT/support | https://auto-rc.luopeike.com/pt-PT/privacy-policy |
+| العربية | https://auto-rc.luopeike.com/ar-SA/ | https://auto-rc.luopeike.com/ar-SA/help | https://auto-rc.luopeike.com/ar-SA/support | https://auto-rc.luopeike.com/ar-SA/privacy-policy |
 
 Sitemap: https://auto-rc.luopeike.com/sitemap.xml
 
@@ -31,17 +31,17 @@ Localized landing pages are available under:
 Localized help, support, and privacy pages are available under:
 
 ```text
-/<locale>/help.html
-/<locale>/support.html
-/<locale>/privacy-policy.html
+/<locale>/help
+/<locale>/support
+/<locale>/privacy-policy
 ```
 
 Examples:
 
 - https://auto-rc.luopeike.com/en-US/
 - https://auto-rc.luopeike.com/zh-Hans/
-- https://auto-rc.luopeike.com/ja/help.html
-- https://auto-rc.luopeike.com/de-DE/support.html
-- https://auto-rc.luopeike.com/fr-FR/privacy-policy.html
+- https://auto-rc.luopeike.com/ja/help
+- https://auto-rc.luopeike.com/de-DE/support
+- https://auto-rc.luopeike.com/fr-FR/privacy-policy
 
 Utility pages used for screenshot previews are excluded from indexing with `robots.txt` and page-level `noindex` tags.
