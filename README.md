@@ -1,6 +1,10 @@
 # Auto Refresh & Clicker Website
 
-Static website for Auto Refresh & Clicker, a Safari extension for automatic page refresh, refresh and click, and refresh until text appears.
+Static website for Auto Refresh & Clicker. The landing pages offer the Safari app for iPhone, iPad, and Mac and the Chrome extension for desktop, with localized popup previews and links to both stores.
+
+The popup previews use the 1.9.7 extension UI. Deploy the updated landing pages with the Chrome Web Store 1.9.7 release so the website matches the version users install.
+
+The Chrome download buttons use Google's [Chrome Web Store badge](https://developer.chrome.com/docs/webstore/branding/) from `images/chrome-web-store-badge.png`, sized to match the App Store badge. The localized `aria-label` on each link names the destination for screen readers.
 
 ## URLs
 
