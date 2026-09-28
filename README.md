@@ -24,6 +24,12 @@ The Chrome download buttons use Google's [Chrome Web Store badge](https://develo
 
 Sitemap: https://auto-rc.luopeike.com/sitemap.xml
 
+The ten localized URL sets are the canonical search pages. The four unprefixed
+English pages remain available as fallbacks and point to their `/en-US/`
+counterparts as canonical URLs. The sitemap lists only the 40 localized pages;
+`hreflang="x-default"` also points to the English pages. Run
+`python3 scripts/check_seo.py` before deploying SEO changes.
+
 ## Search Pages
 
 Localized landing pages are available under:
