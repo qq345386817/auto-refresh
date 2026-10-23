@@ -2,9 +2,30 @@
 
 Static website for Auto Refresh & Clicker. The landing pages offer the Safari app for iPhone, iPad, and Mac and the Chrome extension for desktop, with localized popup previews and links to both stores.
 
-The popup previews use the 1.9.7 extension UI. Deploy the updated landing pages with the Chrome Web Store 1.9.7 release so the website matches the version users install.
+The landing pages show original Safari for Mac 1.9.9 (78) captures, with three selectable tasks in each language. The captions identify the Safari platform and local demonstration page; they do not imply that the Chrome store has the same version. Source paths, dimensions, and SHA-256 values are in `images/safari-tasks/provenance.json`. The image viewer preserves the complete browser capture and offers a full-size image link on small screens.
 
-The Chrome download buttons use Google's [Chrome Web Store badge](https://developer.chrome.com/docs/webstore/branding/) from `images/chrome-web-store-badge.png`, sized to match the App Store badge. The localized `aria-label` on each link names the destination for screen readers.
+Download links have localized accessible names and explicit App Store / Chrome Web Store destinations. Prices are left to the stores.
+
+## Design and content
+
+The shared design system is in `../website-design-system/` and the editable design draft is in `../website-design/`. The system preserves the product blue, system typography, and original icon, and adds website semantic colors and layout rules. `style/foundations.css` is generated from that system; `style/site.css` owns responsive layout. No frontend framework or build dependencies are needed.
+
+Localized copy lives in `scripts/site-copy.json`. To regenerate the 40 localized pages and four default pages:
+
+```sh
+python3 scripts/build_site.py
+python3 scripts/check_seo.py
+```
+
+From the parent app project, sync the design-system values and import original release captures when required:
+
+```sh
+python3 auto-refresh/scripts/build_site.py --tokens website-design-system/tokens.json --import-captures release/1.9.9/captures78/mac
+```
+
+Ordinary builds reuse the selected images already present in the website. Old `images/popup-previews/` files remain for compatibility but are no longer used by the landing pages. The generator preserves canonical links, hreflang groups, original privacy-policy content, and support contact information. The localized help pages describe the current Safari workflow and provide separate setup directions for iPhone/iPad, Mac, and desktop Chrome.
+
+Tabs support click, arrow keys (including RTL), Home and End. Without JavaScript, the default product image remains visible. Pages respect system appearance and reduced motion, and include a keyboard skip link. Keep temporary screenshots, logs, and QA scripts outside this repository. Publishing is a separate step; generating these files does not deploy the site.
 
 ## URLs
 
