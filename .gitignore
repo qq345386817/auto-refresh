@@ -1,2 +1,23 @@
 .DS_Store
 
+# Python and optional local browser/deployment tooling.
+__pycache__/
+*.py[cod]
+node_modules/
+.wrangler/
+
+# Local credentials and support material are never website assets.
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
+/support-private/
+
+# Generated QA output; keep the served product images versioned.
+test-results/
+playwright-report/
+blob-report/
+*.log
+
