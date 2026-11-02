@@ -51,6 +51,30 @@ counterparts as canonical URLs. The sitemap lists only the 40 localized pages;
 `hreflang="x-default"` also points to the English pages. Run
 `python3 scripts/check_seo.py` before deploying SEO changes.
 
+## IndexNow notifications
+
+This site uses the [IndexNow protocol](https://www.indexnow.org/documentation)
+to notify participating search engines about deployed content changes.
+`indexnow.json` identifies this host and its ownership file. The matching root
+`.txt` file is intentionally public ownership proof, not a Bing account or
+Cloudflare credential. Keep its filename and contents consistent.
+
+After a deployment succeeds, preview and then submit only the canonical URLs
+whose content was added or updated:
+
+```sh
+python3 scripts/submit_indexnow.py --url https://auto-rc.luopeike.com/en-US/
+python3 scripts/submit_indexnow.py --url https://auto-rc.luopeike.com/en-US/ --submit
+```
+
+Repeat `--url` for multiple changed pages. The script rejects other hosts,
+preview pages, and noncanonical fallback URLs; verifies the live ownership file
+before sending; and distinguishes HTTP 200 receipt from HTTP 202 pending key
+validation. A successful notification does not guarantee crawling, indexing,
+ranking, or immediate disappearance of Bing Webmaster recommendations. Future
+deployments need this notification step; the static website does not send one
+on each visitor page load. Submit evidence and webmaster screenshots stay local.
+
 ## Search Pages
 
 Localized landing pages are available under:
