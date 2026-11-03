@@ -11,7 +11,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 COPY = json.loads((ROOT / 'scripts/site-copy.json').read_text())
-SCENES = ('02-auto-refresh', '01-refresh-click', '04-find-stopped')
+SCENES = ('02-auto-refresh', '01-refresh-click', '04-repeat-click')
 APP_STORE = 'https://apps.apple.com/app/id6502815806'
 CHROME_STORE = 'https://chromewebstore.google.com/detail/auto-refresh-clicker/npnkajomnfmgoakdnjcafbnmcgfkgghc'
 ARROW = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"></path></svg>'
@@ -41,21 +41,30 @@ def sync_tokens(path):
 
 
 def import_captures(directory):
+    directory = directory.resolve()
     destination = ROOT / 'images/safari-tasks'
     destination.mkdir(exist_ok=True)
     assets = []
+    builds = set()
     for locale in COPY:
         for scene in SCENES:
-            source = directory / f'{locale}-{scene}-raw.png'
-            name = f'{locale}-{scene}.png'
-            shutil.copyfile(source, destination / name)
+            source = directory / f'{locale}-{scene}.png'
+            proof = json.loads((directory / f'{locale}-{scene}.json').read_text())
+            assert proof['version'] == '1.10.0' and proof['build'] == '80' and proof['family'] == 'mac', 'Final Mac release capture required'
+            assert proof.get('demo_story_revision') == 'news-orders-v1', 'Use the current news and orders scenes'
+            assert proof.get('visual_reviewed') and proof.get('language_reviewed'), 'Review the original capture before publishing it'
+            assert proof['locale'] == locale and proof['scene'] == scene
             contents = source.read_bytes()
+            assert hashlib.sha256(contents).hexdigest() == proof['sha256'], 'Capture checksum mismatch'
+            builds.add(proof['build'])
+            name = f'{locale}-{scene}-v{proof["version"]}-b{proof["build"]}.png'
+            shutil.copyfile(source, destination / name)
             width, height = struct.unpack('>II', contents[16:24])
             assets.append({'file': 'images/safari-tasks/' + name, 'locale': locale,
-                           'scene': scene, 'source': 'release/1.9.9/captures78/mac/' + source.name,
-                           'sha256': hashlib.sha256(contents).hexdigest(), 'width': width, 'height': height})
+                           'scene': scene, 'source': str(source.relative_to(ROOT.parent)),
+                           'build': proof['build'], 'sha256': hashlib.sha256(contents).hexdigest(), 'width': width, 'height': height})
     (destination / 'provenance.json').write_text(json.dumps({
-        'app_version': '1.9.9', 'build': '78', 'surface': 'Safari on macOS',
+        'app_version': '1.10.0', 'builds': sorted(builds), 'surface': 'Safari on Mac',
         'example': 'Local demonstration page', 'transformation': 'None; byte-for-byte copy',
         'assets': assets}, ensure_ascii=False, indent=2) + '\n')
 
@@ -85,11 +94,11 @@ def gallery(c, locale, prefix, assets):
     for index, (scene, label) in enumerate(zip(SCENES, c['tabs'])):
         active = index == 1
         buttons.append(f'<button type="button" id="task-tab-{index}" role="tab" aria-selected="{str(active).lower()}" aria-controls="task-panel-{index}" tabindex="{0 if active else -1}">{e(label)}</button>')
-        file = f'images/safari-tasks/{locale}-{scene}.png'
-        asset = assets[file]
+        asset = assets[(locale, scene)]
+        file = asset['file']
         priority = ' fetchpriority="high"' if active else ''
         panels.append(f'<div id="task-panel-{index}" role="tabpanel" aria-labelledby="task-tab-{index}" tabindex="0"{"" if active else " hidden"}><figure><img src="{prefix}{file}" alt="{e(label + " — " + c["caption"])}" width="{asset["width"]}" height="{asset["height"]}" loading="{"eager" if active else "lazy"}" decoding="async"{priority}><figcaption><a href="{prefix}{file}" target="_blank" rel="noopener">{e(c["openImage"])}{ARROW}</a></figcaption></figure></div>')
-    return f'<section class="viewer" aria-label="{e(c["previewLabel"])}" data-viewer><div class="viewer-toolbar"><span class="viewer-platform"><span class="live-dot" aria-hidden="true"></span>Safari <span aria-hidden="true">/</span> macOS</span><div class="task-tabs" role="tablist" aria-label="{e(c["previewLabel"])}">{"".join(buttons)}</div></div>{"".join(panels)}</section><p class="capture-caption">{e(c["caption"])}</p>'
+    return f'<section class="viewer" aria-label="{e(c["previewLabel"])}" data-viewer><div class="viewer-toolbar"><span class="viewer-platform"><span class="live-dot" aria-hidden="true"></span>Safari <span aria-hidden="true">/</span> Mac</span><div class="task-tabs" role="tablist" aria-label="{e(c["previewLabel"])}">{"".join(buttons)}</div></div>{"".join(panels)}</section><p class="capture-caption">{e(c["caption"])}</p>'
 
 
 def footer(c, links):
@@ -108,11 +117,11 @@ def build_page(path, locale, page, assets):
     privacy_label = unescape(re.search(r'href="(?:en-US/)?privacy-policy"[^>]*>(.*?)</a>', header).group(1))
     help_label = unescape(re.search(r'href="(?:en-US/)?help"[^>]*>(.*?)</a>', header).group(1))
     if page == 'index':
-        main = f'''<main id="main-content"><section class="hero" aria-labelledby="hero-title"><div><p class="eyebrow">{e(c['ctaText'])}</p><h1 id="hero-title">{e(c['hero'][0])}<br><span>{e(c['hero'][1])}</span></h1></div><div class="hero-copy"><p class="lead">{e(c['intro'])}</p>{stores(c)}<p class="hero-note">{e(c['promise'])}</p><a class="text-link" href="#tasks">{e(c['jump'])}{ARROW}</a></div></section>
+        main = f'''<main id="main-content"><section class="hero" aria-labelledby="hero-title"><div><p class="eyebrow">{e(c['ctaText'])}</p><h1 id="hero-title">{e(c['hero'][0])}<br><span>{e(c['hero'][1])}</span></h1></div><div class="hero-copy"><p class="lead">{e(c['intro'])}</p>{stores(c)}<p class="hero-note">{e(c['promise'])}</p><p class="release-note">{e(c['releaseStatus'])}</p><a class="text-link" href="#tasks">{e(c['jump'])}{ARROW}</a></div></section>
           {gallery(c, locale, prefix, assets)}{tasks(c)}{setup(c)}<section class="section privacy-section"><h2>{e(c['privacyTitle'])}</h2><div><p>{e(c['privacyText'])}</p><p>{e(c['mobileNote'])}</p><a class="text-link" href="privacy-policy">{e(privacy_label)}{ARROW}</a></div></section>{faq(c)}<section class="section closing"><div><h2>{e(c['cta'])}</h2><p>{e(c['ctaText'])}</p></div><div>{stores(c)}<p class="capture-caption">{e(c['priceNote'])}</p></div></section></main>'''
     elif page == 'help':
         platforms = ''.join(f'<article><h3>{e(title)}</h3><p>{e(body)}</p></article>' for title, body in c['platforms'])
-        main = f'<main id="main-content" class="content-page"><p class="eyebrow">Auto Refresh &amp; Clicker</p><h1>{e(help_label)}</h1><p class="lead small">{e(c["intro"])}</p>{setup(c, False)}<section class="section platform-guides" aria-label="{e(c["guide"])}">{platforms}</section>{tasks(c)}<aside class="platform-note"><p>{e(c["mobileNote"])}</p></aside>{faq(c, True)}<div class="section">{stores(c)}<p class="capture-caption">{e(c["priceNote"])}</p></div></main>'
+        main = f'<main id="main-content" class="content-page"><p class="eyebrow">Auto Refresh &amp; Clicker</p><h1>{e(help_label)}</h1><p class="lead small">{e(c["intro"])}</p><p class="release-note">{e(c["releaseStatus"])}</p>{setup(c, False)}<section class="section platform-guides" aria-label="{e(c["guide"])}">{platforms}</section>{tasks(c)}<aside class="platform-note"><p>{e(c["mobileNote"])}</p></aside>{faq(c, True)}<div class="section">{stores(c)}<p class="capture-caption">{e(c["priceNote"])}</p></div></main>'
     else:
         main = re.search(r'<main\b[\s\S]*?</main>', document).group()
         if 'id="main-content"' not in main:
@@ -125,6 +134,10 @@ def build_page(path, locale, page, assets):
     document = re.sub(r'<meta name="theme-color"[^>]*>', '<meta name="theme-color" content="#ffffff">', document)
     if 'foundations.css' not in document:
         document = document.replace(f'<link rel="stylesheet" href="{prefix}style/site.css">', f'<link rel="stylesheet" href="{prefix}style/foundations.css">\n  <link rel="stylesheet" href="{prefix}style/site.css">')
+    for stylesheet in ('foundations.css', 'site.css'):
+        digest = hashlib.sha256((ROOT / 'style' / stylesheet).read_bytes()).hexdigest()[:12]
+        document = re.sub(r'(href="(?:\.\./)?style/' + re.escape(stylesheet) + r')(?:\?[^\"]*)?"',
+                          lambda match: match[1] + '?v=' + digest + '"', document)
     if page == 'index':
         for attribute in ('name="description"', 'property="og:description"'):
             document = re.sub(f'<meta {attribute} content="[^"]*">', f'<meta {attribute} content="{e(c["intro"])}">', document)
@@ -141,7 +154,7 @@ def main():
     if args.import_captures:
         import_captures(args.import_captures)
     manifest = json.loads((ROOT / 'images/safari-tasks/provenance.json').read_text())
-    assets = {asset['file']: asset for asset in manifest['assets']}
+    assets = {(asset['locale'], asset['scene']): asset for asset in manifest['assets']}
     for locale in COPY:
         for page in ('index', 'help', 'support', 'privacy-policy'):
             build_page(ROOT / locale / f'{page}.html', locale, page, assets)

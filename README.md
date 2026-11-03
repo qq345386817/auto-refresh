@@ -2,7 +2,7 @@
 
 Static website for Auto Refresh & Clicker. The landing pages offer the Safari app for iPhone, iPad, and Mac and the Chrome extension for desktop, with localized popup previews and links to both stores.
 
-The landing pages show original Safari for Mac 1.9.9 (78) captures, with three selectable tasks in each language. The captions identify the Safari platform and local demonstration page; they do not imply that the Chrome store has the same version. Source paths, dimensions, and SHA-256 values are in `images/safari-tasks/provenance.json`. The image viewer preserves the complete browser capture and offers a full-size image link on small screens.
+The landing pages show original Safari on Mac 1.10.0 (80) captures, with three selectable tasks in each language. The captions identify Safari on Mac and the local demonstration page; a release note distinguishes the upcoming Safari version from the versions currently available in each store. They do not imply that the Chrome store has the same version. Source paths, dimensions, and SHA-256 values are in `images/safari-tasks/provenance.json`. The image viewer preserves the complete browser capture and offers a full-size image link on small screens.
 
 Download links have localized accessible names and explicit App Store / Chrome Web Store destinations. Prices are left to the stores.
 
@@ -20,7 +20,7 @@ python3 scripts/check_seo.py
 From the parent app project, sync the design-system values and import original release captures when required:
 
 ```sh
-python3 auto-refresh/scripts/build_site.py --tokens website-design-system/tokens.json --import-captures release/1.9.9/captures78/mac
+python3 auto-refresh/scripts/build_site.py --tokens website-design-system/tokens.json --import-captures release/1.10.0/captures80/mac
 ```
 
 Ordinary builds reuse the selected images already present in the website. Old `images/popup-previews/` files remain for compatibility but are no longer used by the landing pages. The generator preserves canonical links, hreflang groups, original privacy-policy content, and support contact information. The localized help pages describe the current Safari workflow and provide separate setup directions for iPhone/iPad, Mac, and desktop Chrome.
