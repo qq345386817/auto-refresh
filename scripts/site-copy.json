@@ -4,11 +4,11 @@
     "platforms": [
       [
         "iPhone / iPad",
-        "In Settings, open Apps → Safari → Extensions. On older systems, use Settings → Safari → Extensions. Enable Auto Refresh & Clicker and allow access to the sites you use."
+        "Requires iOS / iPadOS 15.4 or later. In Settings, open Apps → Safari → Extensions. On older systems, use Settings → Safari → Extensions. Enable Auto Refresh & Clicker and allow access to the sites you use."
       ],
       [
         "Mac",
-        "Open the installed app, choose Open Safari Settings, and enable Auto Refresh & Clicker in Extensions. Then open a webpage and select its Safari toolbar icon."
+        "Requires macOS 12 or later and Safari 15.4 or later. Open the installed app, choose Open Safari Settings, and enable Auto Refresh & Clicker in Extensions. Then open a webpage and select its Safari toolbar icon."
       ],
       [
         "Chrome · Desktop",
@@ -65,7 +65,7 @@
       ],
       [
         "Why is the extension missing on my Mac?",
-        "Open the installed app at least once, then check Safari Settings → Extensions. Manifest V3 requires Safari 15.4 or later. If it is still missing, contact support with your macOS, Safari, and app versions and installation source."
+        "Open the installed app at least once, then check Safari Settings → Extensions. Use Safari 15.4 or later. If it is still missing, contact support with your macOS, Safari, and app versions and installation source."
       ],
       [
         "Will it keep running when my phone is locked?",
@@ -89,11 +89,11 @@
     "platforms": [
       [
         "iPhone / iPad",
-        "在系统设置中打开 App → Safari → 扩展；旧系统为设置 → Safari → 扩展。启用 Auto Refresh & Clicker，并允许访问需要使用的网站。"
+        "需要 iOS / iPadOS 15.4 或更新版本。 在系统设置中打开 App → Safari → 扩展；旧系统为设置 → Safari → 扩展。启用 Auto Refresh & Clicker，并允许访问需要使用的网站。"
       ],
       [
         "Mac",
-        "打开已安装的 App，点击“打开 Safari 设置”，在扩展中启用 Auto Refresh & Clicker。随后打开网页，点击 Safari 工具栏中的扩展图标。"
+        "需要 macOS 12 或更新版本，以及 Safari 15.4 或更新版本。 打开已安装的 App，点击“打开 Safari 设置”，在扩展中启用 Auto Refresh & Clicker。随后打开网页，点击 Safari 工具栏中的扩展图标。"
       ],
       [
         "Chrome · 电脑",
@@ -150,7 +150,7 @@
       ],
       [
         "Mac 的 Safari 中没有看到扩展？",
-        "安装后先打开一次 App，再查看 Safari 设置 → 扩展。Manifest V3 要求 Safari 15.4 或更新版本。如果仍未出现，请联系支持，并附上 macOS、Safari、App 版本及安装来源。"
+        "安装后先打开一次 App，再查看 Safari 设置 → 扩展。请使用 Safari 15.4 或更新版本。如果仍未出现，请联系支持，并附上 macOS、Safari、App 版本及安装来源。"
       ],
       [
         "手机锁屏后会继续运行吗？",
@@ -174,11 +174,11 @@
     "platforms": [
       [
         "iPhone / iPad",
-        "在系統設定中開啟 App → Safari → 延伸功能；舊系統為設定 → Safari → 延伸功能。啟用 Auto Refresh & Clicker，並允許存取需要使用的網站。"
+        "需要 iOS / iPadOS 15.4 或更新版本。 在系統設定中開啟 App → Safari → 延伸功能；舊系統為設定 → Safari → 延伸功能。啟用 Auto Refresh & Clicker，並允許存取需要使用的網站。"
       ],
       [
         "Mac",
-        "開啟已安裝的 App，選擇開啟 Safari 設定，在延伸功能中啟用 Auto Refresh & Clicker。接著開啟網頁，點擊 Safari 工具列中的擴充功能圖示。"
+        "需要 macOS 12 或更新版本，以及 Safari 15.4 或更新版本。 開啟已安裝的 App，選擇開啟 Safari 設定，在延伸功能中啟用 Auto Refresh & Clicker。接著開啟網頁，點擊 Safari 工具列中的擴充功能圖示。"
       ],
       [
         "Chrome · 電腦",
@@ -235,7 +235,7 @@
       ],
       [
         "Mac 的 Safari 中沒有看到擴充功能？",
-        "安裝後先開啟一次 App，再查看 Safari 設定 → 擴充功能。Manifest V3 需要 Safari 15.4 或更新版本。若仍未出現，請聯絡支援，並提供 macOS、Safari、App 版本及安裝來源。"
+        "安裝後先開啟一次 App，再查看 Safari 設定 → 擴充功能。請使用 Safari 15.4 或更新版本。若仍未出現，請聯絡支援，並提供 macOS、Safari、App 版本及安裝來源。"
       ],
       [
         "手機鎖定後會繼續執行嗎？",
@@ -259,11 +259,11 @@
     "platforms": [
       [
         "iPhone / iPad",
-        "設定でアプリ → Safari → 機能拡張を開きます。旧バージョンでは設定 → Safari → 機能拡張です。Auto Refresh & Clicker を有効にし、使用するサイトへのアクセスを許可してください。"
+        "iOS / iPadOS 15.4 以降が必要です。 設定でアプリ → Safari → 機能拡張を開きます。旧バージョンでは設定 → Safari → 機能拡張です。Auto Refresh & Clicker を有効にし、使用するサイトへのアクセスを許可してください。"
       ],
       [
         "Mac",
-        "インストールしたアプリから Safari の設定を開き、機能拡張で Auto Refresh & Clicker を有効にします。Web ページを開き、Safari ツールバーの拡張機能アイコンを選択してください。"
+        "macOS 12 以降と Safari 15.4 以降が必要です。 インストールしたアプリから Safari の設定を開き、機能拡張で Auto Refresh & Clicker を有効にします。Web ページを開き、Safari ツールバーの拡張機能アイコンを選択してください。"
       ],
       [
         "Chrome · パソコン",
@@ -320,7 +320,7 @@
       ],
       [
         "Mac の Safari に拡張機能が表示されません。",
-        "インストールしたアプリを一度開き、Safari の設定 → 機能拡張をご確認ください。Manifest V3 は Safari 15.4 以降に対応します。表示されない場合は、macOS、Safari、アプリのバージョンと入手元をサポートへお知らせください。"
+        "インストールしたアプリを一度開き、Safari の設定 → 機能拡張をご確認ください。Safari 15.4 以降をご利用ください。表示されない場合は、macOS、Safari、アプリのバージョンと入手元をサポートへお知らせください。"
       ],
       [
         "画面をロックしても動作しますか？",
@@ -344,11 +344,11 @@
     "platforms": [
       [
         "iPhone / iPad",
-        "설정에서 앱 → Safari → 확장 프로그램을 여세요. 이전 시스템에서는 설정 → Safari → 확장 프로그램입니다. Auto Refresh & Clicker를 켜고 사용할 사이트 접근을 허용하세요."
+        "iOS / iPadOS 15.4 이상이 필요합니다. 설정에서 앱 → Safari → 확장 프로그램을 여세요. 이전 시스템에서는 설정 → Safari → 확장 프로그램입니다. Auto Refresh & Clicker를 켜고 사용할 사이트 접근을 허용하세요."
       ],
       [
         "Mac",
-        "설치된 앱에서 Safari 설정을 열고 확장 프로그램에서 Auto Refresh & Clicker를 활성화하세요. 웹페이지를 열고 Safari 도구 막대의 확장 프로그램 아이콘을 선택하세요."
+        "macOS 12 이상 및 Safari 15.4 이상이 필요합니다. 설치된 앱에서 Safari 설정을 열고 확장 프로그램에서 Auto Refresh & Clicker를 활성화하세요. 웹페이지를 열고 Safari 도구 막대의 확장 프로그램 아이콘을 선택하세요."
       ],
       [
         "Chrome · 컴퓨터",
@@ -405,7 +405,7 @@
       ],
       [
         "Mac의 Safari에 확장 프로그램이 없어요.",
-        "설치된 앱을 한 번 연 뒤 Safari 설정 → 확장 프로그램을 확인하세요. Manifest V3는 Safari 15.4 이상이 필요합니다. 계속 표시되지 않으면 macOS, Safari, 앱 버전과 설치 출처를 지원팀에 알려주세요."
+        "설치된 앱을 한 번 연 뒤 Safari 설정 → 확장 프로그램을 확인하세요. Safari 15.4 이상을 사용해 주세요. 계속 표시되지 않으면 macOS, Safari, 앱 버전과 설치 출처를 지원팀에 알려주세요."
       ],
       [
         "휴대폰을 잠가도 계속 실행되나요?",
@@ -429,11 +429,11 @@
     "platforms": [
       [
         "iPhone / iPad",
-        "Öffnen Sie Einstellungen → Apps → Safari → Erweiterungen; auf älteren Systemen Einstellungen → Safari → Erweiterungen. Aktivieren Sie Auto Refresh & Clicker und erlauben Sie den Zugriff auf Ihre Websites."
+        "Erfordert iOS / iPadOS 15.4 oder neuer. Öffnen Sie Einstellungen → Apps → Safari → Erweiterungen; auf älteren Systemen Einstellungen → Safari → Erweiterungen. Aktivieren Sie Auto Refresh & Clicker und erlauben Sie den Zugriff auf Ihre Websites."
       ],
       [
         "Mac",
-        "Öffnen Sie über die installierte App die Safari-Einstellungen und aktivieren Sie Auto Refresh & Clicker unter Erweiterungen. Öffnen Sie dann eine Webseite und das Erweiterungssymbol in der Safari-Symbolleiste."
+        "Erfordert macOS 12 oder neuer und Safari 15.4 oder neuer. Öffnen Sie über die installierte App die Safari-Einstellungen und aktivieren Sie Auto Refresh & Clicker unter Erweiterungen. Öffnen Sie dann eine Webseite und das Erweiterungssymbol in der Safari-Symbolleiste."
       ],
       [
         "Chrome · Computer",
@@ -490,7 +490,7 @@
       ],
       [
         "Warum fehlt die Erweiterung auf meinem Mac?",
-        "Öffnen Sie die installierte App einmal und prüfen Sie Safari-Einstellungen → Erweiterungen. Manifest V3 benötigt Safari 15.4 oder neuer. Fehlt sie weiterhin, senden Sie dem Support die macOS-, Safari- und App-Version sowie die Installationsquelle."
+        "Öffnen Sie die installierte App einmal und prüfen Sie Safari-Einstellungen → Erweiterungen. Verwenden Sie Safari 15.4 oder neuer. Fehlt sie weiterhin, senden Sie dem Support die macOS-, Safari- und App-Version sowie die Installationsquelle."
       ],
       [
         "Läuft die Aufgabe bei gesperrtem iPhone weiter?",
@@ -514,11 +514,11 @@
     "platforms": [
       [
         "iPhone / iPad",
-        "Ouvrez Réglages → Apps → Safari → Extensions ; sur les anciens systèmes, Réglages → Safari → Extensions. Activez Auto Refresh & Clicker et autorisez l’accès aux sites utilisés."
+        "Nécessite iOS / iPadOS 15.4 ou ultérieur. Ouvrez Réglages → Apps → Safari → Extensions ; sur les anciens systèmes, Réglages → Safari → Extensions. Activez Auto Refresh & Clicker et autorisez l’accès aux sites utilisés."
       ],
       [
         "Mac",
-        "Depuis l’app installée, ouvrez les réglages Safari et activez Auto Refresh & Clicker dans Extensions. Ouvrez ensuite une page et sélectionnez l’icône dans la barre d’outils Safari."
+        "Nécessite macOS 12 ou ultérieur et Safari 15.4 ou ultérieur. Depuis l’app installée, ouvrez les réglages Safari et activez Auto Refresh & Clicker dans Extensions. Ouvrez ensuite une page et sélectionnez l’icône dans la barre d’outils Safari."
       ],
       [
         "Chrome · Ordinateur",
@@ -575,7 +575,7 @@
       ],
       [
         "L’extension n’apparaît pas sur mon Mac.",
-        "Ouvrez une fois l’app installée, puis vérifiez Réglages Safari → Extensions. Manifest V3 nécessite Safari 15.4 ou ultérieur. Si elle reste absente, contactez le support en indiquant les versions de macOS, Safari et de l’app, ainsi que la source d’installation."
+        "Ouvrez une fois l’app installée, puis vérifiez Réglages Safari → Extensions. Utilisez Safari 15.4 ou ultérieur. Si elle reste absente, contactez le support en indiquant les versions de macOS, Safari et de l’app, ainsi que la source d’installation."
       ],
       [
         "Continue-t-il lorsque mon téléphone est verrouillé ?",
@@ -599,11 +599,11 @@
     "platforms": [
       [
         "iPhone / iPad",
-        "Abre Ajustes → Apps → Safari → Extensiones; en sistemas anteriores, Ajustes → Safari → Extensiones. Activa Auto Refresh & Clicker y permite el acceso a los sitios que utilices."
+        "Requiere iOS / iPadOS 15.4 o posterior. Abre Ajustes → Apps → Safari → Extensiones; en sistemas anteriores, Ajustes → Safari → Extensiones. Activa Auto Refresh & Clicker y permite el acceso a los sitios que utilices."
       ],
       [
         "Mac",
-        "Desde la app instalada, abre los ajustes de Safari y activa Auto Refresh & Clicker en Extensiones. Abre una página y pulsa el icono de la extensión en la barra de Safari."
+        "Requiere macOS 12 o posterior y Safari 15.4 o posterior. Desde la app instalada, abre los ajustes de Safari y activa Auto Refresh & Clicker en Extensiones. Abre una página y pulsa el icono de la extensión en la barra de Safari."
       ],
       [
         "Chrome · Ordenador",
@@ -660,7 +660,7 @@
       ],
       [
         "¿Por qué no aparece la extensión en mi Mac?",
-        "Abre una vez la app instalada y revisa Ajustes de Safari → Extensiones. Manifest V3 requiere Safari 15.4 o posterior. Si sigue sin aparecer, contacta con soporte e indica las versiones de macOS, Safari y la app, y el origen de instalación."
+        "Abre una vez la app instalada y revisa Ajustes de Safari → Extensiones. Usa Safari 15.4 o posterior. Si sigue sin aparecer, contacta con soporte e indica las versiones de macOS, Safari y la app, y el origen de instalación."
       ],
       [
         "¿Sigue funcionando con el teléfono bloqueado?",
@@ -684,11 +684,11 @@
     "platforms": [
       [
         "iPhone / iPad",
-        "Abra Definições → Aplicações → Safari → Extensões; em sistemas anteriores, Definições → Safari → Extensões. Ative Auto Refresh & Clicker e permita o acesso aos sites utilizados."
+        "Requer o iOS / iPadOS 15.4 ou posterior. Abra Definições → Aplicações → Safari → Extensões; em sistemas anteriores, Definições → Safari → Extensões. Ative Auto Refresh & Clicker e permita o acesso aos sites utilizados."
       ],
       [
         "Mac",
-        "A partir da app instalada, abra as definições do Safari e ative Auto Refresh & Clicker em Extensões. Abra depois uma página e selecione o ícone na barra do Safari."
+        "Requer o macOS 12 ou posterior e o Safari 15.4 ou posterior. A partir da app instalada, abra as definições do Safari e ative Auto Refresh & Clicker em Extensões. Abra depois uma página e selecione o ícone na barra do Safari."
       ],
       [
         "Chrome · Computador",
@@ -745,7 +745,7 @@
       ],
       [
         "Porque não aparece a extensão no meu Mac?",
-        "Abra uma vez a app instalada e veja Definições do Safari → Extensões. O Manifest V3 requer Safari 15.4 ou posterior. Se continuar ausente, contacte o suporte com as versões do macOS, Safari e da app, e a origem da instalação."
+        "Abra uma vez a app instalada e veja Definições do Safari → Extensões. Utilize o Safari 15.4 ou posterior. Se continuar ausente, contacte o suporte com as versões do macOS, Safari e da app, e a origem da instalação."
       ],
       [
         "Continua a funcionar com o telefone bloqueado?",
@@ -769,11 +769,11 @@
     "platforms": [
       [
         "iPhone / iPad",
-        "افتح الإعدادات ← التطبيقات ← Safari ← الملحقات؛ وفي الأنظمة الأقدم الإعدادات ← Safari ← الملحقات. فعّل Auto Refresh & Clicker واسمح بالوصول إلى المواقع التي تستخدمها."
+        "يتطلب iOS / iPadOS 15.4 أو أحدث. افتح الإعدادات ← التطبيقات ← Safari ← الملحقات؛ وفي الأنظمة الأقدم الإعدادات ← Safari ← الملحقات. فعّل Auto Refresh & Clicker واسمح بالوصول إلى المواقع التي تستخدمها."
       ],
       [
         "Mac",
-        "من التطبيق المثبّت، افتح إعدادات Safari وفعّل Auto Refresh & Clicker ضمن الإضافات. افتح صفحة ويب ثم اختر رمز الإضافة في شريط أدوات Safari."
+        "يتطلب macOS 12 أو أحدث وSafari 15.4 أو أحدث. من التطبيق المثبّت، افتح إعدادات Safari وفعّل Auto Refresh & Clicker ضمن الإضافات. افتح صفحة ويب ثم اختر رمز الإضافة في شريط أدوات Safari."
       ],
       [
         "Chrome · الكمبيوتر",
@@ -830,7 +830,7 @@
       ],
       [
         "لماذا لا تظهر الإضافة على Mac؟",
-        "افتح التطبيق المثبّت مرة واحدة ثم راجع إعدادات Safari ← الإضافات. يتطلب Manifest V3 إصدار Safari 15.4 أو أحدث. إذا استمرت المشكلة، أرسل للدعم إصدارات macOS وSafari والتطبيق ومصدر التثبيت."
+        "افتح التطبيق المثبّت مرة واحدة ثم راجع إعدادات Safari ← الإضافات. استخدم Safari 15.4 أو أحدث. إذا استمرت المشكلة، أرسل للدعم إصدارات macOS وSafari والتطبيق ومصدر التثبيت."
       ],
       [
         "هل تستمر عند قفل الهاتف؟",
