@@ -51,6 +51,17 @@ counterparts as canonical URLs. The sitemap lists only the 40 localized pages;
 `hreflang="x-default"` also points to the English pages. Run
 `python3 scripts/check_seo.py` before deploying SEO changes.
 
+Language menus use native HTML disclosure controls with ordinary links to the
+equivalent page in all ten languages. They work without JavaScript, preserve the
+current page when switching languages, and connect all 40 canonical pages through
+HTML navigation. The SEO check verifies those links and their current-language
+indicators in addition to canonical and hreflang metadata.
+
+The build also generates a root `404.html`. Cloudflare Pages uses it to return
+HTTP 404 for missing routes instead of treating this static site as a single-page
+app and returning the homepage with HTTP 200. Error-page assets use root-relative
+paths so they also load for missing nested URLs.
+
 ## IndexNow notifications
 
 This site uses the [IndexNow protocol](https://www.indexnow.org/documentation)

@@ -3,7 +3,7 @@
 
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import urljoin, urlparse
 from xml.etree import ElementTree
 
 
@@ -22,6 +22,10 @@ class Links(HTMLParser):
         self.canonical = []
         self.alternates = {}
         self.og_urls = []
+        self.anchor_hrefs = []
+        self.language_links = []
+        self.in_language_switch = False
+        self.robots = ''
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
@@ -31,6 +35,18 @@ class Links(HTMLParser):
             self.alternates[attrs.get("hreflang")] = attrs.get("href")
         if tag == "meta" and attrs.get("property") == "og:url":
             self.og_urls.append(attrs.get("content"))
+        if tag == "meta" and attrs.get("name") == "robots":
+            self.robots = attrs.get("content", "")
+        if tag == "details" and attrs.get("class") == "language-switch":
+            self.in_language_switch = True
+        if tag == "a" and attrs.get("href"):
+            self.anchor_hrefs.append(attrs["href"])
+            if self.in_language_switch:
+                self.language_links.append(attrs)
+
+    def handle_endtag(self, tag):
+        if tag == "details":
+            self.in_language_switch = False
 
 
 def page_file(url):
@@ -48,6 +64,14 @@ def links(url):
     return parser
 
 
+def check_language_links(document, url, variants, locale):
+    expected = {code: target for code, target in variants.items() if code != 'x-default'}
+    actual = {link.get('hreflang'): urljoin(url, link['href']) for link in document.language_links}
+    assert len(document.language_links) == len(expected) and actual == expected, f'Noncrawlable language menu: {url}'
+    selected = [link for link in document.language_links if link.get('aria-current') == 'page']
+    assert len(selected) == 1 and selected[0]['hreflang'] == locale, f'Wrong current language: {url}'
+
+
 def main():
     sitemap = ElementTree.parse(ROOT / "sitemap.xml").getroot()
     urls = [node.text for node in sitemap.findall(".//{*}loc")]
@@ -63,14 +87,34 @@ def main():
             assert document.canonical == [url], f"Wrong canonical: {url}"
             assert document.og_urls == [url], f"Wrong og:url: {url}"
             assert document.alternates == variants, f"Wrong hreflang group: {url}"
+            check_language_links(document, url, variants, locale)
 
         fallback = ORIGIN + page
         document = links(fallback)
         assert document.canonical == [variants["en-US"]], f"Wrong fallback canonical: {fallback}"
         assert document.og_urls == [variants["en-US"]], f"Wrong fallback og:url: {fallback}"
         assert document.alternates == variants, f"Wrong fallback hreflang group: {fallback}"
+        check_language_links(document, fallback, variants, 'en-US')
 
-    print(f"Checked {len(urls)} sitemap URLs and {len(PAGES)} English fallback pages")
+    reachable = {ORIGIN + '/en-US/'}
+    pending = list(reachable)
+    while pending:
+        url = pending.pop()
+        for href in links(url).anchor_hrefs:
+            target = urljoin(url, href).split('#')[0]
+            if target in expected and target not in reachable:
+                reachable.add(target)
+                pending.append(target)
+    assert reachable == expected, 'Canonical pages are disconnected from HTML navigation'
+
+    not_found = Links()
+    not_found.feed((ROOT / '404.html').read_text(encoding='utf-8'))
+    assert 'noindex' in not_found.robots and not not_found.canonical, '404 must not advertise a canonical content page'
+    assert {ORIGIN + f'/{locale}/' for locale in LOCALES} <= {
+        urljoin(ORIGIN, href) for href in not_found.anchor_hrefs
+    }, '404 must offer working language homepage links'
+
+    print(f"Checked {len(urls)} sitemap URLs, {len(PAGES)} English fallbacks, crawlable language navigation and 404 page")
 
 
 if __name__ == "__main__":

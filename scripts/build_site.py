@@ -15,6 +15,12 @@ SCENES = ('02-auto-refresh', '01-refresh-click', '04-repeat-click')
 APP_STORE = 'https://apps.apple.com/app/id6502815806'
 CHROME_STORE = 'https://chromewebstore.google.com/detail/auto-refresh-clicker/npnkajomnfmgoakdnjcafbnmcgfkgghc'
 ARROW = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"></path></svg>'
+LANGUAGES = (
+    ('en-US', 'English'), ('zh-Hans', '简体中文'), ('zh-Hant', '繁體中文'),
+    ('ja', '日本語'), ('ko', '한국어'), ('de-DE', 'Deutsch'),
+    ('fr-FR', 'Français'), ('es-ES', 'Español'), ('pt-PT', 'Português'),
+    ('ar-SA', 'العربية'),
+)
 
 
 def e(text):
@@ -105,12 +111,51 @@ def footer(c, links):
     return f'<footer class="site-footer"><a class="footer-brand" href="./">Auto Refresh &amp; Clicker</a><nav aria-label="{e(c["guide"])}">{links}</nav><span>Safari · Chrome</span></footer>'
 
 
+def language_switch(locale, page, label):
+    suffix = '/' if page == 'index' else f'/{page}'
+    current = dict(LANGUAGES)[locale]
+    items = []
+    for code, name in LANGUAGES:
+        current_attribute = ' aria-current="page"' if code == locale else ''
+        items.append(f'<a href="/{code}{suffix}" hreflang="{code}" lang="{code}" dir="auto"{current_attribute}>{e(name)}</a>')
+    links = ''.join(items)
+    chevron = '<svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>'
+    return (f'<details class="language-switch"><summary aria-label="{e(label + ": " + current)}">'
+            f'<span lang="{locale}" dir="auto">{e(current)}</span>{chevron}</summary>'
+            f'<nav class="language-options" aria-label="{e(label)}">{links}</nav></details>')
+
+
+def build_not_found():
+    links = ''.join(f'<a href="/{code}/" lang="{code}" hreflang="{code}" dir="auto">{e(name)}</a>'
+                    for code, name in LANGUAGES)
+    styles = ''.join(
+        f'<link rel="stylesheet" href="/style/{name}?v={hashlib.sha256((ROOT / "style" / name).read_bytes()).hexdigest()[:12]}">'
+        for name in ('foundations.css', 'site.css')
+    )
+    document = f'''<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page not found — Auto Refresh &amp; Clicker</title><meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#ffffff">{styles}<link rel="icon" href="/favicon/favicon.ico"></head>
+<body><div class="page"><div class="container narrow"><header class="topbar">
+<a class="brand" href="/en-US/"><img src="/images/app-icon.png" alt="" width="38" height="38"><span>Auto Refresh &amp; Clicker</span></a>
+</header><main class="content-page"><p class="eyebrow">404</p><h1>Page not found</h1>
+<p>This link may be out of date. Choose your language to return to the homepage.</p>
+<nav class="not-found-languages" aria-label="Languages">{links}</nav></main></div></div></body></html>
+'''
+    (ROOT / '404.html').write_text(document)
+
+
 def build_page(path, locale, page, assets):
     document = path.read_text()
     c = COPY[locale]
     prefix = '' if path.parent == ROOT else '../'
     header = re.search(r'<header\b[\s\S]*?</header>', document).group()
     header = re.sub(r'aria-label="Primary"', f'aria-label="{e(c["guide"])}"', header)
+    switch_pattern = r'<(?:label|details)\b[^>]*class="language-switch"[^>]*>[\s\S]*?</(?:label|details)>'
+    switch = re.search(switch_pattern, header)
+    assert switch, f'Missing language navigation: {path}'
+    label = unescape(re.search(r'<(?:select|nav)\b[^>]*aria-label="([^"]+)"', switch.group()).group(1))
+    header = re.sub(switch_pattern, lambda _: language_switch(locale, page, label), header)
     if page != 'index':
         header = header.replace(f'<a href="{page}">', f'<a href="{page}" aria-current="page">')
     links = re.search(r'<nav\b[^>]*>([\s\S]*?)</nav>', header).group(1)
@@ -160,7 +205,8 @@ def main():
             build_page(ROOT / locale / f'{page}.html', locale, page, assets)
     for page in ('index', 'help', 'support', 'privacy-policy'):
         build_page(ROOT / f'{page}.html', 'en-US', page, assets)
-    print('Built 40 localized pages and 4 English fallbacks.')
+    build_not_found()
+    print('Built 40 localized pages, 4 English fallbacks, and a 404 page.')
 
 
 if __name__ == '__main__':
