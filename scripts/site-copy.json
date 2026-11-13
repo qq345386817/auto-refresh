@@ -82,7 +82,7 @@
     "previewLabel": "Explore the Safari tasks",
     "captureAlt": "Safari extension with a configured task, running state, countdown, and Stop control",
     "priceNote": "See each store for current pricing and compatibility.",
-    "releaseStatus": "Safari 1.10.0 preview. These new features are being prepared for release; check the version available in your store. The Chrome extension is updated separately."
+    "releaseStatus": "The Safari app now supports selecting icon buttons and repeating clicks without reloading. Chrome is updated separately; check its store listing for available features."
   },
   "zh-Hans": {
     "openImage": "查看完整尺寸截图",
@@ -167,7 +167,7 @@
     "previewLabel": "查看 Safari 的三种任务",
     "captureAlt": "Safari 扩展已配置任务，显示运行状态、倒计时和停止按钮",
     "priceNote": "当前价格与兼容性以各商店页面为准。",
-    "releaseStatus": "Safari 1.10.0 新版预览。这些新功能正在准备上线，请以商店中可下载的版本为准。Chrome 版将单独更新。"
+    "releaseStatus": "Safari 版现已支持选择图标按钮和仅重复点击。Chrome 版单独更新，具体功能请查看对应商店的说明。"
   },
   "zh-Hant": {
     "openImage": "查看完整尺寸截圖",
@@ -252,7 +252,7 @@
     "previewLabel": "查看 Safari 的三種任務",
     "captureAlt": "Safari 擴充功能已設定任務，顯示執行狀態、倒數計時與停止按鈕",
     "priceNote": "目前價格與相容性以各商店頁面為準。",
-    "releaseStatus": "Safari 1.10.0 新版預覽。這些新功能正在準備上線，請以商店中可下載的版本為準。Chrome 版將另行更新。"
+    "releaseStatus": "Safari 版現已支援選取圖示按鈕與僅重複點擊。Chrome 版另行更新，實際功能請查看對應商店的說明。"
   },
   "ja": {
     "openImage": "元のサイズで表示",
@@ -337,7 +337,7 @@
     "previewLabel": "Safari のタスクを見る",
     "captureAlt": "タスク設定、実行状態、カウントダウン、停止ボタンを表示した Safari 拡張機能",
     "priceNote": "最新の価格と互換性は各ストアでご確認ください。",
-    "releaseStatus": "Safari 1.10.0 のプレビューです。新機能は公開準備中です。ストアで配信中のバージョンをご確認ください。Chrome 版は別途更新されます。"
+    "releaseStatus": "Safari版では、アイコンボタンの選択と、再読み込みしない繰り返しクリックが使えます。Chrome版は別途更新されるため、対応機能はストアでご確認ください。"
   },
   "ko": {
     "openImage": "원본 크기로 보기",
@@ -422,7 +422,7 @@
     "previewLabel": "Safari 작업 살펴보기",
     "captureAlt": "작업 설정, 실행 상태, 카운트다운, 중지 버튼이 표시된 Safari 확장 프로그램",
     "priceNote": "현재 가격과 호환성은 각 스토어에서 확인하세요.",
-    "releaseStatus": "Safari 1.10.0 미리 보기입니다. 새 기능은 출시 준비 중이니 스토어의 버전을 확인해 주세요. Chrome 확장 프로그램은 별도로 업데이트됩니다."
+    "releaseStatus": "Safari 버전에서 아이콘 버튼 선택과 페이지 새로고침 없는 반복 클릭을 사용할 수 있습니다. Chrome 버전은 별도로 업데이트되므로 지원 기능은 해당 스토어에서 확인해 주세요."
   },
   "de-DE": {
     "openImage": "Aufnahme in voller Größe öffnen",
@@ -507,7 +507,7 @@
     "previewLabel": "Safari-Aufgaben ansehen",
     "captureAlt": "Safari-Erweiterung mit eingestellter Aufgabe, Ausführungsstatus, Countdown und Stopp-Schaltfläche",
     "priceNote": "Aktuelle Preise und Kompatibilität finden Sie im jeweiligen Store.",
-    "releaseStatus": "Vorschau auf Safari 1.10.0. Die neuen Funktionen werden für die Veröffentlichung vorbereitet. Prüfen Sie die Version im Store. Die Chrome-Erweiterung wird separat aktualisiert."
+    "releaseStatus": "Die Safari-App unterstützt jetzt die Auswahl von Symbolschaltflächen und wiederholte Klicks ohne Neuladen. Chrome wird separat aktualisiert; die verfügbaren Funktionen stehen im jeweiligen Store."
   },
   "fr-FR": {
     "openImage": "Ouvrir la capture en taille réelle",
@@ -592,7 +592,7 @@
     "previewLabel": "Découvrir les tâches Safari",
     "captureAlt": "Extension Safari avec une tâche configurée, son état, un compte à rebours et un bouton d’arrêt",
     "priceNote": "Consultez chaque boutique pour les prix et la compatibilité.",
-    "releaseStatus": "Aperçu de Safari 1.10.0. Ces nouveautés sont en préparation : vérifiez la version disponible dans votre store. L’extension Chrome est mise à jour séparément."
+    "releaseStatus": "L’app Safari permet désormais de sélectionner des boutons à icône et de répéter les clics sans recharger la page. Chrome est mis à jour séparément : consultez sa fiche pour les fonctions disponibles."
   },
   "es-ES": {
     "openImage": "Abrir captura a tamaño completo",
@@ -677,7 +677,7 @@
     "previewLabel": "Explorar las tareas de Safari",
     "captureAlt": "Extensión de Safari con tarea configurada, estado de ejecución, cuenta atrás y botón para detener",
     "priceNote": "Consulta el precio y la compatibilidad en cada tienda.",
-    "releaseStatus": "Vista previa de Safari 1.10.0. Estas novedades están en preparación; consulta la versión disponible en tu tienda. La extensión de Chrome se actualiza por separado."
+    "releaseStatus": "La app de Safari ya permite seleccionar botones con iconos y repetir clics sin recargar la página. Chrome se actualiza por separado; consulta sus funciones en la tienda correspondiente."
   },
   "pt-PT": {
     "openImage": "Abrir captura no tamanho original",
@@ -762,7 +762,7 @@
     "previewLabel": "Explorar as tarefas do Safari",
     "captureAlt": "Extensão Safari com tarefa configurada, estado, contagem decrescente e botão de paragem",
     "priceNote": "Consulte os preços e a compatibilidade em cada loja.",
-    "releaseStatus": "Antevisão do Safari 1.10.0. Estas novidades estão em preparação; consulte a versão disponível na loja. A extensão do Chrome é atualizada em separado."
+    "releaseStatus": "A app Safari já permite selecionar botões com ícones e repetir cliques sem recarregar a página. O Chrome é atualizado em separado; consulte as funções disponíveis na respetiva loja."
   },
   "ar-SA": {
     "openImage": "افتح اللقطة بالحجم الكامل",
@@ -847,6 +847,6 @@
     "previewLabel": "استكشف مهام Safari",
     "captureAlt": "إضافة Safari تعرض مهمة مُعدّة وحالة التشغيل والعد التنازلي وزر الإيقاف",
     "priceNote": "راجع كل متجر لمعرفة الأسعار والتوافق الحاليين.",
-    "releaseStatus": "معاينة Safari 1.10.0. يجري تجهيز هذه الميزات للإصدار؛ تحقق من النسخة المتاحة في متجرك. تُحدّث إضافة Chrome بشكل منفصل."
+    "releaseStatus": "يدعم تطبيق Safari الآن اختيار أزرار الأيقونات وتكرار النقر دون إعادة تحميل الصفحة. تُحدَّث إضافة Chrome بشكل منفصل؛ راجع صفحة المتجر لمعرفة الميزات المتاحة."
   }
 }

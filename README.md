@@ -2,7 +2,7 @@
 
 Static website for Auto Refresh & Clicker. The landing pages offer the Safari app for iPhone, iPad, and Mac and the Chrome extension for desktop, with localized popup previews and links to both stores.
 
-The landing pages show original Safari on Mac 1.10.0 (80) captures, with three selectable tasks in each language. The captions identify Safari on Mac and the local demonstration page; a release note distinguishes the upcoming Safari version from the versions currently available in each store. They do not imply that the Chrome store has the same version. Source paths, dimensions, and SHA-256 values are in `images/safari-tasks/provenance.json`. The image viewer preserves the complete browser capture and offers a full-size image link on small screens.
+The landing pages show original Safari on Mac 1.10.0 (80) captures, with three selectable tasks in each language. The captions identify Safari on Mac and the local demonstration page. The feature note describes the released Safari workflow and explains that Chrome updates separately. Source paths, dimensions, and SHA-256 values are in `images/safari-tasks/provenance.json`. The image viewer preserves the complete browser capture and offers a full-size image link on small screens.
 
 Download links have localized accessible names and explicit App Store / Chrome Web Store destinations. Prices are left to the stores.
 
@@ -10,7 +10,7 @@ Download links have localized accessible names and explicit App Store / Chrome W
 
 The shared design system is in `../website-design-system/` and the editable design draft is in `../website-design/`. The system preserves the product blue, system typography, and original icon, and adds website semantic colors and layout rules. `style/foundations.css` is generated from that system; `style/site.css` owns responsive layout. No frontend framework or build dependencies are needed.
 
-Localized copy lives in `scripts/site-copy.json`. To regenerate the 40 localized pages and four default pages:
+Localized landing-page copy lives in `scripts/site-copy.json`; step-by-step help, troubleshooting and page-specific descriptions live in `scripts/help-copy.json`. To regenerate the 40 localized pages and four default pages:
 
 ```sh
 python3 scripts/build_site.py
@@ -23,7 +23,7 @@ From the parent app project, sync the design-system values and import original r
 python3 auto-refresh/scripts/build_site.py --tokens website-design-system/tokens.json --import-captures release/1.10.0/captures80/mac
 ```
 
-Ordinary builds reuse the selected images already present in the website. Old `images/popup-previews/` files remain for compatibility but are no longer used by the landing pages. The generator preserves canonical links, hreflang groups, original privacy-policy content, and support contact information. The localized help pages describe the current Safari workflow and provide separate setup directions for iPhone/iPad, Mac, and desktop Chrome.
+Ordinary builds reuse the selected images already present in the website. Old `images/popup-previews/` files remain for compatibility but are no longer used by the landing pages. The generator preserves canonical links, hreflang groups, original privacy-policy body content, and support contact information. Each help page has its own description and title, platform setup directions, three numbered task walkthroughs, troubleshooting and a support handoff. Homepage task links lead directly to the corresponding help sections. The instructions explain returning to the extension after selecting a target, waits after each click, full-page reloads, repeated icon clicks, applying changes and stopping. Do not describe a preview or removed feature in page metadata.
 
 Tabs support click, arrow keys (including RTL), Home and End. Without JavaScript, the default product image remains visible. Pages respect system appearance and reduced motion, and include a keyboard skip link. Keep temporary screenshots, logs, and QA scripts outside this repository. Publishing is a separate step; generating these files does not deploy the site.
 

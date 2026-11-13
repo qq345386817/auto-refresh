@@ -1,0 +1,722 @@
+{
+  "en-US": {
+    "title": "Setup and troubleshooting",
+    "description": "Learn to set up Safari auto refresh, click after reloading, or repeat clicks on an icon button without reloading. Includes permissions and troubleshooting.",
+    "intro": "Start with the task your page needs: reload the whole page, click after a reload, or click a list’s own refresh button. Follow the steps below on the webpage you want to use.",
+    "toc": "On this page",
+    "enable": "Enable the extension first",
+    "links": [
+      "Set up auto refresh",
+      "Set up refresh and click",
+      "Set up repeat clicks"
+    ],
+    "guides": [
+      {
+        "intro": "For a dashboard or status page that needs a full reload. Here is a simple 10-second setup.",
+        "steps": [
+          "Open the webpage, open the extension and choose Auto Refresh.",
+          "Choose the 10-second preset, or enter another interval in whole seconds greater than zero.",
+          "Choose Start. Check that the status shows Running and the countdown decreases. The page will reload when the interval ends.",
+          "Reopen the extension on the same tab to check the task or choose Stop. Closing the extension window does not stop the task."
+        ],
+        "note": "A full reload can reset a page’s filters or unsaved settings. If the page has its own refresh button, try Repeat click only instead."
+      },
+      {
+        "intro": "Use this when a page needs to reload before you click a button or follow a sequence of links.",
+        "steps": [
+          "Choose Refresh & Click. For the first step, either select a button or link on the page, or enter its title. These are two ways to choose the same target.",
+          "When selecting on the page, choose the target and then reopen the extension. Selection itself does not activate the button. Set the wait after this click, for example 3 seconds.",
+          "Add more steps if needed. They run in numbered order; each wait happens after that step’s click, including the last step before the next reload.",
+          "Choose Start. The page reloads first, then the click steps run. Check the result. Reopen the extension to Stop, or edit the steps and choose Apply changes."
+        ],
+        "note": "If a selected target cannot be identified reliably after reloading, enter its text or choose a button with a unique name. This mode reloads the whole page."
+      },
+      {
+        "intro": "For a list with its own refresh icon, where reloading the whole page would reset your filters.",
+        "steps": [
+          "Set the filters you want on the webpage, then open the extension and choose Repeat click only.",
+          "Enter a click interval, for example 5 seconds. Choose Select button or link and select the list’s refresh icon, even if it has no visible text.",
+          "After selecting, reopen the extension as the page notice suggests. Confirm the selected target and choose Start.",
+          "Watch the list update and check that the filters behave as expected. Reopen the extension to see the next-click countdown and click count, or choose Stop."
+        ],
+        "note": "This mode does not request a page reload. The button still performs the website’s own action, which may change the page. If you navigate away or the target changes, choose it again before restarting."
+      }
+    ],
+    "troubleshooting": "If something is not working",
+    "issues": [
+      [
+        "The extension is missing in Safari on Mac",
+        "Open the installed Mac app at least once, then check Safari Settings → Extensions. You need macOS 12 or later and Safari 15.4 or later. If it is still missing after relaunching Safari, contact support with your versions and installation source."
+      ],
+      [
+        "The task will not start",
+        "Open an ordinary http or https webpage and allow the extension to access that website in Safari settings. Browser settings, new-tab pages and some protected pages cannot run tasks. Read the message in the extension before trying again."
+      ],
+      [
+        "The selected button is unavailable or several buttons match",
+        "Make sure the button is visible and enabled. Open the extension and select the exact button again. If the page changed, its saved target may no longer apply. A title that matches several buttons is not specific enough."
+      ],
+      [
+        "The interval or configuration is rejected",
+        "Use positive whole seconds and complete every click step. After editing a running task, choose Apply changes. Then check the task summary to confirm the active configuration."
+      ],
+      [
+        "The task pauses on iPhone or iPad",
+        "Keep Safari in the foreground and the device unlocked. iOS and iPadOS may suspend browser tasks in the background or while locked. Continuous background operation is not guaranteed."
+      ]
+    ],
+    "contactTitle": "Still need a hand?",
+    "contactBody": "Include your device, system and browser versions, app version, task mode and the exact error message. For an internal or private website, describe the button and what happens; you do not need to share its address or confidential data.",
+    "contactLink": "Contact support",
+    "supportDescription": "Get help with Auto Refresh & Clicker setup, website permissions, purchases and task errors. Find the support email and what to include in your message.",
+    "privacyDescription": "Read the Auto Refresh & Clicker privacy policy for the Safari app and browser extension."
+  },
+  "zh-Hans": {
+    "title": "设置教程与故障排查",
+    "description": "了解如何在 Safari 中设置自动刷新、刷新后按步骤点击，以及选择图标按钮、不重载网页地重复点击，并排查权限和运行问题。",
+    "intro": "先看看网页需要哪种操作：重载整个页面、刷新后再点击，还是只点列表自己的刷新按钮。在目标网页打开扩展，按下面的步骤设置即可。",
+    "toc": "本页内容",
+    "enable": "先启用扩展",
+    "links": [
+      "设置自动刷新",
+      "设置刷新并点击",
+      "设置仅重复点击"
+    ],
+    "guides": [
+      {
+        "intro": "适合需要重载整页的看板或状态页面。下面以每 10 秒刷新一次为例。",
+        "steps": [
+          "打开目标网页，再打开扩展，选择“自动刷新”。",
+          "选择 10 秒预设，或输入其他间隔；请使用大于零的整数秒。",
+          "点击“开始”，确认状态变为“运行中”、倒计时持续减少。倒计时结束后，网页会重新加载。",
+          "在同一个标签页重新打开扩展，可以查看任务或点击“停止”。关闭扩展窗口不会停止任务。"
+        ],
+        "note": "整页重载可能重置筛选条件或未保存的设置。如果网页有自己的刷新按钮，可以试试“仅重复点击”。"
+      },
+      {
+        "intro": "适合需要先刷新网页，再点击按钮或依次打开链接的场景。",
+        "steps": [
+          "选择“刷新并点击”。为第一个步骤选择目标：可以在网页上选择按钮或超链接，也可以输入标题，两种方式都可以。",
+          "如果在网页上选择目标，选中后请重新打开扩展；选择本身不会触发按钮。设置“本次点击后等待”，例如 3 秒。",
+          "需要多次点击时继续添加步骤。任务按编号顺序执行，每段等待都发生在对应点击之后，最后一步的等待结束后才会进入下一轮刷新。",
+          "点击“开始”后，网页会先重新加载，再执行点击步骤。确认实际结果；重新打开扩展即可“停止”，修改步骤后点击“应用更改”。"
+        ],
+        "note": "如果提示刷新后无法可靠定位目标，可以输入按钮文字，或选择有唯一名称的按钮。这个模式会重载整个网页。"
+      },
+      {
+        "intro": "适合有独立刷新图标的列表，尤其是整页刷新会让筛选条件恢复默认值的网页。",
+        "steps": [
+          "先在网页上设好筛选条件，再打开扩展，选择“仅重复点击”。",
+          "输入点击间隔，例如 5 秒。点击“选择按钮或超链接”，再选中列表的刷新图标；没有文字的图标也能直接选择。",
+          "选中后，按网页上的提示重新打开扩展。确认已选择的目标，再点击“开始”。",
+          "观察列表是否更新、筛选条件是否符合预期。重新打开扩展，可以查看下次点击倒计时和已点击次数，也可以点击“停止”。"
+        ],
+        "note": "这个模式不会主动重载网页，但按钮仍会执行网站本身的操作，页面也可能因此变化。如果跳转了网页或目标发生变化，请重新选择后再开始。"
+      }
+    ],
+    "troubleshooting": "遇到问题时，从这里检查",
+    "issues": [
+      [
+        "Mac 的 Safari 里没有看到扩展",
+        "安装后至少打开一次 Mac App，再查看 Safari 设置 → 扩展。需要 macOS 12 或更新版本，以及 Safari 15.4 或更新版本。重新打开 Safari 后仍未出现，请联系支持并附上各版本号和安装来源。"
+      ],
+      [
+        "点击开始后，任务没有运行",
+        "请打开普通的 http 或 https 网页，并在 Safari 设置中允许扩展访问这个网站。浏览器设置、新标签页和部分受保护页面无法运行任务。先查看扩展里的具体错误提示，再尝试启动。"
+      ],
+      [
+        "按钮不可用，或有多个按钮匹配",
+        "先确认按钮在页面上可见且可点击，再打开扩展，重新选择具体按钮。网页发生变化后，之前保存的目标可能不再适用；如果输入的标题匹配多个按钮，也需要重新选择。"
+      ],
+      [
+        "间隔或配置无法通过检查",
+        "请使用大于零的整数秒，并填写每个点击步骤。修改运行中的任务后，需要点击“应用更改”，再查看任务摘要，确认当前生效的配置。"
+      ],
+      [
+        "iPhone 或 iPad 上的任务暂停了",
+        "执行任务时请保持 Safari 在前台、设备处于解锁状态。进入后台或锁屏时，iOS 和 iPadOS 可能暂停浏览器任务，无法保证持续后台运行。"
+      ]
+    ],
+    "contactTitle": "还需要帮忙？",
+    "contactBody": "请附上设备、系统版本、浏览器版本、App 版本、使用的模式和完整错误提示。如果是内部或私密网站，描述按钮和操作结果即可，不需要提供网址或机密数据。",
+    "contactLink": "联系支持",
+    "supportDescription": "获取 Auto Refresh & Clicker 的安装、网站权限、购买和任务运行帮助，查看支持邮箱及反馈问题时需要提供的信息。",
+    "privacyDescription": "查看 Auto Refresh & Clicker 的隐私政策，了解 Safari App 和浏览器扩展的相关隐私说明。"
+  },
+  "zh-Hant": {
+    "title": "設定教學與疑難排解",
+    "description": "瞭解如何在 Safari 設定自動重新整理、重新整理後依序點擊，以及選取圖示按鈕、不重新載入網頁地重複點擊，並排查權限與執行問題。",
+    "intro": "先看看網頁需要哪種操作：重新載入整個頁面、重新整理後再點擊，還是只點清單自己的更新按鈕。在目標網頁開啟擴充功能，依照下列步驟設定即可。",
+    "toc": "本頁內容",
+    "enable": "先啟用擴充功能",
+    "links": [
+      "設定自動重新整理",
+      "設定重新整理並點擊",
+      "設定僅重複點擊"
+    ],
+    "guides": [
+      {
+        "intro": "適合需要重新載入整頁的看板或狀態頁面。以下以每 10 秒重新整理一次為例。",
+        "steps": [
+          "開啟目標網頁，再開啟擴充功能，選擇「自動重新整理」。",
+          "選擇 10 秒預設值，或輸入其他間隔；請使用大於零的整數秒。",
+          "點擊「開始」，確認狀態變為執行中、倒數計時持續減少。倒數結束後，網頁會重新載入。",
+          "在同一個分頁重新開啟擴充功能，可以查看任務或點擊「停止」。關閉擴充功能視窗不會停止任務。"
+        ],
+        "note": "整頁重新載入可能重設篩選條件或未儲存的設定。如果網頁有自己的更新按鈕，可以試試「僅重複點擊」。"
+      },
+      {
+        "intro": "適合需要先重新整理網頁，再點擊按鈕或依序開啟連結的情境。",
+        "steps": [
+          "選擇「重新整理並點擊」。為第一個步驟選取目標：可以在網頁上選取按鈕或超連結，也可以輸入標題。",
+          "如果在網頁上選取目標，選中後請重新開啟擴充功能；選取本身不會觸發按鈕。設定本次點擊後的等待時間，例如 3 秒。",
+          "需要多次點擊時繼續新增步驟。任務依編號順序執行，每段等待都在對應點擊之後；最後一步等待結束後，才會進入下一輪重新整理。",
+          "點擊「開始」後，網頁會先重新載入，再執行點擊步驟。確認實際結果；重新開啟擴充功能即可停止，修改步驟後請套用變更。"
+        ],
+        "note": "若提示重新整理後無法可靠定位目標，可以輸入按鈕文字，或選取名稱唯一的按鈕。這個模式會重新載入整個網頁。"
+      },
+      {
+        "intro": "適合有獨立更新圖示的清單，尤其是整頁重新整理會讓篩選條件恢復預設值的網頁。",
+        "steps": [
+          "先在網頁上設定篩選條件，再開啟擴充功能，選擇「僅重複點擊」。",
+          "輸入點擊間隔，例如 5 秒。選擇選取按鈕或超連結，再選中清單的更新圖示；沒有文字的圖示也能直接選取。",
+          "選中後，依網頁上的提示重新開啟擴充功能。確認已選取的目標，再點擊「開始」。",
+          "觀察清單是否更新、篩選條件是否符合預期。重新開啟擴充功能，可以查看下次點擊倒數與已點擊次數，也可以停止任務。"
+        ],
+        "note": "這個模式不會主動重新載入網頁，但按鈕仍會執行網站本身的操作，頁面也可能因此改變。若前往其他網頁或目標改變，請重新選取後再開始。"
+      }
+    ],
+    "troubleshooting": "遇到問題時，從這裡檢查",
+    "issues": [
+      [
+        "Mac 的 Safari 裡沒有看到擴充功能",
+        "安裝後至少開啟一次 Mac App，再查看 Safari 設定 → 延伸功能。需要 macOS 12 或更新版本，以及 Safari 15.4 或更新版本。重新開啟 Safari 後仍未出現，請聯絡支援並附上版本號與安裝來源。"
+      ],
+      [
+        "開始後，任務沒有執行",
+        "請開啟一般的 http 或 https 網頁，並在 Safari 設定中允許擴充功能存取這個網站。瀏覽器設定、新分頁與部分受保護頁面無法執行任務。先查看擴充功能裡的錯誤提示，再嘗試啟動。"
+      ],
+      [
+        "按鈕無法使用，或有多個按鈕符合",
+        "先確認按鈕可見且可點擊，再開啟擴充功能，重新選取確切的按鈕。網頁改變後，儲存的目標可能不再適用；若標題符合多個按鈕，也需要重新選取。"
+      ],
+      [
+        "間隔或設定無法通過檢查",
+        "請使用大於零的整數秒，並填寫每個點擊步驟。修改執行中的任務後，請套用變更，再查看任務摘要以確認生效的設定。"
+      ],
+      [
+        "iPhone 或 iPad 上的任務暫停了",
+        "執行任務時請保持 Safari 在前景、裝置處於解鎖狀態。進入背景或鎖定螢幕時，iOS 和 iPadOS 可能暫停瀏覽器任務，無法保證持續在背景執行。"
+      ]
+    ],
+    "contactTitle": "還需要幫忙？",
+    "contactBody": "請附上裝置、系統版本、瀏覽器版本、App 版本、使用模式與完整錯誤提示。如果是內部或私人網站，描述按鈕和操作結果即可，不必提供網址或機密資料。",
+    "contactLink": "聯絡支援",
+    "supportDescription": "取得 Auto Refresh & Clicker 的安裝、網站權限、購買與任務執行協助，查看支援信箱及回報問題時需要提供的資訊。",
+    "privacyDescription": "查看 Auto Refresh & Clicker 的隱私權政策與 Safari App、瀏覽器擴充功能的相關隱私說明。"
+  },
+  "ja": {
+    "title": "設定ガイドとトラブル解決",
+    "description": "Safariで自動更新、更新後のクリック、ページを再読み込みしないアイコンボタンの繰り返しクリックを設定する手順と、権限や動作の問題への対処方法。",
+    "intro": "ページ全体を更新したいのか、更新後にクリックしたいのか、一覧の更新ボタンだけを押したいのか。目的に合った手順を選び、操作したいページで拡張機能を開いてください。",
+    "toc": "このページの内容",
+    "enable": "まず拡張機能を有効にする",
+    "links": [
+      "自動更新の設定手順",
+      "更新してクリックの設定手順",
+      "繰り返しクリックの設定手順"
+    ],
+    "guides": [
+      {
+        "intro": "ページ全体の再読み込みが必要なダッシュボードや状況確認ページに。10秒ごとに更新する例です。",
+        "steps": [
+          "対象のページで拡張機能を開き、「自動更新」を選びます。",
+          "10秒のプリセットを選ぶか、別の間隔を入力します。秒数は1以上の整数にしてください。",
+          "開始し、実行中の表示と減っていくカウントダウンを確認します。間隔が経過するとページが再読み込みされます。",
+          "同じタブで拡張機能を開き直すと、状態の確認や停止ができます。拡張機能のウインドウを閉じてもタスクは停止しません。"
+        ],
+        "note": "ページ全体の再読み込みで、フィルターや未保存の設定が初期化される場合があります。ページ内に更新ボタンがあれば「クリックのみ繰り返す」をお試しください。"
+      },
+      {
+        "intro": "ページを更新してからボタンを押したり、複数のリンクを順番にクリックしたりする場合に使います。",
+        "steps": [
+          "「更新してクリック」を選びます。最初のステップで、ページ上のボタンやリンクを選ぶか、タイトルを入力します。どちらの方法でも対象を指定できます。",
+          "ページ上で選んだら、拡張機能を開き直します。選ぶだけではボタンは作動しません。クリック後の待機時間を、例えば3秒に設定します。",
+          "必要に応じてステップを追加します。番号順にクリックし、それぞれのクリック後に待機します。最後の待機が終わると、次の更新に進みます。",
+          "開始すると、まずページが再読み込みされ、その後クリックが実行されます。結果を確認してください。停止や設定変更は拡張機能を開き直して行い、変更後は適用します。"
+        ],
+        "note": "再読み込み後に対象を確実に識別できないと表示されたら、ボタンの文字を入力するか、名前が一意のボタンを選んでください。このモードはページ全体を再読み込みします。"
+      },
+      {
+        "intro": "一覧に独自の更新アイコンがあり、ページ全体を更新するとフィルターが戻ってしまう場合に便利です。",
+        "steps": [
+          "ページでフィルターを設定し、拡張機能を開いて「クリックのみ繰り返す」を選びます。",
+          "クリック間隔を、例えば5秒に設定します。ボタンやリンクを選択する操作から、一覧の更新アイコンを選びます。文字のないアイコンも選択できます。",
+          "選択後はページの案内に従って拡張機能を開き直します。選択した対象を確認して開始します。",
+          "一覧が更新され、フィルターが意図どおり動くか確認します。拡張機能を開き直すと、次のクリックまでの時間とクリック回数を確認でき、停止もできます。"
+        ],
+        "note": "このモード自体はページを再読み込みしません。ただしボタンはサイト本来の処理を実行するため、ページが変化することはあります。別のページへ移動した場合や対象が変わった場合は、選び直してから再開してください。"
+      }
+    ],
+    "troubleshooting": "うまく動かないときは",
+    "issues": [
+      [
+        "MacのSafariに拡張機能が表示されない",
+        "インストールしたMacアプリを一度開き、Safariの設定 → 機能拡張を確認してください。macOS 12以降とSafari 15.4以降が必要です。Safariを開き直しても表示されない場合は、各バージョンと入手元を添えてサポートへご連絡ください。"
+      ],
+      [
+        "タスクが開始しない",
+        "通常のhttpまたはhttpsページを開き、Safariの設定でそのサイトへのアクセスを許可してください。ブラウザの設定、新規タブ、一部の保護されたページでは実行できません。拡張機能のエラー内容を確認してください。"
+      ],
+      [
+        "ボタンが使えない、または複数のボタンが一致する",
+        "ボタンが表示され、押せる状態か確認し、拡張機能から正確なボタンを選び直してください。ページが変わると保存した対象が使えなくなる場合があります。同じタイトルのボタンが複数ある場合も、直接選んでください。"
+      ],
+      [
+        "間隔や設定を受け付けない",
+        "1以上の整数の秒数を入力し、すべてのクリック手順を設定してください。実行中に変更した場合は変更を適用し、タスクの概要で有効な設定を確認します。"
+      ],
+      [
+        "iPhoneやiPadでタスクが止まる",
+        "Safariを前面に表示し、端末のロックを解除したままにしてください。バックグラウンドやロック中はiOSとiPadOSがブラウザのタスクを一時停止することがあり、継続動作は保証されません。"
+      ]
+    ],
+    "contactTitle": "解決しない場合は",
+    "contactBody": "端末、OSとブラウザのバージョン、アプリのバージョン、使用モード、エラー全文をお知らせください。社内・非公開サイトの場合は、ボタンと動作の説明だけで構いません。URLや機密情報を共有する必要はありません。",
+    "contactLink": "サポートに連絡",
+    "supportDescription": "Auto Refresh & Clickerの設定、サイトへのアクセス許可、購入、タスクの問題についてのサポート窓口と、お問い合わせ時に必要な情報。",
+    "privacyDescription": "Auto Refresh & ClickerのSafariアプリとブラウザ拡張機能に関するプライバシーポリシーをご確認ください。"
+  },
+  "ko": {
+    "title": "설정 안내와 문제 해결",
+    "description": "Safari 자동 새로고침, 새로고침 후 순서대로 클릭, 페이지를 새로고침하지 않는 아이콘 버튼 반복 클릭의 설정 방법과 권한 및 실행 문제 해결 안내입니다.",
+    "intro": "페이지 전체를 새로고침할지, 새로고침 후 클릭할지, 목록 자체의 새로고침 버튼만 누를지 먼저 정하세요. 사용하려는 웹페이지에서 확장 프로그램을 열고 아래 단계를 따라 설정하면 됩니다.",
+    "toc": "이 페이지의 내용",
+    "enable": "먼저 확장 프로그램 켜기",
+    "links": [
+      "자동 새로고침 설정하기",
+      "새로고침 후 클릭 설정하기",
+      "반복 클릭 설정하기"
+    ],
+    "guides": [
+      {
+        "intro": "페이지 전체를 다시 불러와야 하는 대시보드나 상태 페이지에 사용하세요. 10초마다 새로고침하는 예시입니다.",
+        "steps": [
+          "대상 웹페이지에서 확장 프로그램을 열고 ‘자동 새로고침’을 선택하세요.",
+          "10초 프리셋을 선택하거나 다른 간격을 입력하세요. 초 단위의 1 이상 정수를 사용하세요.",
+          "시작한 뒤 실행 중 상태와 줄어드는 카운트다운을 확인하세요. 간격이 지나면 페이지를 다시 불러옵니다.",
+          "같은 탭에서 확장 프로그램을 다시 열면 작업을 확인하거나 중지할 수 있습니다. 확장 프로그램 창을 닫아도 작업은 중지되지 않습니다."
+        ],
+        "note": "전체 페이지를 다시 불러오면 필터나 저장하지 않은 설정이 초기화될 수 있습니다. 페이지에 자체 새로고침 버튼이 있다면 ‘클릭만 반복’을 사용해 보세요."
+      },
+      {
+        "intro": "페이지를 새로고침한 다음 버튼을 누르거나 여러 링크를 순서대로 클릭해야 할 때 사용하세요.",
+        "steps": [
+          "‘새로고침 & 클릭’을 선택하세요. 첫 단계에서 웹페이지의 버튼이나 링크를 직접 선택하거나 제목을 입력하세요. 두 방법 모두 같은 대상을 지정하는 방법입니다.",
+          "웹페이지에서 대상을 선택했다면 확장 프로그램을 다시 여세요. 선택만으로 버튼이 실행되지는 않습니다. 클릭 후 대기 시간을 예를 들어 3초로 설정하세요.",
+          "필요하면 단계를 추가하세요. 번호 순서대로 클릭하고 각 클릭 후에 대기합니다. 마지막 단계의 대기가 끝나면 다음 새로고침으로 넘어갑니다.",
+          "시작하면 먼저 페이지를 다시 불러온 뒤 클릭 단계를 실행합니다. 결과를 확인하세요. 확장 프로그램을 다시 열어 중지하거나, 단계를 수정한 뒤 변경 사항을 적용할 수 있습니다."
+        ],
+        "note": "새로고침 후 대상을 확실히 식별할 수 없다는 메시지가 나오면 버튼의 텍스트를 입력하거나 이름이 고유한 버튼을 선택하세요. 이 모드는 전체 페이지를 다시 불러옵니다."
+      },
+      {
+        "intro": "전체 페이지를 새로고침하면 필터가 초기화되지만 목록에 자체 새로고침 아이콘이 있는 경우에 적합합니다.",
+        "steps": [
+          "웹페이지에서 필터를 설정한 다음 확장 프로그램을 열고 ‘클릭만 반복’을 선택하세요.",
+          "클릭 간격을 예를 들어 5초로 입력하세요. 버튼 또는 링크 선택 기능으로 목록의 새로고침 아이콘을 선택하세요. 글자가 없는 아이콘도 선택할 수 있습니다.",
+          "선택 후 페이지 안내에 따라 확장 프로그램을 다시 여세요. 선택한 대상을 확인하고 시작하세요.",
+          "목록이 업데이트되고 필터가 예상대로 동작하는지 확인하세요. 확장 프로그램을 다시 열면 다음 클릭 카운트다운과 클릭 횟수를 확인하거나 작업을 중지할 수 있습니다."
+        ],
+        "note": "이 모드 자체는 페이지 새로고침을 요청하지 않습니다. 다만 버튼은 웹사이트의 원래 동작을 실행하므로 페이지가 바뀔 수 있습니다. 다른 페이지로 이동하거나 대상이 바뀌면 다시 선택한 후 시작하세요."
+      }
+    ],
+    "troubleshooting": "잘 작동하지 않을 때",
+    "issues": [
+      [
+        "Mac Safari에 확장 프로그램이 보이지 않아요",
+        "설치한 Mac 앱을 한 번 이상 연 뒤 Safari 설정 → 확장 프로그램을 확인하세요. macOS 12 이상과 Safari 15.4 이상이 필요합니다. Safari를 다시 열어도 보이지 않으면 버전과 설치 경로를 적어 지원팀에 문의하세요."
+      ],
+      [
+        "작업이 시작되지 않아요",
+        "일반 http 또는 https 웹페이지를 열고 Safari 설정에서 해당 웹사이트 접근을 허용하세요. 브라우저 설정, 새 탭과 일부 보호된 페이지에서는 작업을 실행할 수 없습니다. 다시 시도하기 전에 확장 프로그램의 오류 메시지를 확인하세요."
+      ],
+      [
+        "버튼을 사용할 수 없거나 여러 버튼이 일치해요",
+        "버튼이 보이고 활성화되어 있는지 확인한 후 확장 프로그램에서 정확한 버튼을 다시 선택하세요. 페이지가 바뀌면 저장한 대상이 더 이상 맞지 않을 수 있습니다. 같은 제목의 버튼이 여러 개일 때도 직접 선택해 주세요."
+      ],
+      [
+        "간격이나 설정이 올바르지 않다고 나와요",
+        "1 이상 정수의 초 단위를 사용하고 모든 클릭 단계를 입력하세요. 실행 중 설정을 수정했다면 변경 사항을 적용하고 작업 요약에서 실제 설정을 확인하세요."
+      ],
+      [
+        "iPhone이나 iPad에서 작업이 멈춰요",
+        "Safari를 화면에 띄워 두고 기기의 잠금을 해제해 두세요. iOS와 iPadOS는 백그라운드나 잠금 상태에서 브라우저 작업을 일시 중지할 수 있어 지속적인 백그라운드 실행은 보장되지 않습니다."
+      ]
+    ],
+    "contactTitle": "도움이 더 필요하신가요?",
+    "contactBody": "기기, 운영체제 및 브라우저 버전, 앱 버전, 작업 모드와 오류 메시지 전체를 알려 주세요. 내부 또는 비공개 사이트라면 버튼과 실행 결과를 설명해 주시면 됩니다. 주소나 기밀 데이터를 공유할 필요는 없습니다.",
+    "contactLink": "지원팀에 문의하기",
+    "supportDescription": "Auto Refresh & Clicker 설정, 웹사이트 권한, 구매 및 작업 오류에 관한 지원 이메일과 문의할 때 필요한 정보를 확인하세요.",
+    "privacyDescription": "Auto Refresh & Clicker의 Safari 앱 및 브라우저 확장 프로그램 개인정보 처리방침을 확인하세요."
+  },
+  "de-DE": {
+    "title": "Einrichtung und Fehlerbehebung",
+    "description": "Safari-Seiten automatisch aktualisieren, nach dem Neuladen klicken oder Symbolschaltflächen ohne Neuladen wiederholt anklicken: Anleitung und Fehlerbehebung.",
+    "intro": "Soll die ganze Seite neu laden, danach eine Klickfolge ausführen oder nur die Aktualisierungsschaltfläche einer Liste betätigen? Wählen Sie die passende Anleitung und öffnen Sie die Erweiterung auf Ihrer gewünschten Webseite.",
+    "toc": "Auf dieser Seite",
+    "enable": "Zuerst die Erweiterung aktivieren",
+    "links": [
+      "Automatische Aktualisierung einrichten",
+      "Aktualisieren und Klicken einrichten",
+      "Wiederholte Klicks einrichten"
+    ],
+    "guides": [
+      {
+        "intro": "Für Dashboards oder Statusseiten, die vollständig neu geladen werden sollen. Dieses Beispiel verwendet zehn Sekunden.",
+        "steps": [
+          "Öffnen Sie die Webseite und die Erweiterung. Wählen Sie Automatische Aktualisierung.",
+          "Wählen Sie die Vorgabe für 10 Sekunden oder geben Sie ein anderes Intervall in ganzen Sekunden größer als null ein.",
+          "Starten Sie die Aufgabe. Prüfen Sie den Laufstatus und den abnehmenden Countdown. Nach Ablauf des Intervalls wird die Seite neu geladen.",
+          "Öffnen Sie die Erweiterung im selben Tab erneut, um die Aufgabe zu prüfen oder zu stoppen. Das Schließen des Erweiterungsfensters beendet die Aufgabe nicht."
+        ],
+        "note": "Ein vollständiges Neuladen kann Filter oder ungespeicherte Einstellungen zurücksetzen. Hat die Seite eine eigene Aktualisierungsschaltfläche, versuchen Sie Wiederholt klicken."
+      },
+      {
+        "intro": "Für Seiten, die vor einem Klick oder einer Folge von Klicks neu geladen werden müssen.",
+        "steps": [
+          "Wählen Sie Aktualisieren und klicken. Wählen Sie im ersten Schritt eine Schaltfläche oder einen Link direkt auf der Seite aus oder geben Sie den Titel ein. Beide Wege bestimmen das Klickziel.",
+          "Öffnen Sie nach der Auswahl auf der Seite die Erweiterung erneut. Die Auswahl allein betätigt die Schaltfläche nicht. Legen Sie die Wartezeit nach diesem Klick fest, zum Beispiel 3 Sekunden.",
+          "Fügen Sie bei Bedarf weitere Schritte hinzu. Sie werden in nummerierter Reihenfolge ausgeführt. Jede Wartezeit folgt dem jeweiligen Klick; nach der letzten beginnt die nächste Aktualisierung.",
+          "Starten Sie die Aufgabe. Zuerst lädt die Seite neu, danach folgen die Klicks. Prüfen Sie das Ergebnis. Öffnen Sie die Erweiterung zum Stoppen erneut oder bearbeiten Sie die Schritte und übernehmen Sie die Änderungen."
+        ],
+        "note": "Lässt sich ein Ziel nach dem Neuladen nicht zuverlässig erkennen, geben Sie den Schaltflächentext ein oder wählen Sie eine Schaltfläche mit eindeutigem Namen. Dieser Modus lädt die gesamte Seite neu."
+      },
+      {
+        "intro": "Für Listen mit eigenem Aktualisierungssymbol, deren Filter durch ein Neuladen der ganzen Seite zurückgesetzt würden.",
+        "steps": [
+          "Stellen Sie die Filter auf der Webseite ein. Öffnen Sie die Erweiterung und wählen Sie Wiederholt klicken.",
+          "Geben Sie ein Klickintervall ein, zum Beispiel 5 Sekunden. Wählen Sie über die Schaltflächen- oder Linkauswahl das Aktualisierungssymbol der Liste aus. Sichtbarer Text ist dafür nicht erforderlich.",
+          "Öffnen Sie nach der Auswahl die Erweiterung erneut, wie im Hinweis auf der Seite beschrieben. Prüfen Sie das ausgewählte Ziel und starten Sie die Aufgabe.",
+          "Prüfen Sie, ob sich die Liste aktualisiert und die Filter wie erwartet funktionieren. In der erneut geöffneten Erweiterung sehen Sie den Countdown zum nächsten Klick, die Klickanzahl und die Stoppfunktion."
+        ],
+        "note": "Dieser Modus fordert kein Neuladen an. Die Schaltfläche führt aber weiterhin ihre eigene Webseitenaktion aus und kann dadurch die Seite verändern. Nach einem Seitenwechsel oder einer Änderung des Ziels wählen Sie es vor dem Neustart erneut aus."
+      }
+    ],
+    "troubleshooting": "Wenn etwas nicht funktioniert",
+    "issues": [
+      [
+        "Die Erweiterung fehlt in Safari auf dem Mac",
+        "Öffnen Sie die installierte Mac-App mindestens einmal und prüfen Sie Safari → Einstellungen → Erweiterungen. Erforderlich sind macOS 12 oder neuer und Safari 15.4 oder neuer. Fehlt sie auch nach einem Safari-Neustart, nennen Sie dem Support die Versionen und die Installationsquelle."
+      ],
+      [
+        "Die Aufgabe startet nicht",
+        "Öffnen Sie eine normale http- oder https-Webseite und erlauben Sie der Erweiterung in Safari den Zugriff auf diese Website. Browsereinstellungen, neue Tabs und manche geschützten Seiten unterstützen keine Aufgaben. Beachten Sie die Fehlermeldung in der Erweiterung."
+      ],
+      [
+        "Die Schaltfläche ist nicht verfügbar oder mehrere passen",
+        "Prüfen Sie, ob die Schaltfläche sichtbar und aktiviert ist. Wählen Sie dann die genaue Schaltfläche in der Erweiterung erneut aus. Nach Seitenänderungen kann ein gespeichertes Ziel ungültig sein. Ein Titel, der auf mehrere Schaltflächen passt, ist nicht eindeutig."
+      ],
+      [
+        "Intervall oder Konfiguration werden abgelehnt",
+        "Verwenden Sie ganze Sekunden größer als null und füllen Sie alle Klickschritte aus. Übernehmen Sie Änderungen an einer laufenden Aufgabe und prüfen Sie anschließend die aktive Konfiguration in der Aufgabenübersicht."
+      ],
+      [
+        "Die Aufgabe pausiert auf iPhone oder iPad",
+        "Lassen Sie Safari im Vordergrund und das Gerät entsperrt. iOS und iPadOS können Browseraufgaben im Hintergrund oder bei gesperrtem Gerät aussetzen. Ein dauerhafter Hintergrundbetrieb ist nicht garantiert."
+      ]
+    ],
+    "contactTitle": "Brauchen Sie weitere Hilfe?",
+    "contactBody": "Nennen Sie Gerät, System-, Browser- und App-Version, Aufgabenmodus und die vollständige Fehlermeldung. Bei internen oder privaten Websites genügt eine Beschreibung der Schaltfläche und des Verhaltens. Die Adresse oder vertrauliche Daten müssen Sie nicht teilen.",
+    "contactLink": "Support kontaktieren",
+    "supportDescription": "Hilfe zu Einrichtung, Website-Berechtigungen, Käufen und Aufgabenfehlern in Auto Refresh & Clicker. Supportadresse und Angaben für Ihre Anfrage.",
+    "privacyDescription": "Lesen Sie die Datenschutzerklärung von Auto Refresh & Clicker für die Safari-App und Browsererweiterung."
+  },
+  "fr-FR": {
+    "title": "Configuration et dépannage",
+    "description": "Configurez l’actualisation Safari, les clics après rechargement ou les clics sur une icône sans recharger la page. Guide des autorisations et dépannage.",
+    "intro": "Faut-il recharger toute la page, cliquer après son actualisation ou simplement appuyer sur le bouton d’actualisation d’une liste ? Choisissez le guide adapté et ouvrez l’extension sur la page concernée.",
+    "toc": "Sur cette page",
+    "enable": "Commencez par activer l’extension",
+    "links": [
+      "Configurer l’actualisation automatique",
+      "Configurer l’actualisation avec clics",
+      "Configurer les clics répétés"
+    ],
+    "guides": [
+      {
+        "intro": "Pour un tableau de bord ou une page d’état qui doit être entièrement rechargé. Voici un exemple toutes les 10 secondes.",
+        "steps": [
+          "Ouvrez la page, puis l’extension, et choisissez Actualisation automatique.",
+          "Choisissez le préréglage de 10 secondes ou saisissez un autre intervalle en secondes entières, supérieur à zéro.",
+          "Démarrez la tâche. Vérifiez son état actif et le décompte. La page se recharge à la fin de l’intervalle.",
+          "Rouvrez l’extension dans le même onglet pour vérifier la tâche ou l’arrêter. Fermer la fenêtre de l’extension n’arrête pas la tâche."
+        ],
+        "note": "Un rechargement complet peut réinitialiser les filtres ou les réglages non enregistrés. Si la page possède son propre bouton d’actualisation, essayez les clics seuls répétés."
+      },
+      {
+        "intro": "Pour recharger une page avant de cliquer sur un bouton ou de suivre une suite de liens.",
+        "steps": [
+          "Choisissez Actualiser et cliquer. À la première étape, sélectionnez un bouton ou un lien sur la page, ou saisissez son titre. Les deux méthodes servent à choisir la même cible.",
+          "Après la sélection sur la page, rouvrez l’extension. La sélection seule n’active pas le bouton. Réglez l’attente après ce clic, par exemple 3 secondes.",
+          "Ajoutez d’autres étapes si nécessaire. Elles suivent l’ordre des numéros, avec une attente après chaque clic. La dernière attente précède le rechargement suivant.",
+          "Démarrez : la page se recharge d’abord, puis les clics sont exécutés. Vérifiez le résultat. Rouvrez l’extension pour arrêter, ou modifiez les étapes et appliquez les changements."
+        ],
+        "note": "Si une cible ne peut pas être identifiée de manière fiable après rechargement, saisissez son texte ou choisissez un bouton au nom unique. Ce mode recharge toute la page."
+      },
+      {
+        "intro": "Pour une liste munie de sa propre icône d’actualisation, dont les filtres seraient réinitialisés par un rechargement complet.",
+        "steps": [
+          "Réglez les filtres sur la page, ouvrez l’extension et choisissez Clics seuls répétés.",
+          "Saisissez un intervalle, par exemple 5 secondes. Avec la sélection de bouton ou de lien, choisissez l’icône d’actualisation de la liste, même si elle ne comporte aucun texte.",
+          "Après la sélection, rouvrez l’extension comme l’indique le message sur la page. Vérifiez la cible sélectionnée, puis démarrez.",
+          "Vérifiez que la liste se met à jour et que les filtres se comportent comme prévu. Rouvrez l’extension pour voir le décompte avant le prochain clic, le nombre de clics ou arrêter la tâche."
+        ],
+        "note": "Ce mode ne demande pas de rechargement. Le bouton effectue toutefois l’action prévue par le site, qui peut modifier la page. Après une navigation ou un changement de cible, sélectionnez-la de nouveau avant de redémarrer."
+      }
+    ],
+    "troubleshooting": "En cas de difficulté",
+    "issues": [
+      [
+        "L’extension n’apparaît pas dans Safari sur Mac",
+        "Ouvrez au moins une fois l’app Mac installée, puis vérifiez Safari → Réglages → Extensions. macOS 12 ou ultérieur et Safari 15.4 ou ultérieur sont requis. Si elle reste absente après relance de Safari, indiquez au support vos versions et la source d’installation."
+      ],
+      [
+        "La tâche ne démarre pas",
+        "Ouvrez une page http ou https classique et autorisez l’extension à accéder à ce site dans les réglages Safari. Les réglages du navigateur, les nouveaux onglets et certaines pages protégées ne permettent pas les tâches. Consultez le message d’erreur de l’extension."
+      ],
+      [
+        "Le bouton est indisponible ou plusieurs correspondent",
+        "Vérifiez que le bouton est visible et actif, puis sélectionnez précisément ce bouton dans l’extension. Une page modifiée peut rendre la cible enregistrée inutilisable. Un titre commun à plusieurs boutons ne suffit pas à les distinguer."
+      ],
+      [
+        "L’intervalle ou la configuration est refusé",
+        "Utilisez un nombre entier de secondes supérieur à zéro et complétez chaque étape. Après avoir modifié une tâche en cours, appliquez les changements et vérifiez la configuration active dans le résumé."
+      ],
+      [
+        "La tâche s’interrompt sur iPhone ou iPad",
+        "Gardez Safari au premier plan et l’appareil déverrouillé. iOS et iPadOS peuvent suspendre les tâches du navigateur en arrière-plan ou lorsque l’appareil est verrouillé. L’exécution continue en arrière-plan n’est pas garantie."
+      ]
+    ],
+    "contactTitle": "Besoin d’un coup de main ?",
+    "contactBody": "Indiquez l’appareil, les versions du système, du navigateur et de l’app, le mode utilisé et le message d’erreur complet. Pour un site interne ou privé, décrivez le bouton et le résultat : il n’est pas nécessaire de partager son adresse ou des données confidentielles.",
+    "contactLink": "Contacter le support",
+    "supportDescription": "Aide pour la configuration, les autorisations, les achats et les erreurs de tâche d’Auto Refresh & Clicker. Adresse du support et informations utiles à fournir.",
+    "privacyDescription": "Consultez la politique de confidentialité d’Auto Refresh & Clicker pour l’app Safari et l’extension de navigateur."
+  },
+  "es-ES": {
+    "title": "Configuración y solución de problemas",
+    "description": "Aprende a actualizar Safari, hacer clic tras recargar o pulsar un icono repetidamente sin recargar la página. Incluye permisos y solución de problemas.",
+    "intro": "¿Necesitas recargar toda la página, hacer clic después o pulsar solo el botón de actualización de una lista? Elige la guía adecuada y abre la extensión en la página que quieras usar.",
+    "toc": "En esta página",
+    "enable": "Primero, activa la extensión",
+    "links": [
+      "Configurar la actualización automática",
+      "Configurar la actualización con clics",
+      "Configurar los clics repetidos"
+    ],
+    "guides": [
+      {
+        "intro": "Para paneles o páginas de estado que necesitan recargarse por completo. Este ejemplo usa un intervalo de 10 segundos.",
+        "steps": [
+          "Abre la página y la extensión, y elige Autoactualizar.",
+          "Selecciona el ajuste de 10 segundos o introduce otro intervalo en segundos enteros mayores que cero.",
+          "Inicia la tarea. Comprueba el estado de ejecución y la cuenta atrás. La página se recargará al terminar el intervalo.",
+          "Vuelve a abrir la extensión en la misma pestaña para comprobar la tarea o detenerla. Cerrar la ventana de la extensión no detiene la tarea."
+        ],
+        "note": "Una recarga completa puede restablecer filtros o ajustes sin guardar. Si la página tiene su propio botón de actualización, prueba Solo clics repetidos."
+      },
+      {
+        "intro": "Para recargar una página antes de pulsar un botón o seguir una secuencia de enlaces.",
+        "steps": [
+          "Elige Refrescar y Clic. Para el primer paso, selecciona un botón o enlace en la página, o escribe su título. Ambas opciones sirven para elegir el mismo objetivo.",
+          "Si lo seleccionas en la página, vuelve a abrir la extensión después. La selección no activa el botón. Ajusta la espera después del clic, por ejemplo a 3 segundos.",
+          "Añade más pasos si los necesitas. Se ejecutan en el orden de los números y cada espera va después de su clic. Tras la última espera comienza la siguiente recarga.",
+          "Inicia la tarea: primero se recarga la página y después se ejecutan los clics. Comprueba el resultado. Reabre la extensión para detenerla o edita los pasos y aplica los cambios."
+        ],
+        "note": "Si un objetivo no se puede identificar de forma fiable tras recargar, escribe el texto del botón o elige uno con un nombre único. Este modo recarga la página completa."
+      },
+      {
+        "intro": "Para listas con su propio icono de actualización, cuando una recarga completa restablecería los filtros.",
+        "steps": [
+          "Configura los filtros en la página, abre la extensión y elige Solo clics repetidos.",
+          "Introduce un intervalo, por ejemplo 5 segundos. Usa la selección de botón o enlace para elegir el icono de actualización de la lista, aunque no tenga texto visible.",
+          "Después de seleccionarlo, vuelve a abrir la extensión como indica el aviso de la página. Confirma el objetivo e inicia la tarea.",
+          "Comprueba que la lista se actualiza y los filtros funcionan como esperas. Reabre la extensión para ver el tiempo hasta el próximo clic, el número de clics o detener la tarea."
+        ],
+        "note": "Este modo no solicita una recarga. El botón sigue ejecutando la acción propia del sitio, que puede cambiar la página. Si navegas a otra página o cambia el objetivo, selecciónalo de nuevo antes de reiniciar."
+      }
+    ],
+    "troubleshooting": "Si algo no funciona",
+    "issues": [
+      [
+        "La extensión no aparece en Safari para Mac",
+        "Abre al menos una vez la app instalada y revisa Safari → Ajustes → Extensiones. Necesitas macOS 12 o posterior y Safari 15.4 o posterior. Si sigue sin aparecer al reabrir Safari, envía al soporte las versiones y el origen de la instalación."
+      ],
+      [
+        "La tarea no se inicia",
+        "Abre una página http o https normal y permite el acceso de la extensión a ese sitio en los ajustes de Safari. Los ajustes del navegador, las nuevas pestañas y algunas páginas protegidas no permiten ejecutar tareas. Lee el error de la extensión antes de intentarlo otra vez."
+      ],
+      [
+        "El botón no está disponible o coinciden varios",
+        "Comprueba que el botón sea visible y esté habilitado; después, selecciónalo de nuevo en la extensión. Si la página cambia, el objetivo guardado puede dejar de ser válido. Un título que coincide con varios botones no es suficientemente específico."
+      ],
+      [
+        "Se rechaza el intervalo o la configuración",
+        "Usa segundos enteros mayores que cero y completa cada paso de clic. Tras editar una tarea en ejecución, aplica los cambios y comprueba la configuración activa en el resumen."
+      ],
+      [
+        "La tarea se pausa en iPhone o iPad",
+        "Mantén Safari en primer plano y el dispositivo desbloqueado. iOS y iPadOS pueden suspender las tareas del navegador en segundo plano o con la pantalla bloqueada. No se garantiza la ejecución continua en segundo plano."
+      ]
+    ],
+    "contactTitle": "¿Necesitas más ayuda?",
+    "contactBody": "Indica el dispositivo, las versiones del sistema, del navegador y de la app, el modo de tarea y el error completo. Si se trata de un sitio interno o privado, describe el botón y el resultado; no hace falta compartir su dirección ni datos confidenciales.",
+    "contactLink": "Contactar con soporte",
+    "supportDescription": "Ayuda con la configuración, los permisos, las compras y los errores de Auto Refresh & Clicker. Correo de soporte e información que conviene incluir al escribir.",
+    "privacyDescription": "Consulta la política de privacidad de Auto Refresh & Clicker para la app de Safari y la extensión del navegador."
+  },
+  "pt-PT": {
+    "title": "Configuração e resolução de problemas",
+    "description": "Saiba como atualizar páginas no Safari, clicar após recarregar ou repetir cliques num ícone sem recarregar a página. Inclui permissões e resolução de problemas.",
+    "intro": "Precisa de recarregar a página inteira, clicar depois da atualização ou apenas usar o botão de atualização de uma lista? Escolha o guia adequado e abra a extensão na página que pretende utilizar.",
+    "toc": "Nesta página",
+    "enable": "Comece por ativar a extensão",
+    "links": [
+      "Configurar a atualização automática",
+      "Configurar a atualização com cliques",
+      "Configurar cliques repetidos"
+    ],
+    "guides": [
+      {
+        "intro": "Para painéis ou páginas de estado que precisam de ser totalmente recarregados. Este exemplo usa um intervalo de 10 segundos.",
+        "steps": [
+          "Abra a página e a extensão e escolha Atualização Automática.",
+          "Escolha a predefinição de 10 segundos ou introduza outro intervalo em segundos inteiros superiores a zero.",
+          "Inicie a tarefa. Confirme o estado de execução e a contagem decrescente. A página será recarregada no fim do intervalo.",
+          "Volte a abrir a extensão no mesmo separador para verificar a tarefa ou pará-la. Fechar a janela da extensão não para a tarefa."
+        ],
+        "note": "Recarregar a página inteira pode repor filtros ou definições não guardadas. Se a página tiver um botão de atualização próprio, experimente Apenas cliques repetidos."
+      },
+      {
+        "intro": "Para recarregar uma página antes de clicar num botão ou seguir uma sequência de ligações.",
+        "steps": [
+          "Escolha Atualizar e Clicar. No primeiro passo, selecione um botão ou uma ligação na página ou introduza o título. As duas opções permitem escolher o mesmo alvo.",
+          "Depois de selecionar na página, volte a abrir a extensão. A seleção por si só não ativa o botão. Defina a espera após o clique, por exemplo 3 segundos.",
+          "Adicione mais passos, se necessário. São executados pela ordem dos números, com uma espera após cada clique. A última espera antecede a atualização seguinte.",
+          "Inicie a tarefa: a página é recarregada primeiro e os cliques são executados depois. Verifique o resultado. Volte a abrir a extensão para parar ou edite os passos e aplique as alterações."
+        ],
+        "note": "Se não for possível identificar o alvo com segurança após recarregar, introduza o texto do botão ou escolha um botão com nome único. Este modo recarrega a página inteira."
+      },
+      {
+        "intro": "Para listas com o seu próprio ícone de atualização, quando recarregar a página inteira reporia os filtros.",
+        "steps": [
+          "Defina os filtros na página, abra a extensão e escolha Apenas cliques repetidos.",
+          "Introduza um intervalo, por exemplo 5 segundos. Use a seleção de botão ou ligação para escolher o ícone de atualização da lista, mesmo que não tenha texto visível.",
+          "Após a seleção, volte a abrir a extensão, conforme o aviso na página. Confirme o alvo e inicie a tarefa.",
+          "Verifique se a lista é atualizada e se os filtros funcionam como esperado. Volte a abrir a extensão para ver o tempo até ao próximo clique, o número de cliques ou parar a tarefa."
+        ],
+        "note": "Este modo não pede o recarregamento da página. O botão continua a executar a ação do próprio site, que pode alterar a página. Se navegar para outra página ou o alvo mudar, selecione-o de novo antes de reiniciar."
+      }
+    ],
+    "troubleshooting": "Se algo não funcionar",
+    "issues": [
+      [
+        "A extensão não aparece no Safari do Mac",
+        "Abra a app instalada pelo menos uma vez e verifique Safari → Definições → Extensões. Precisa de macOS 12 ou posterior e Safari 15.4 ou posterior. Se continuar em falta após reabrir o Safari, indique ao suporte as versões e a origem da instalação."
+      ],
+      [
+        "A tarefa não inicia",
+        "Abra uma página http ou https normal e permita o acesso da extensão a esse site nas definições do Safari. As definições do navegador, os novos separadores e algumas páginas protegidas não permitem tarefas. Consulte o erro na extensão antes de tentar novamente."
+      ],
+      [
+        "O botão não está disponível ou há várias correspondências",
+        "Confirme que o botão está visível e ativo e selecione o botão exato novamente na extensão. Uma alteração na página pode invalidar o alvo guardado. Um título comum a vários botões não é suficientemente específico."
+      ],
+      [
+        "O intervalo ou a configuração é recusado",
+        "Use segundos inteiros superiores a zero e preencha todos os passos de clique. Depois de editar uma tarefa em execução, aplique as alterações e confirme a configuração ativa no resumo."
+      ],
+      [
+        "A tarefa fica em pausa no iPhone ou iPad",
+        "Mantenha o Safari em primeiro plano e o dispositivo desbloqueado. O iOS e o iPadOS podem suspender tarefas do navegador em segundo plano ou com o ecrã bloqueado. Não é garantida a execução contínua em segundo plano."
+      ]
+    ],
+    "contactTitle": "Precisa de mais ajuda?",
+    "contactBody": "Indique o dispositivo, as versões do sistema, do navegador e da app, o modo de tarefa e a mensagem de erro completa. Num site interno ou privado, descreva o botão e o resultado; não precisa de partilhar o endereço nem dados confidenciais.",
+    "contactLink": "Contactar o suporte",
+    "supportDescription": "Ajuda com a configuração, permissões, compras e erros de tarefas do Auto Refresh & Clicker. Email de suporte e informações a incluir no contacto.",
+    "privacyDescription": "Consulte a política de privacidade do Auto Refresh & Clicker para a app Safari e a extensão do navegador."
+  },
+  "ar-SA": {
+    "title": "الإعداد وحل المشكلات",
+    "description": "تعرّف على إعداد التحديث التلقائي في Safari، والنقر بعد إعادة التحميل، وتكرار النقر على زر أيقونة دون إعادة تحميل الصفحة، مع خطوات الأذونات وحل المشكلات.",
+    "intro": "هل تحتاج إلى إعادة تحميل الصفحة كاملة، أم النقر بعد تحديثها، أم الضغط على زر التحديث الخاص بالقائمة فقط؟ اختر الخطوات المناسبة وافتح الإضافة على صفحة الويب التي تريد استخدامها.",
+    "toc": "في هذه الصفحة",
+    "enable": "فعّل الإضافة أولاً",
+    "links": [
+      "إعداد التحديث التلقائي",
+      "إعداد التحديث والنقر",
+      "إعداد النقر المتكرر"
+    ],
+    "guides": [
+      {
+        "intro": "للوحات المعلومات وصفحات الحالة التي تحتاج إلى إعادة تحميل كاملة. يستخدم هذا المثال فترة 10 ثوانٍ.",
+        "steps": [
+          "افتح صفحة الويب ثم الإضافة، واختر «تحديث تلقائي».",
+          "اختر الإعداد المسبق 10 ثوانٍ، أو أدخل فترة أخرى بعدد صحيح من الثواني أكبر من صفر.",
+          "ابدأ المهمة، وتحقق من حالة التشغيل وتناقص العد التنازلي. ستُعاد تحميل الصفحة عند انتهاء الفترة.",
+          "أعد فتح الإضافة في علامة التبويب نفسها للتحقق من المهمة أو إيقافها. إغلاق نافذة الإضافة لا يوقف المهمة."
+        ],
+        "note": "قد تؤدي إعادة تحميل الصفحة كاملة إلى إعادة ضبط المرشحات أو الإعدادات غير المحفوظة. إذا كان للصفحة زر تحديث خاص بها، فجرّب «تكرار النقر فقط»."
+      },
+      {
+        "intro": "استخدم هذا الوضع عندما تحتاج إلى إعادة تحميل الصفحة قبل النقر على زر أو تنفيذ سلسلة من النقرات على الروابط.",
+        "steps": [
+          "اختر «تحديث وانقر». في الخطوة الأولى، اختر زراً أو رابطاً من الصفحة، أو أدخل عنوانه. الطريقتان تحددان الهدف نفسه.",
+          "بعد اختيار الهدف من الصفحة، أعد فتح الإضافة. الاختيار وحده لا يفعّل الزر. اضبط مدة الانتظار بعد النقرة، مثلاً 3 ثوانٍ.",
+          "أضف خطوات أخرى عند الحاجة. تُنفّذ حسب ترتيب الأرقام، ويأتي الانتظار بعد نقرة كل خطوة. بعد انتهاء الانتظار الأخير تبدأ إعادة التحميل التالية.",
+          "ابدأ المهمة: تُعاد تحميل الصفحة أولاً ثم تُنفّذ خطوات النقر. تحقق من النتيجة. أعد فتح الإضافة للإيقاف، أو عدّل الخطوات وطبّق التغييرات."
+        ],
+        "note": "إذا تعذّر تحديد الهدف بثبات بعد إعادة التحميل، فأدخل نص الزر أو اختر زراً باسم فريد. يعيد هذا الوضع تحميل الصفحة كاملة."
+      },
+      {
+        "intro": "للقوائم التي تملك أيقونة تحديث خاصة بها، عندما تؤدي إعادة تحميل الصفحة كاملة إلى إعادة ضبط المرشحات.",
+        "steps": [
+          "اضبط المرشحات على صفحة الويب، ثم افتح الإضافة واختر «تكرار النقر فقط».",
+          "أدخل فترة للنقر، مثلاً 5 ثوانٍ. استخدم اختيار الزر أو الرابط لتحديد أيقونة تحديث القائمة، حتى إذا لم يكن لها نص ظاهر.",
+          "بعد الاختيار، أعد فتح الإضافة كما توضح رسالة الصفحة. تأكد من الهدف المحدد ثم ابدأ المهمة.",
+          "راقب تحديث القائمة وتحقق من عمل المرشحات كما تتوقع. أعد فتح الإضافة لعرض العد التنازلي للنقرة التالية وعدد النقرات، أو لإيقاف المهمة."
+        ],
+        "note": "لا يطلب هذا الوضع إعادة تحميل الصفحة، لكن الزر ينفّذ إجراء الموقع الأصلي وقد يغيّر الصفحة. إذا انتقلت إلى صفحة أخرى أو تغيّر الهدف، فاختره مجدداً قبل إعادة التشغيل."
+      }
+    ],
+    "troubleshooting": "إذا لم يعمل شيء كما تتوقع",
+    "issues": [
+      [
+        "الإضافة لا تظهر في Safari على Mac",
+        "افتح تطبيق Mac المثبّت مرة واحدة على الأقل، ثم راجع إعدادات Safari ← الإضافات. يلزم macOS 12 أو أحدث وSafari 15.4 أو أحدث. إذا بقيت غير ظاهرة بعد إعادة فتح Safari، فأرسل للدعم أرقام الإصدارات ومصدر التثبيت."
+      ],
+      [
+        "المهمة لا تبدأ",
+        "افتح صفحة http أو https عادية، واسمح للإضافة بالوصول إلى ذلك الموقع من إعدادات Safari. لا يمكن تشغيل المهام في إعدادات المتصفح وعلامات التبويب الجديدة وبعض الصفحات المحمية. اقرأ رسالة الخطأ في الإضافة قبل المحاولة مجدداً."
+      ],
+      [
+        "الزر غير متاح أو توجد عدة أزرار مطابقة",
+        "تأكد من أن الزر ظاهر ومفعّل، ثم حدّد الزر المقصود مجدداً من الإضافة. قد لا يعود الهدف المحفوظ صالحاً بعد تغيّر الصفحة. إذا كان العنوان يطابق عدة أزرار، فاختر الزر مباشرة."
+      ],
+      [
+        "الفترة أو الإعدادات مرفوضة",
+        "استخدم عدداً صحيحاً من الثواني أكبر من صفر وأكمل كل خطوات النقر. بعد تعديل مهمة قيد التشغيل، طبّق التغييرات ثم تحقق من الإعدادات الفعلية في ملخص المهمة."
+      ],
+      [
+        "تتوقف المهمة مؤقتاً على iPhone أو iPad",
+        "أبقِ Safari في الواجهة والجهاز مفتوح القفل. قد يعلّق iOS وiPadOS مهام المتصفح في الخلفية أو عند قفل الشاشة. لا يمكن ضمان التشغيل المستمر في الخلفية."
+      ]
+    ],
+    "contactTitle": "هل ما زلت تحتاج إلى مساعدة؟",
+    "contactBody": "اذكر الجهاز وإصدارات النظام والمتصفح والتطبيق ووضع المهمة ونص الخطأ كاملاً. إذا كان الموقع داخلياً أو خاصاً، فصف الزر والنتيجة؛ لا تحتاج إلى مشاركة عنوانه أو بيانات سرية.",
+    "contactLink": "التواصل مع الدعم",
+    "supportDescription": "مساعدة في إعداد Auto Refresh & Clicker وأذونات المواقع والمشتريات وأخطاء المهام، مع بريد الدعم والمعلومات المفيدة عند التواصل.",
+    "privacyDescription": "اقرأ سياسة خصوصية Auto Refresh & Clicker لتطبيق Safari وإضافة المتصفح."
+  }
+}

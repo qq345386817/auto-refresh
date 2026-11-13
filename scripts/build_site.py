@@ -11,7 +11,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 COPY = json.loads((ROOT / 'scripts/site-copy.json').read_text())
+HELP = json.loads((ROOT / 'scripts/help-copy.json').read_text())
 SCENES = ('02-auto-refresh', '01-refresh-click', '04-repeat-click')
+GUIDE_IDS = ('auto-refresh', 'refresh-click', 'repeat-click')
 APP_STORE = 'https://apps.apple.com/app/id6502815806'
 CHROME_STORE = 'https://chromewebstore.google.com/detail/auto-refresh-clicker/npnkajomnfmgoakdnjcafbnmcgfkgghc'
 ARROW = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"></path></svg>'
@@ -85,14 +87,33 @@ def setup(c, guide=True):
     return f'<section class="section setup-section" id="setup" aria-labelledby="setup-title"><div class="section-heading"><h2 id="setup-title">{e(c["setup"])}</h2><p>{e(c["setupIntro"])}</p></div><ol class="setup-grid">{rows}</ol>{link}</section>'
 
 
-def tasks(c):
-    rows = ''.join(f'<article><span class="feature-number" aria-hidden="true">0{i+1}</span><h3>{e(c["tabs"][i])}</h3><p>{e(body)}</p></article>' for i, body in enumerate(c['modes']))
+def tasks(c, h):
+    rows = ''.join(f'<article><span class="feature-number" aria-hidden="true">0{i+1}</span><h3>{e(c["tabs"][i])}</h3><p>{e(body)}</p><a class="text-link" href="help#{GUIDE_IDS[i]}">{e(h["links"][i])}{ARROW}</a></article>' for i, body in enumerate(c['modes']))
     return f'<section class="section" id="tasks" aria-labelledby="tasks-title"><div class="section-heading"><h2 id="tasks-title">{e(c["tasks"])}</h2><p>{e(c["tasksIntro"])}</p></div><div class="feature-grid">{rows}</div></section>'
 
 
 def faq(c, opened=False):
     items = ''.join(f'<details{" open" if opened else ""}><summary>{e(q)}</summary><div><p>{e(a)}</p></div></details>' for q, a in c['faq'])
     return f'<section class="section faq-section" id="faq" aria-labelledby="faq-title"><h2 id="faq-title">{e(c["faqTitle"])}</h2><div class="faq-list">{items}</div></section>'
+
+
+def help_page(c, h):
+    sections = [('enable', h['enable'])] + list(zip(GUIDE_IDS, c['tabs'])) + [
+        ('troubleshooting', h['troubleshooting']), ('contact', h['contactTitle'])]
+    contents = ''.join(f'<a href="#{anchor}">{e(label)}</a>' for anchor, label in sections)
+    platforms = ''.join(f'<article><h3>{e(title)}</h3><p>{e(body)}</p></article>' for title, body in c['platforms'])
+    tutorials = []
+    for i, guide in enumerate(h['guides']):
+        steps = ''.join(f'<li>{e(step)}</li>' for step in guide['steps'])
+        tutorials.append(f'<section class="section tutorial" id="{GUIDE_IDS[i]}" aria-labelledby="{GUIDE_IDS[i]}-title"><h2 id="{GUIDE_IDS[i]}-title">{e(c["tabs"][i])}</h2><p class="tutorial-intro">{e(guide["intro"])}</p><ol class="tutorial-steps">{steps}</ol><aside class="platform-note"><p>{e(guide["note"])}</p></aside></section>')
+    issues = ''.join(f'<details><summary>{e(q)}</summary><div><p>{e(a)}</p></div></details>' for q, a in h['issues'])
+    return (f'<main id="main-content" class="content-page help-page"><p class="eyebrow">Auto Refresh &amp; Clicker</p>'
+            f'<h1>{e(h["title"])}</h1><p class="lead small">{e(h["intro"])}</p><p class="release-note">{e(c["releaseStatus"])}</p>'
+            f'<nav class="help-contents" aria-label="{e(h["toc"])}"><h2>{e(h["toc"])}</h2>{contents}</nav>'
+            f'<section class="section" id="enable" aria-labelledby="enable-title"><h2 id="enable-title">{e(h["enable"])}</h2><div class="platform-guides">{platforms}</div></section>'
+            + ''.join(tutorials)
+            + f'<section class="section" id="troubleshooting" aria-labelledby="troubleshooting-title"><h2 id="troubleshooting-title">{e(h["troubleshooting"])}</h2><div class="faq-list">{issues}</div></section>'
+            f'<section class="section help-contact" id="contact" aria-labelledby="contact-title"><h2 id="contact-title">{e(h["contactTitle"])}</h2><p>{e(h["contactBody"])}</p><a class="text-link" href="support">{e(h["contactLink"])}{ARROW}</a></section></main>')
 
 
 def gallery(c, locale, prefix, assets):
@@ -148,6 +169,7 @@ def build_not_found():
 def build_page(path, locale, page, assets):
     document = path.read_text()
     c = COPY[locale]
+    h = HELP[locale]
     prefix = '' if path.parent == ROOT else '../'
     header = re.search(r'<header\b[\s\S]*?</header>', document).group()
     header = re.sub(r'aria-label="Primary"', f'aria-label="{e(c["guide"])}"', header)
@@ -160,17 +182,23 @@ def build_page(path, locale, page, assets):
         header = header.replace(f'<a href="{page}">', f'<a href="{page}" aria-current="page">')
     links = re.search(r'<nav\b[^>]*>([\s\S]*?)</nav>', header).group(1)
     privacy_label = unescape(re.search(r'href="(?:en-US/)?privacy-policy"[^>]*>(.*?)</a>', header).group(1))
-    help_label = unescape(re.search(r'href="(?:en-US/)?help"[^>]*>(.*?)</a>', header).group(1))
     if page == 'index':
         main = f'''<main id="main-content"><section class="hero" aria-labelledby="hero-title"><div><p class="eyebrow">{e(c['ctaText'])}</p><h1 id="hero-title">{e(c['hero'][0])}<br><span>{e(c['hero'][1])}</span></h1></div><div class="hero-copy"><p class="lead">{e(c['intro'])}</p>{stores(c)}<p class="hero-note">{e(c['promise'])}</p><p class="release-note">{e(c['releaseStatus'])}</p><a class="text-link" href="#tasks">{e(c['jump'])}{ARROW}</a></div></section>
-          {gallery(c, locale, prefix, assets)}{tasks(c)}{setup(c)}<section class="section privacy-section"><h2>{e(c['privacyTitle'])}</h2><div><p>{e(c['privacyText'])}</p><p>{e(c['mobileNote'])}</p><a class="text-link" href="privacy-policy">{e(privacy_label)}{ARROW}</a></div></section>{faq(c)}<section class="section closing"><div><h2>{e(c['cta'])}</h2><p>{e(c['ctaText'])}</p></div><div>{stores(c)}<p class="capture-caption">{e(c['priceNote'])}</p></div></section></main>'''
+          {gallery(c, locale, prefix, assets)}{tasks(c, h)}{setup(c)}<section class="section privacy-section"><h2>{e(c['privacyTitle'])}</h2><div><p>{e(c['privacyText'])}</p><p>{e(c['mobileNote'])}</p><a class="text-link" href="privacy-policy">{e(privacy_label)}{ARROW}</a></div></section>{faq(c)}<section class="section closing"><div><h2>{e(c['cta'])}</h2><p>{e(c['ctaText'])}</p></div><div>{stores(c)}<p class="capture-caption">{e(c['priceNote'])}</p></div></section></main>'''
     elif page == 'help':
-        platforms = ''.join(f'<article><h3>{e(title)}</h3><p>{e(body)}</p></article>' for title, body in c['platforms'])
-        main = f'<main id="main-content" class="content-page"><p class="eyebrow">Auto Refresh &amp; Clicker</p><h1>{e(help_label)}</h1><p class="lead small">{e(c["intro"])}</p><p class="release-note">{e(c["releaseStatus"])}</p>{setup(c, False)}<section class="section platform-guides" aria-label="{e(c["guide"])}">{platforms}</section>{tasks(c)}<aside class="platform-note"><p>{e(c["mobileNote"])}</p></aside>{faq(c, True)}<div class="section">{stores(c)}<p class="capture-caption">{e(c["priceNote"])}</p></div></main>'
+        main = help_page(c, h)
     else:
         main = re.search(r'<main\b[\s\S]*?</main>', document).group()
         if 'id="main-content"' not in main:
             main = re.sub(r'<main\b', '<main id="main-content"', main, count=1)
+        if page == 'support':
+            # Keep the existing contact links and purchase guidance. Replace the
+            # old supplemental cards, some of which described the removed mode.
+            pattern = r'<section class="section support-list">([\s\S]*?)</section>'
+            section = re.search(pattern, main)
+            articles = re.findall(r'<article>[\s\S]*?</article>', section[1])[:4]
+            articles.append(f'<article><h2>{e(h["contactTitle"])}</h2><p>{e(h["contactBody"])}</p><a class="text-link" href="help#troubleshooting">{e(h["troubleshooting"])}{ARROW}</a></article>')
+            main = re.sub(pattern, lambda _: '<section class="section support-list">' + ''.join(articles) + '</section>', main)
     body = f'<body><a class="skip-link" href="#main-content">{e(c["skip"])}</a><div class="page"><div class="container{" narrow" if page != "index" else ""}">{header}{main}{footer(c, links)}</div></div>'
     if page == 'index':
         body += f'<script src="{prefix}script/site.js" defer></script>'
@@ -183,9 +211,14 @@ def build_page(path, locale, page, assets):
         digest = hashlib.sha256((ROOT / 'style' / stylesheet).read_bytes()).hexdigest()[:12]
         document = re.sub(r'(href="(?:\.\./)?style/' + re.escape(stylesheet) + r')(?:\?[^\"]*)?"',
                           lambda match: match[1] + '?v=' + digest + '"', document)
-    if page == 'index':
-        for attribute in ('name="description"', 'property="og:description"'):
-            document = re.sub(f'<meta {attribute} content="[^"]*">', f'<meta {attribute} content="{e(c["intro"])}">', document)
+    descriptions = {'index': c['intro'], 'help': h['description'],
+                    'support': h['supportDescription'], 'privacy-policy': h['privacyDescription']}
+    for attribute in ('name="description"', 'property="og:description"'):
+        document = re.sub(f'<meta {attribute} content="[^"]*">', lambda _: f'<meta {attribute} content="{e(descriptions[page])}">', document)
+    if page == 'help':
+        title = e(h['title'] + ' · Auto Refresh & Clicker')
+        document = re.sub(r'<title>[\s\S]*?</title>', lambda _: f'<title>{title}</title>', document)
+        document = re.sub(r'<meta property="og:title" content="[^"]*">', lambda _: f'<meta property="og:title" content="{title}">', document)
     path.write_text(document)
 
 
