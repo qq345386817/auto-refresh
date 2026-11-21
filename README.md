@@ -2,13 +2,15 @@
 
 Static website for Auto Refresh & Clicker. The landing pages offer the Safari app for iPhone, iPad, and Mac and the Chrome extension for desktop, with localized popup previews and links to both stores.
 
-The landing pages show original Safari on Mac 1.10.0 (80) captures, with three selectable tasks in each language. The captions identify Safari on Mac and the local demonstration page. The feature note describes the released Safari workflow and explains that Chrome updates separately. Source paths, dimensions, and SHA-256 values are in `images/safari-tasks/provenance.json`. The image viewer preserves the complete browser capture and offers a full-size image link on small screens.
+The homepage opens with a playable order-list example. Visitors can change the filter, refresh once, or start and stop repeated clicks every three seconds. The timer stops when the demo leaves view or the page is hidden. Order labels and products use the existing localized preview data.
+
+The landing pages also show original Safari on Mac 1.10.0 (80) captures, with three selectable tasks in each language. The captions identify Safari on Mac and the local demonstration page. The feature note describes the released Safari workflow and explains that Chrome updates separately. Source paths, dimensions, and SHA-256 values are in `images/safari-tasks/provenance.json`. Each mode pairs its full Safari capture with its instructions and guide link. Selecting the image opens the original at full size.
 
 Download links have localized accessible names and explicit App Store / Chrome Web Store destinations. Prices are left to the stores.
 
 ## Design and content
 
-The shared design system is in `../website-design-system/` and the editable design draft is in `../website-design/`. The system preserves the product blue, system typography, and original icon, and adds website semantic colors and layout rules. `style/foundations.css` is generated from that system; `style/site.css` owns responsive layout. No frontend framework or build dependencies are needed.
+The shared design system is in `../website-design-system/` and the earlier editable design draft is in `../website-design/`. The system preserves the product blue, system typography, and original icon, and adds website semantic colors and layout rules. `style/foundations.css` is generated from that system; `style/site.css` owns the shared layout and `style/landing.css` defines the homepage composition. No frontend framework or build dependencies are needed.
 
 Localized landing-page copy lives in `scripts/site-copy.json`; step-by-step help, troubleshooting and page-specific descriptions live in `scripts/help-copy.json`. To regenerate the 40 localized pages and four default pages:
 
@@ -25,7 +27,7 @@ python3 auto-refresh/scripts/build_site.py --tokens website-design-system/tokens
 
 Ordinary builds reuse the selected images already present in the website. Old `images/popup-previews/` files remain for compatibility but are no longer used by the landing pages. The generator preserves canonical links, hreflang groups, original privacy-policy body content, and support contact information. Each help page has its own description and title, platform setup directions, three numbered task walkthroughs, troubleshooting and a support handoff. Homepage task links lead directly to the corresponding help sections. The instructions explain returning to the extension after selecting a target, waits after each click, full-page reloads, repeated icon clicks, applying changes and stopping. Do not describe a preview or removed feature in page metadata.
 
-Tabs support click, arrow keys (including RTL), Home and End. Without JavaScript, the default product image remains visible. Pages respect system appearance and reduced motion, and include a keyboard skip link. Keep temporary screenshots, logs, and QA scripts outside this repository. Publishing is a separate step; generating these files does not deploy the site.
+The vertical mode selector supports click, Up, Down, Home and End. Without JavaScript, all three captures and guide links remain available through ordinary page anchors. Pages respect system appearance and reduced motion, and include a keyboard skip link. Keep temporary screenshots, logs, and QA scripts outside this repository. Publishing is a separate step; generating these files does not deploy the site.
 
 ## URLs
 

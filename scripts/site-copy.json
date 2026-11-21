@@ -19,7 +19,7 @@
       "Keep pages fresh.",
       "Keep your time."
     ],
-    "intro": "Some pages need a refresh. Others just need a click. Auto Refresh & Clicker takes care of those repeated actions on Safari webpages, so you can get on with your day.",
+    "intro": "Refresh a whole Safari page on a timer, or keep your filters and click just the list’s refresh button. Choose the button once and let the extension take the next turn.",
     "promise": "Inside your browser. No account needed.",
     "skip": "Skip to content",
     "jump": "See how it works",
@@ -82,7 +82,12 @@
     "previewLabel": "Explore the Safari tasks",
     "captureAlt": "Safari extension with a configured task, running state, countdown, and Stop control",
     "priceNote": "See each store for current pricing and compatibility.",
-    "releaseStatus": "The Safari app now supports selecting icon buttons and repeating clicks without reloading. Chrome is updated separately; check its store listing for available features."
+    "releaseStatus": "The Safari app now supports selecting icon buttons and repeating clicks without reloading. Chrome is updated separately; check its store listing for available features.",
+    "demo": {
+      "heading": "Some pages just need a click.",
+      "start": "Try repeat click",
+      "stop": "Stop demo"
+    }
   },
   "zh-Hans": {
     "openImage": "查看完整尺寸截图",
@@ -104,7 +109,7 @@
       "网页更新，",
       "不必守候。"
     ],
-    "intro": "有的网页需要刷新，有的只需要点一下。Auto Refresh & Clicker 帮你在 Safari 网页中重复这些操作，让你腾出手做别的事。",
+    "intro": "在 Safari 里，你可以定时刷新整页。只想更新列表？选中列表的刷新按钮，让扩展按时点击，刚设好的筛选条件也能保留。",
     "promise": "在浏览器中运行，无需注册账户。",
     "skip": "跳到正文",
     "jump": "看看如何运行",
@@ -167,7 +172,12 @@
     "previewLabel": "查看 Safari 的三种任务",
     "captureAlt": "Safari 扩展已配置任务，显示运行状态、倒计时和停止按钮",
     "priceNote": "当前价格与兼容性以各商店页面为准。",
-    "releaseStatus": "Safari 版现已支持选择图标按钮和仅重复点击。Chrome 版单独更新，具体功能请查看对应商店的说明。"
+    "releaseStatus": "Safari 版现已支持选择图标按钮和仅重复点击。Chrome 版单独更新，具体功能请查看对应商店的说明。",
+    "demo": {
+      "heading": "有时，只需点一下。",
+      "start": "试试重复点击",
+      "stop": "停止演示"
+    }
   },
   "zh-Hant": {
     "openImage": "查看完整尺寸截圖",
@@ -189,7 +199,7 @@
       "網頁更新，",
       "不必守候。"
     ],
-    "intro": "有的網頁需要重新整理，有的只需要點一下。Auto Refresh & Clicker 幫你在 Safari 網頁中重複這些操作，讓你騰出手做別的事。",
+    "intro": "在 Safari 裡，你可以定時重新整理整頁。只想更新清單？選取清單的重新整理按鈕，讓擴充功能定時點按，保留剛設好的篩選條件。",
     "promise": "在瀏覽器中執行，無須註冊帳號。",
     "skip": "跳至內容",
     "jump": "看看如何運作",
@@ -252,7 +262,12 @@
     "previewLabel": "查看 Safari 的三種任務",
     "captureAlt": "Safari 擴充功能已設定任務，顯示執行狀態、倒數計時與停止按鈕",
     "priceNote": "目前價格與相容性以各商店頁面為準。",
-    "releaseStatus": "Safari 版現已支援選取圖示按鈕與僅重複點擊。Chrome 版另行更新，實際功能請查看對應商店的說明。"
+    "releaseStatus": "Safari 版現已支援選取圖示按鈕與僅重複點擊。Chrome 版另行更新，實際功能請查看對應商店的說明。",
+    "demo": {
+      "heading": "有時，只需點一下。",
+      "start": "試試重複點擊",
+      "stop": "停止示範"
+    }
   },
   "ja": {
     "openImage": "元のサイズで表示",
@@ -274,7 +289,7 @@
       "ページの更新を、",
       "おまかせに。"
     ],
-    "intro": "ページ全体を更新したいときも、ボタンだけ押したいときも。Auto Refresh & Clicker が Safari のウェブページで繰り返す操作をお手伝いします。",
+    "intro": "Safari のページ全体を一定間隔で再読み込みできます。一覧だけ更新したいときは、その更新ボタンを選ぶだけ。拡張機能が繰り返しクリックするので、絞り込み条件はそのままです。",
     "promise": "ブラウザ内で動作。アカウント登録は不要。",
     "skip": "本文へ移動",
     "jump": "動作を見る",
@@ -337,7 +352,12 @@
     "previewLabel": "Safari のタスクを見る",
     "captureAlt": "タスク設定、実行状態、カウントダウン、停止ボタンを表示した Safari 拡張機能",
     "priceNote": "最新の価格と互換性は各ストアでご確認ください。",
-    "releaseStatus": "Safari版では、アイコンボタンの選択と、再読み込みしない繰り返しクリックが使えます。Chrome版は別途更新されるため、対応機能はストアでご確認ください。"
+    "releaseStatus": "Safari版では、アイコンボタンの選択と、再読み込みしない繰り返しクリックが使えます。Chrome版は別途更新されるため、対応機能はストアでご確認ください。",
+    "demo": {
+      "heading": "クリックだけで更新。",
+      "start": "繰り返しクリックを試す",
+      "stop": "デモを停止"
+    }
   },
   "ko": {
     "openImage": "원본 크기로 보기",
@@ -359,7 +379,7 @@
       "페이지는 새롭게,",
       "시간은 여유롭게."
     ],
-    "intro": "페이지 전체를 새로고침할 때도, 버튼 하나만 누르면 될 때도 있죠. Auto Refresh & Clicker가 Safari 웹페이지의 반복 작업을 도와드립니다.",
+    "intro": "Safari 페이지 전체를 일정한 간격으로 새로 고칠 수 있어요. 목록만 업데이트하고 싶다면 목록의 새로 고침 버튼을 선택하세요. 확장 프로그램이 대신 눌러 주니 필터를 그대로 유지할 수 있어요.",
     "promise": "브라우저 안에서 실행. 계정 가입 불필요.",
     "skip": "본문으로 이동",
     "jump": "작동 방식 보기",
@@ -422,7 +442,12 @@
     "previewLabel": "Safari 작업 살펴보기",
     "captureAlt": "작업 설정, 실행 상태, 카운트다운, 중지 버튼이 표시된 Safari 확장 프로그램",
     "priceNote": "현재 가격과 호환성은 각 스토어에서 확인하세요.",
-    "releaseStatus": "Safari 버전에서 아이콘 버튼 선택과 페이지 새로고침 없는 반복 클릭을 사용할 수 있습니다. Chrome 버전은 별도로 업데이트되므로 지원 기능은 해당 스토어에서 확인해 주세요."
+    "releaseStatus": "Safari 버전에서 아이콘 버튼 선택과 페이지 새로고침 없는 반복 클릭을 사용할 수 있습니다. Chrome 버전은 별도로 업데이트되므로 지원 기능은 해당 스토어에서 확인해 주세요.",
+    "demo": {
+      "heading": "클릭만으로 새로 고침.",
+      "start": "반복 클릭 체험",
+      "stop": "데모 중지"
+    }
   },
   "de-DE": {
     "openImage": "Aufnahme in voller Größe öffnen",
@@ -444,7 +469,7 @@
       "Seiten aktuell.",
       "Zeit für Sie."
     ],
-    "intro": "Manchmal braucht eine Seite ein Neuladen. Manchmal reicht ein Klick. Auto Refresh & Clicker übernimmt diese Wiederholungen auf Safari-Webseiten für Sie.",
+    "intro": "Lade eine Safari-Seite in festen Abständen neu. Soll nur die Liste aktualisiert werden? Wähle ihren Aktualisieren-Button aus. Die Erweiterung klickt für dich und deine Filter bleiben erhalten.",
     "promise": "Im Browser. Ohne Benutzerkonto.",
     "skip": "Zum Inhalt",
     "jump": "So funktioniert es",
@@ -507,7 +532,12 @@
     "previewLabel": "Safari-Aufgaben ansehen",
     "captureAlt": "Safari-Erweiterung mit eingestellter Aufgabe, Ausführungsstatus, Countdown und Stopp-Schaltfläche",
     "priceNote": "Aktuelle Preise und Kompatibilität finden Sie im jeweiligen Store.",
-    "releaseStatus": "Die Safari-App unterstützt jetzt die Auswahl von Symbolschaltflächen und wiederholte Klicks ohne Neuladen. Chrome wird separat aktualisiert; die verfügbaren Funktionen stehen im jeweiligen Store."
+    "releaseStatus": "Die Safari-App unterstützt jetzt die Auswahl von Symbolschaltflächen und wiederholte Klicks ohne Neuladen. Chrome wird separat aktualisiert; die verfügbaren Funktionen stehen im jeweiligen Store.",
+    "demo": {
+      "heading": "Oft genügt ein Klick.",
+      "start": "Wiederholte Klicks testen",
+      "stop": "Demo stoppen"
+    }
   },
   "fr-FR": {
     "openImage": "Ouvrir la capture en taille réelle",
@@ -529,7 +559,7 @@
       "Des pages à jour.",
       "Du temps pour vous."
     ],
-    "intro": "Parfois, il faut actualiser toute la page. Parfois, un clic suffit. Auto Refresh & Clicker s’occupe de ces gestes répétitifs dans les pages web de Safari.",
+    "intro": "Actualisez une page Safari à intervalles réguliers. Seule la liste vous intéresse ? Sélectionnez son bouton d’actualisation. L’extension clique pour vous et vos filtres restent en place.",
     "promise": "Dans votre navigateur. Sans compte.",
     "skip": "Aller au contenu",
     "jump": "Voir le fonctionnement",
@@ -592,7 +622,12 @@
     "previewLabel": "Découvrir les tâches Safari",
     "captureAlt": "Extension Safari avec une tâche configurée, son état, un compte à rebours et un bouton d’arrêt",
     "priceNote": "Consultez chaque boutique pour les prix et la compatibilité.",
-    "releaseStatus": "L’app Safari permet désormais de sélectionner des boutons à icône et de répéter les clics sans recharger la page. Chrome est mis à jour séparément : consultez sa fiche pour les fonctions disponibles."
+    "releaseStatus": "L’app Safari permet désormais de sélectionner des boutons à icône et de répéter les clics sans recharger la page. Chrome est mis à jour séparément : consultez sa fiche pour les fonctions disponibles.",
+    "demo": {
+      "heading": "Parfois, un clic suffit.",
+      "start": "Essayer les clics répétés",
+      "stop": "Arrêter la démo"
+    }
   },
   "es-ES": {
     "openImage": "Abrir captura a tamaño completo",
@@ -614,7 +649,7 @@
       "Páginas al día.",
       "Tiempo para ti."
     ],
-    "intro": "A veces hay que actualizar toda la página. Otras veces basta con un clic. Auto Refresh & Clicker se encarga de esas acciones repetidas en las páginas web de Safari.",
+    "intro": "Actualiza una página de Safari a intervalos regulares. ¿Solo necesitas actualizar la lista? Selecciona su botón de actualizar. La extensión hará los siguientes clics y conservarás tus filtros.",
     "promise": "En tu navegador. Sin crear una cuenta.",
     "skip": "Saltar al contenido",
     "jump": "Ver cómo funciona",
@@ -677,7 +712,12 @@
     "previewLabel": "Explorar las tareas de Safari",
     "captureAlt": "Extensión de Safari con tarea configurada, estado de ejecución, cuenta atrás y botón para detener",
     "priceNote": "Consulta el precio y la compatibilidad en cada tienda.",
-    "releaseStatus": "La app de Safari ya permite seleccionar botones con iconos y repetir clics sin recargar la página. Chrome se actualiza por separado; consulta sus funciones en la tienda correspondiente."
+    "releaseStatus": "La app de Safari ya permite seleccionar botones con iconos y repetir clics sin recargar la página. Chrome se actualiza por separado; consulta sus funciones en la tienda correspondiente.",
+    "demo": {
+      "heading": "A veces basta un clic.",
+      "start": "Probar el clic repetido",
+      "stop": "Detener la demo"
+    }
   },
   "pt-PT": {
     "openImage": "Abrir captura no tamanho original",
@@ -699,7 +739,7 @@
       "Páginas atualizadas.",
       "Tempo para si."
     ],
-    "intro": "Por vezes, é preciso atualizar a página inteira. Outras vezes, basta um clique. O Auto Refresh & Clicker trata dessas ações repetidas nas páginas web do Safari.",
+    "intro": "Atualize uma página do Safari a intervalos regulares. Quer atualizar apenas a lista? Selecione o botão de atualização da lista. A extensão trata dos próximos cliques e os filtros mantêm-se.",
     "promise": "No navegador. Sem criar uma conta.",
     "skip": "Saltar para o conteúdo",
     "jump": "Ver como funciona",
@@ -762,7 +802,12 @@
     "previewLabel": "Explorar as tarefas do Safari",
     "captureAlt": "Extensão Safari com tarefa configurada, estado, contagem decrescente e botão de paragem",
     "priceNote": "Consulte os preços e a compatibilidade em cada loja.",
-    "releaseStatus": "A app Safari já permite selecionar botões com ícones e repetir cliques sem recarregar a página. O Chrome é atualizado em separado; consulte as funções disponíveis na respetiva loja."
+    "releaseStatus": "A app Safari já permite selecionar botões com ícones e repetir cliques sem recarregar a página. O Chrome é atualizado em separado; consulte as funções disponíveis na respetiva loja.",
+    "demo": {
+      "heading": "Às vezes basta um clique.",
+      "start": "Experimentar cliques repetidos",
+      "stop": "Parar a demonstração"
+    }
   },
   "ar-SA": {
     "openImage": "افتح اللقطة بالحجم الكامل",
@@ -784,7 +829,7 @@
       "صفحات محدّثة.",
       "ووقت لك."
     ],
-    "intro": "أحيانًا تحتاج الصفحة إلى تحديث كامل، وأحيانًا تكفي نقرة واحدة. يتولى Auto Refresh & Clicker هذه الخطوات المتكررة داخل صفحات Safari لتتفرغ لما يهمك.",
+    "intro": "حدّث صفحة Safari كاملة على فترات منتظمة. هل تريد تحديث القائمة وحدها؟ اختر زر التحديث فيها مرة واحدة، وستنقر عليه الإضافة دوريًا مع بقاء خيارات التصفية التي حدّدتها.",
     "promise": "داخل متصفحك. دون إنشاء حساب.",
     "skip": "انتقل إلى المحتوى",
     "jump": "شاهد طريقة العمل",
@@ -847,6 +892,11 @@
     "previewLabel": "استكشف مهام Safari",
     "captureAlt": "إضافة Safari تعرض مهمة مُعدّة وحالة التشغيل والعد التنازلي وزر الإيقاف",
     "priceNote": "راجع كل متجر لمعرفة الأسعار والتوافق الحاليين.",
-    "releaseStatus": "يدعم تطبيق Safari الآن اختيار أزرار الأيقونات وتكرار النقر دون إعادة تحميل الصفحة. تُحدَّث إضافة Chrome بشكل منفصل؛ راجع صفحة المتجر لمعرفة الميزات المتاحة."
+    "releaseStatus": "يدعم تطبيق Safari الآن اختيار أزرار الأيقونات وتكرار النقر دون إعادة تحميل الصفحة. تُحدَّث إضافة Chrome بشكل منفصل؛ راجع صفحة المتجر لمعرفة الميزات المتاحة.",
+    "demo": {
+      "heading": "أحيانًا تكفي نقرة.",
+      "start": "جرّب النقر المتكرر",
+      "stop": "أوقف العرض"
+    }
   }
 }

@@ -12,6 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 COPY = json.loads((ROOT / 'scripts/site-copy.json').read_text())
 HELP = json.loads((ROOT / 'scripts/help-copy.json').read_text())
+DEMO = json.loads((ROOT / 'preview_demo/repeat-copy.json').read_text())
 SCENES = ('02-auto-refresh', '01-refresh-click', '04-repeat-click')
 GUIDE_IDS = ('auto-refresh', 'refresh-click', 'repeat-click')
 APP_STORE = 'https://apps.apple.com/app/id6502815806'
@@ -87,11 +88,6 @@ def setup(c, guide=True):
     return f'<section class="section setup-section" id="setup" aria-labelledby="setup-title"><div class="section-heading"><h2 id="setup-title">{e(c["setup"])}</h2><p>{e(c["setupIntro"])}</p></div><ol class="setup-grid">{rows}</ol>{link}</section>'
 
 
-def tasks(c, h):
-    rows = ''.join(f'<article><span class="feature-number" aria-hidden="true">0{i+1}</span><h3>{e(c["tabs"][i])}</h3><p>{e(body)}</p><a class="text-link" href="help#{GUIDE_IDS[i]}">{e(h["links"][i])}{ARROW}</a></article>' for i, body in enumerate(c['modes']))
-    return f'<section class="section" id="tasks" aria-labelledby="tasks-title"><div class="section-heading"><h2 id="tasks-title">{e(c["tasks"])}</h2><p>{e(c["tasksIntro"])}</p></div><div class="feature-grid">{rows}</div></section>'
-
-
 def faq(c, opened=False):
     items = ''.join(f'<details{" open" if opened else ""}><summary>{e(q)}</summary><div><p>{e(a)}</p></div></details>' for q, a in c['faq'])
     return f'<section class="section faq-section" id="faq" aria-labelledby="faq-title"><h2 id="faq-title">{e(c["faqTitle"])}</h2><div class="faq-list">{items}</div></section>'
@@ -116,16 +112,41 @@ def help_page(c, h):
             f'<section class="section help-contact" id="contact" aria-labelledby="contact-title"><h2 id="contact-title">{e(h["contactTitle"])}</h2><p>{e(h["contactBody"])}</p><a class="text-link" href="support">{e(h["contactLink"])}{ARROW}</a></section></main>')
 
 
-def gallery(c, locale, prefix, assets):
-    buttons, panels = [], []
-    for index, (scene, label) in enumerate(zip(SCENES, c['tabs'])):
-        active = index == 1
-        buttons.append(f'<button type="button" id="task-tab-{index}" role="tab" aria-selected="{str(active).lower()}" aria-controls="task-panel-{index}" tabindex="{0 if active else -1}">{e(label)}</button>')
+def order_demo(c, locale):
+    d = DEMO[locale]
+    initial = ''.join(
+        f'<li><bdi>#{order_id}</bdi><strong>{e(product)}</strong><span>{e(d["pending"])}</span></li>'
+        for order_id, product in zip((1048, 1046, 1045), d['products'][:3])
+    )
+    products = e(json.dumps(d['products'], ensure_ascii=False))
+    return f'''<section class="demo-stage" aria-label="{e(d['demo'])}" data-demo data-products="{products}" data-pending="{e(d['pending'])}" data-shipped="{e(d['shipped'])}">
+      <div class="mini-browser">
+        <div class="window-line"><i aria-hidden="true"></i><span>{e(d['demo'])}</span></div>
+        <div class="orders"><h2>{e(d['title'])}</h2>
+          <div class="order-tools"><select aria-label="{e(d['status'])}" disabled><option value="pending">{e(d['pending'])}</option><option value="all">{e(d['all'])}</option></select>
+          <button type="button" class="refresh-orders" aria-label="{e(d['refresh'])}" disabled>↻</button></div>
+          <ul class="order-list">{initial}</ul></div>
+      </div>
+      <div class="demo-player" hidden><div><strong>{e(c['tabs'][2])}</strong><span><bdi>00:03</bdi></span></div>
+        <button type="button" data-play data-start="{e(c['demo']['start'])}" data-stop="{e(c['demo']['stop'])}"><i aria-hidden="true"></i><span>{e(c['demo']['start'])}</span></button></div>
+    </section>'''
+
+
+def showcase(c, h, locale, prefix, assets):
+    choices, panels = [], []
+    for i, scene in enumerate(SCENES):
+        label = e(c['tabs'][i])
         asset = assets[(locale, scene)]
-        file = asset['file']
-        priority = ' fetchpriority="high"' if active else ''
-        panels.append(f'<div id="task-panel-{index}" role="tabpanel" aria-labelledby="task-tab-{index}" tabindex="0"{"" if active else " hidden"}><figure><img src="{prefix}{file}" alt="{e(label + " — " + c["caption"])}" width="{asset["width"]}" height="{asset["height"]}" loading="{"eager" if active else "lazy"}" decoding="async"{priority}><figcaption><a href="{prefix}{file}" target="_blank" rel="noopener">{e(c["openImage"])}{ARROW}</a></figcaption></figure></div>')
-    return f'<section class="viewer" aria-label="{e(c["previewLabel"])}" data-viewer><div class="viewer-toolbar"><span class="viewer-platform"><span class="live-dot" aria-hidden="true"></span>Safari <span aria-hidden="true">/</span> Mac</span><div class="task-tabs" role="tablist" aria-label="{e(c["previewLabel"])}">{"".join(buttons)}</div></div>{"".join(panels)}</section><p class="capture-caption">{e(c["caption"])}</p>'
+        file = prefix + asset['file']
+        choices.append(f'<a id="task-tab-{i}" href="#task-panel-{i}">{label}</a>')
+        panels.append(f'''<article id="task-panel-{i}" class="mode-panel">
+          <figure><a href="{file}" target="_blank" rel="noopener" aria-label="{e(c['openImage'])}"><img src="{file}" alt="{e(c['tabs'][i] + ' — ' + c['captureAlt'])}" width="{asset['width']}" height="{asset['height']}" loading="lazy" decoding="async"></a>
+          <figcaption>{e(c['caption'])}</figcaption></figure>
+          <h3>{label}</h3><p>{e(c['modes'][i])}</p><a class="text-link" href="help#{GUIDE_IDS[i]}">{e(h['links'][i])}{ARROW}</a></article>''')
+    return f'''<section id="tasks" class="showcase" data-viewer aria-labelledby="tasks-title">
+        <div class="showcase-menu"><h2 id="tasks-title">{e(c['tasks'])}</h2>
+        <nav class="mode-list" aria-label="{e(c['previewLabel'])}">{''.join(choices)}</nav></div>
+        <div class="showcase-media">{''.join(panels)}</div></section>'''
 
 
 def footer(c, links):
@@ -183,8 +204,9 @@ def build_page(path, locale, page, assets):
     links = re.search(r'<nav\b[^>]*>([\s\S]*?)</nav>', header).group(1)
     privacy_label = unescape(re.search(r'href="(?:en-US/)?privacy-policy"[^>]*>(.*?)</a>', header).group(1))
     if page == 'index':
-        main = f'''<main id="main-content"><section class="hero" aria-labelledby="hero-title"><div><p class="eyebrow">{e(c['ctaText'])}</p><h1 id="hero-title">{e(c['hero'][0])}<br><span>{e(c['hero'][1])}</span></h1></div><div class="hero-copy"><p class="lead">{e(c['intro'])}</p>{stores(c)}<p class="hero-note">{e(c['promise'])}</p><p class="release-note">{e(c['releaseStatus'])}</p><a class="text-link" href="#tasks">{e(c['jump'])}{ARROW}</a></div></section>
-          {gallery(c, locale, prefix, assets)}{tasks(c, h)}{setup(c)}<section class="section privacy-section"><h2>{e(c['privacyTitle'])}</h2><div><p>{e(c['privacyText'])}</p><p>{e(c['mobileNote'])}</p><a class="text-link" href="privacy-policy">{e(privacy_label)}{ARROW}</a></div></section>{faq(c)}<section class="section closing"><div><h2>{e(c['cta'])}</h2><p>{e(c['ctaText'])}</p></div><div>{stores(c)}<p class="capture-caption">{e(c['priceNote'])}</p></div></section></main>'''
+        headline = e(c['demo']['heading']).replace('，', '，<wbr>') if locale in ('zh-Hans', 'zh-Hant') else e(c['demo']['heading'])
+        main = f'''<main id="main-content" class="landing"><section class="opening" aria-labelledby="hero-title"><div class="opening-copy"><h1 id="hero-title">{headline}</h1><p class="lead">{e(c['intro'])}</p></div>{order_demo(c, locale)}<div class="opening-actions">{stores(c)}<p class="hero-note">{e(c['ctaText'])}</p><a class="text-link" href="#tasks">{e(c['jump'])}{ARROW}</a></div></section>
+          {showcase(c, h, locale, prefix, assets)}{setup(c)}<section class="section privacy-section"><h2>{e(c['privacyTitle'])}</h2><div><p>{e(c['privacyText'])}</p><p>{e(c['mobileNote'])}</p><a class="text-link" href="privacy-policy">{e(privacy_label)}{ARROW}</a></div></section>{faq(c)}<section class="section closing"><div><h2>{e(c['cta'])}</h2><p>{e(c['ctaText'])}</p></div><div>{stores(c)}<p class="capture-caption">{e(c['releaseStatus'])}</p><p class="capture-caption">{e(c['priceNote'])}</p></div></section></main>'''
     elif page == 'help':
         main = help_page(c, h)
     else:
@@ -201,13 +223,16 @@ def build_page(path, locale, page, assets):
             main = re.sub(pattern, lambda _: '<section class="section support-list">' + ''.join(articles) + '</section>', main)
     body = f'<body><a class="skip-link" href="#main-content">{e(c["skip"])}</a><div class="page"><div class="container{" narrow" if page != "index" else ""}">{header}{main}{footer(c, links)}</div></div>'
     if page == 'index':
-        body += f'<script src="{prefix}script/site.js" defer></script>'
+        version = hashlib.sha256((ROOT / 'script/site.js').read_bytes()).hexdigest()[:12]
+        body += f'<script src="{prefix}script/site.js?v={version}" defer></script>'
     body += '</body>'
     document = re.sub(r'<body>[\s\S]*?</body>', lambda _: body, document)
     document = re.sub(r'<meta name="theme-color"[^>]*>', '<meta name="theme-color" content="#ffffff">', document)
     if 'foundations.css' not in document:
         document = document.replace(f'<link rel="stylesheet" href="{prefix}style/site.css">', f'<link rel="stylesheet" href="{prefix}style/foundations.css">\n  <link rel="stylesheet" href="{prefix}style/site.css">')
-    for stylesheet in ('foundations.css', 'site.css'):
+    if page == 'index' and 'landing.css' not in document:
+        document = document.replace('</head>', f'<link rel="stylesheet" href="{prefix}style/landing.css">\n</head>')
+    for stylesheet in ('foundations.css', 'site.css', 'landing.css'):
         digest = hashlib.sha256((ROOT / 'style' / stylesheet).read_bytes()).hexdigest()[:12]
         document = re.sub(r'(href="(?:\.\./)?style/' + re.escape(stylesheet) + r')(?:\?[^\"]*)?"',
                           lambda match: match[1] + '?v=' + digest + '"', document)
