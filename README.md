@@ -1,10 +1,10 @@
 # Auto Refresh & Clicker Website
 
-Static website for Auto Refresh & Clicker. The landing pages offer the Safari app for iPhone, iPad, and Mac and the Chrome extension for desktop, with localized popup previews and links to both stores.
+Static website for Auto Refresh & Clicker. The Apple app runs webpage tasks on iPhone, iPad, and Mac, either in its own browser or through the Safari extension. The homepage shows how to reopen a bookmark and run saved steps. Desktop Chrome has a separate extension.
 
 The homepage opens with a playable order-list example. Visitors can change the filter, refresh once, or start and stop repeated clicks every three seconds. The timer stops when the demo leaves view or the page is hidden. Order labels and products use the existing localized preview data.
 
-The landing pages also show original Safari on Mac 1.10.0 (80) captures, with three selectable tasks in each language. The captions identify Safari on Mac and the local demonstration page. The feature note describes the released Safari workflow and explains that Chrome updates separately. Source paths, dimensions, and SHA-256 values are in `images/safari-tasks/provenance.json`. Each mode pairs its full Safari capture with its instructions and guide link. Selecting the image opens the original at full size.
+The landing pages also show original Safari on Mac 1.10.0 (80) captures, with three selectable tasks in each language. The captions identify Safari on Mac and the local demonstration page. The 2.0 workflow images in `images/web-workflows-v2/` are localized web copies of the reviewed Mac candidate and the native load-workflow capture, sourced from the app project’s 2.0.0 local review. The older Safari captures illustrate the extension separately. Source paths, dimensions, and SHA-256 values are in `images/safari-tasks/provenance.json`. Each mode pairs its full Safari capture with its instructions and guide link. Selecting the image opens the original at full size.
 
 Download links have localized accessible names and explicit App Store / Chrome Web Store destinations. Prices are left to the stores.
 

@@ -223,3 +223,14 @@
 @media (forced-colors: active) {
   .demo-player button i, .mode-list a[aria-selected=true]::after { background: ButtonText; }
 }
+
+.workflow-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  align-items: center;
+  gap: clamp(28px, 5vw, 72px);
+}
+.workflow-feature p { margin-block: 18px; color: var(--muted); }
+@media (max-width: 720px) {
+  .workflow-feature { grid-template-columns: minmax(0, 1fr); }
+}

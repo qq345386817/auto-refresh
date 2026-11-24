@@ -93,8 +93,22 @@ def faq(c, opened=False):
     return f'<section class="section faq-section" id="faq" aria-labelledby="faq-title"><h2 id="faq-title">{e(c["faqTitle"])}</h2><div class="faq-list">{items}</div></section>'
 
 
-def help_page(c, h):
-    sections = [('enable', h['enable'])] + list(zip(GUIDE_IDS, c['tabs'])) + [
+def workflow_image(locale, scene, alt, prefix):
+    file = f"{prefix}images/web-workflows-v2/{locale}-{scene}.jpg"
+    width, height = (1440, 900) if scene == 'overview' else (1100, 750)
+    return (f'<a href="{file}" class="workflow-image"><img src="{file}" width="{width}" height="{height}" '
+            f'alt="{e(alt)}" loading="lazy" decoding="async"></a>')
+
+
+def workflow_section(c, locale, prefix):
+    steps = ' · '.join(c['workflowActions'])
+    return (f'<section class="section workflow-feature" id="workflows"><div><h2>{e(c["workflowTitle"])}</h2>'
+            f'<p>{e(c["workflowBody"])}</p><a class="text-link" href="help#workflows">{e(c["guide"])}{ARROW}</a></div>'
+            f'{workflow_image(locale, "overview", steps, prefix)}</section>')
+
+
+def help_page(c, h, locale, prefix):
+    sections = [('workflows', c['workflowTitle']), ('enable', h['enable'])] + list(zip(GUIDE_IDS, c['tabs'])) + [
         ('troubleshooting', h['troubleshooting']), ('contact', h['contactTitle'])]
     contents = ''.join(f'<a href="#{anchor}">{e(label)}</a>' for anchor, label in sections)
     platforms = ''.join(f'<article><h3>{e(title)}</h3><p>{e(body)}</p></article>' for title, body in c['platforms'])
@@ -104,8 +118,14 @@ def help_page(c, h):
         tutorials.append(f'<section class="section tutorial" id="{GUIDE_IDS[i]}" aria-labelledby="{GUIDE_IDS[i]}-title"><h2 id="{GUIDE_IDS[i]}-title">{e(c["tabs"][i])}</h2><p class="tutorial-intro">{e(guide["intro"])}</p><ol class="tutorial-steps">{steps}</ol><aside class="platform-note"><p>{e(guide["note"])}</p></aside></section>')
     issues = ''.join(f'<details><summary>{e(q)}</summary><div><p>{e(a)}</p></div></details>' for q, a in h['issues'])
     return (f'<main id="main-content" class="content-page help-page"><p class="eyebrow">Auto Refresh &amp; Clicker</p>'
-            f'<h1>{e(h["title"])}</h1><p class="lead small">{e(h["intro"])}</p><p class="release-note">{e(c["releaseStatus"])}</p>'
+            f'<h1>{e(h["title"])}</h1><p class="lead small">{e(h["intro"])}</p>'
             f'<nav class="help-contents" aria-label="{e(h["toc"])}"><h2>{e(h["toc"])}</h2>{contents}</nav>'
+            f'<section class="section tutorial" id="workflows"><h2>{e(h["workflowQuestion"])}</h2>'
+            f'<ol class="tutorial-steps">{"".join(f"<li>{e(step)}</li>" for step in h["workflowSteps"])}</ol>'
+            f'{workflow_image(locale, "load", c["workflowActions"][1] + " · Mac", prefix)}'
+            f'<h3>{e(h["wildcardQuestion"])}</h3><p>{e(h["wildcards"])} <bdi><code>*_AVS_*</code></bdi></p>'
+            f'<aside class="platform-note"><h3>iPhone · iPad</h3><p>{e(h["mobileForeground"])}</p>'
+            f'<h3>Mac</h3><p>{e(h["foreground"])}</p></aside></section>'
             f'<section class="section" id="enable" aria-labelledby="enable-title"><h2 id="enable-title">{e(h["enable"])}</h2><div class="platform-guides">{platforms}</div></section>'
             + ''.join(tutorials)
             + f'<section class="section" id="troubleshooting" aria-labelledby="troubleshooting-title"><h2 id="troubleshooting-title">{e(h["troubleshooting"])}</h2><div class="faq-list">{issues}</div></section>'
@@ -150,7 +170,7 @@ def showcase(c, h, locale, prefix, assets):
 
 
 def footer(c, links):
-    return f'<footer class="site-footer"><a class="footer-brand" href="./">Auto Refresh &amp; Clicker</a><nav aria-label="{e(c["guide"])}">{links}</nav><span>Safari · Chrome</span></footer>'
+    return f'<footer class="site-footer"><a class="footer-brand" href="./">Auto Refresh &amp; Clicker</a><nav aria-label="{e(c["guide"])}">{links}</nav></footer>'
 
 
 def language_switch(locale, page, label):
@@ -205,10 +225,10 @@ def build_page(path, locale, page, assets):
     privacy_label = unescape(re.search(r'href="(?:en-US/)?privacy-policy"[^>]*>(.*?)</a>', header).group(1))
     if page == 'index':
         headline = e(c['demo']['heading']).replace('，', '，<wbr>') if locale in ('zh-Hans', 'zh-Hant') else e(c['demo']['heading'])
-        main = f'''<main id="main-content" class="landing"><section class="opening" aria-labelledby="hero-title"><div class="opening-copy"><h1 id="hero-title">{headline}</h1><p class="lead">{e(c['intro'])}</p></div>{order_demo(c, locale)}<div class="opening-actions">{stores(c)}<p class="hero-note">{e(c['ctaText'])}</p><a class="text-link" href="#tasks">{e(c['jump'])}{ARROW}</a></div></section>
-          {showcase(c, h, locale, prefix, assets)}{setup(c)}<section class="section privacy-section"><h2>{e(c['privacyTitle'])}</h2><div><p>{e(c['privacyText'])}</p><p>{e(c['mobileNote'])}</p><a class="text-link" href="privacy-policy">{e(privacy_label)}{ARROW}</a></div></section>{faq(c)}<section class="section closing"><div><h2>{e(c['cta'])}</h2><p>{e(c['ctaText'])}</p></div><div>{stores(c)}<p class="capture-caption">{e(c['releaseStatus'])}</p><p class="capture-caption">{e(c['priceNote'])}</p></div></section></main>'''
+        main = f'''<main id="main-content" class="landing"><section class="opening" aria-labelledby="hero-title"><div class="opening-copy"><h1 id="hero-title">{headline}</h1><p class="lead">{e(c['intro'])}</p></div>{order_demo(c, locale)}<div class="opening-actions">{stores(c)}<p class="hero-note">{e(c['ctaText'])}</p><a class="text-link" href="#workflows">{e(c['jump'])}{ARROW}</a></div></section>
+          {workflow_section(c, locale, prefix)}{showcase(c, h, locale, prefix, assets)}{setup(c)}<section class="section privacy-section"><h2>{e(c['privacyTitle'])}</h2><div><p>{e(c['privacyText'])}</p><a class="text-link" href="privacy-policy">{e(privacy_label)}{ARROW}</a></div></section>{faq(c)}<section class="section closing"><div><h2>{e(c['cta'])}</h2></div><div>{stores(c)}<p class="capture-caption">{e(c['priceNote'])}</p></div></section></main>'''
     elif page == 'help':
-        main = help_page(c, h)
+        main = help_page(c, h, locale, prefix)
     else:
         main = re.search(r'<main\b[\s\S]*?</main>', document).group()
         if 'id="main-content"' not in main:
@@ -219,6 +239,9 @@ def build_page(path, locale, page, assets):
             pattern = r'<section class="section support-list">([\s\S]*?)</section>'
             section = re.search(pattern, main)
             articles = re.findall(r'<article>[\s\S]*?</article>', section[1])[:4]
+            articles[0] = f'<article><h2>{e(c["workflowTitle"])}</h2><p>{e(h["workflowSteps"][-1])}</p><a class="text-link" href="help#workflows">{e(c["guide"])}{ARROW}</a></article>'
+            articles[2] = f'<article><h2>{e(h["wildcardQuestion"])}</h2><p>{e(h["wildcards"])}</p></article>'
+            main = re.sub(r'<p class="lead small">.*?</p>', lambda _: f'<p class="lead small">{e(h["supportDescription"])}</p>', main, count=1)
             articles.append(f'<article><h2>{e(h["contactTitle"])}</h2><p>{e(h["contactBody"])}</p><a class="text-link" href="help#troubleshooting">{e(h["troubleshooting"])}{ARROW}</a></article>')
             main = re.sub(pattern, lambda _: '<section class="section support-list">' + ''.join(articles) + '</section>', main)
     body = f'<body><a class="skip-link" href="#main-content">{e(c["skip"])}</a><div class="page"><div class="container{" narrow" if page != "index" else ""}">{header}{main}{footer(c, links)}</div></div>'
@@ -240,10 +263,23 @@ def build_page(path, locale, page, assets):
                     'support': h['supportDescription'], 'privacy-policy': h['privacyDescription']}
     for attribute in ('name="description"', 'property="og:description"'):
         document = re.sub(f'<meta {attribute} content="[^"]*">', lambda _: f'<meta {attribute} content="{e(descriptions[page])}">', document)
-    if page == 'help':
-        title = e(h['title'] + ' · Auto Refresh & Clicker')
+    if page in ('index', 'help'):
+        title = e((c['pageTitle'] if page == 'index' else h['title']) + ' · Auto Refresh & Clicker')
         document = re.sub(r'<title>[\s\S]*?</title>', lambda _: f'<title>{title}</title>', document)
         document = re.sub(r'<meta property="og:title" content="[^"]*">', lambda _: f'<meta property="og:title" content="{title}">', document)
+    if page == 'index':
+        url = f'https://auto-rc.luopeike.com/{locale}/'
+        image = f'https://auto-rc.luopeike.com/images/web-workflows-v2/{locale}-overview.jpg'
+        schema = {'@context': 'https://schema.org', '@type': 'SoftwareApplication',
+                  '@id': 'https://auto-rc.luopeike.com/#app', 'name': 'Auto Refresh & Clicker',
+                  'applicationCategory': 'UtilitiesApplication', 'operatingSystem': ['iOS', 'iPadOS', 'macOS'],
+                  'softwareVersion': '2.0.0', 'url': url, 'downloadUrl': APP_STORE,
+                  'description': c['intro'], 'screenshot': image, 'inLanguage': locale,
+                  'featureList': [c['workflowTitle'], *c['tabs']]}
+        document = re.sub(r'<meta property="og:image" content="[^"]*">', f'<meta property="og:image" content="{image}">', document)
+        document = re.sub(r'<script type="application/ld\+json">.*?</script>\s*', '', document, flags=re.S)
+        markup = json.dumps(schema, ensure_ascii=False).replace('<', '\\u003c')
+        document = document.replace('</head>', f'<script type="application/ld+json">{markup}</script>\n</head>')
     path.write_text(document)
 
 

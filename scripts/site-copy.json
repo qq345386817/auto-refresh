@@ -19,14 +19,14 @@
       "Keep pages fresh.",
       "Keep your time."
     ],
-    "intro": "Refresh a whole Safari page on a timer, or keep your filters and click just the list’s refresh button. Choose the button once and let the extension take the next turn.",
+    "intro": "Reopen a bookmarked order list, load its saved steps and click the list’s refresh button on a timer. Work in the app or use the extension in Safari.",
     "promise": "Inside your browser. No account needed.",
     "skip": "Skip to content",
     "jump": "See how it works",
     "guide": "Read the setup guide",
-    "store": "Get the Safari app",
+    "store": "Get the app for iPhone, iPad and Mac",
     "chrome": "Get the Chrome extension",
-    "tasks": "One extension. Three ways to keep up.",
+    "tasks": "Explore the Safari tasks",
     "tasksIntro": "From a changing dashboard to a button you click repeatedly: choose the task that fits your page.",
     "tabs": [
       "Auto Refresh",
@@ -38,8 +38,8 @@
       "Choose a button or link on the page, or enter its title. After each refresh, follow your click steps with a wait after each one.",
       "Repeat clicks without reloading the page. Pick even an icon button, set the interval and keep your list moving."
     ],
-    "setup": "Enable. Configure. Start.",
-    "setupIntro": "A short setup, then a clear view of what is running.",
+    "setup": "Set up the Safari extension",
+    "setupIntro": "iPhone / iPad · Mac",
     "steps": [
       [
         "Enable the extension",
@@ -54,22 +54,21 @@
         "Start and check Running and the countdown. Stop at any time, or apply changes to update the task."
       ]
     ],
-    "privacyTitle": "Your tasks stay in your browser.",
-    "privacyText": "No web account to create. Configuration is stored locally, with tasks managed separately for each tab.",
-    "mobileNote": "On iPhone and iPad, keep Safari in the foreground. The system may suspend tasks in the background or while locked.",
+    "privacyTitle": "Bookmarks, saved steps and local history",
+    "privacyText": "In the app, give a bookmark a name or reopen a recent page. History stays on this device until you delete it. You can pause recording or clear visits and keep your bookmarks and workflows.",
     "faqTitle": "A few things to know.",
     "faq": [
       [
-        "Does it click inside other apps?",
-        "Tasks run on webpages in Safari, or in the desktop Chrome extension. It does not control other apps or system interfaces."
+        "Where can I run a webpage task?",
+        "Work on webpages inside the iPhone, iPad or Mac app, or on a Safari tab with the extension. Desktop Chrome has a separate extension."
+      ],
+      [
+        "What if the button name changes?",
+        "Select an icon directly, or enter a button or link name. If part of the name changes, enable wildcard matching and use * for that part. The task stops if it cannot identify a single available match."
       ],
       [
         "Why is the extension missing on my Mac?",
         "Open the installed app at least once, then check Safari Settings → Extensions. Use Safari 15.4 or later. If it is still missing, contact support with your macOS, Safari, and app versions and installation source."
-      ],
-      [
-        "Will it keep running when my phone is locked?",
-        "Continuous background operation is not guaranteed. iOS and iPadOS can suspend browser tasks. Keep Safari in the foreground for active tasks."
       ],
       [
         "Can I change a task while it is running?",
@@ -77,17 +76,25 @@
       ]
     ],
     "cta": "Make the next refresh automatic.",
-    "ctaText": "Safari on iPhone, iPad, and Mac. Chrome on desktop.",
+    "ctaText": "iPhone · iPad · Mac | Safari · Chrome",
     "caption": "Safari on Mac 1.10.0 · Actual captures on a local demonstration page",
     "previewLabel": "Explore the Safari tasks",
     "captureAlt": "Safari extension with a configured task, running state, countdown, and Stop control",
     "priceNote": "See each store for current pricing and compatibility.",
-    "releaseStatus": "The Safari app now supports selecting icon buttons and repeating clicks without reloading. Chrome is updated separately; check its store listing for available features.",
     "demo": {
-      "heading": "Some pages just need a click.",
+      "heading": "Open your list. Run your saved steps.",
       "start": "Try repeat click",
       "stop": "Stop demo"
-    }
+    },
+    "pageTitle": "Webpage auto refresh and click workflows",
+    "workflowTitle": "Use a saved workflow",
+    "workflowBody": "Name and save more than one workflow for the same full URL. When you return to that address, load the steps you need, check them and press Start. Workflows stay in the app or browser where you saved them.",
+    "workflowActions": [
+      "Bookmarks",
+      "Load workflow",
+      "Start",
+      "Stop"
+    ]
   },
   "zh-Hans": {
     "openImage": "查看完整尺寸截图",
@@ -109,14 +116,14 @@
       "网页更新，",
       "不必守候。"
     ],
-    "intro": "在 Safari 里，你可以定时刷新整页。只想更新列表？选中列表的刷新按钮，让扩展按时点击，刚设好的筛选条件也能保留。",
+    "intro": "打开收藏的订单列表，载入已存的步骤，按设定的间隔点击列表自己的刷新按钮。可以直接在 App 内操作，也可以在 Safari 里使用扩展。",
     "promise": "在浏览器中运行，无需注册账户。",
     "skip": "跳到正文",
     "jump": "看看如何运行",
     "guide": "查看完整设置指南",
-    "store": "下载 Safari 版",
+    "store": "下载 iPhone、iPad 和 Mac 版 App",
     "chrome": "安装 Chrome 扩展",
-    "tasks": "一个扩展，三种任务。",
+    "tasks": "查看 Safari 的三种任务",
     "tasksIntro": "从持续更新的看板，到需要反复点击的按钮，为当前网页选择合适的任务。",
     "tabs": [
       "自动刷新",
@@ -128,8 +135,8 @@
       "直接选择网页上的按钮或超链接，也能输入标题。每次刷新后，按你的顺序点击，并在每步之后等待。",
       "只点击，不重载网页。图标按钮也能直接选中，设好间隔，让列表自己更新。"
     ],
-    "setup": "启用。设置。开始。",
-    "setupIntro": "几步完成设置，随时确认运行状态。",
+    "setup": "设置 Safari 扩展",
+    "setupIntro": "iPhone / iPad · Mac",
     "steps": [
       [
         "启用扩展",
@@ -144,22 +151,21 @@
         "点击开始，查看运行状态与倒计时；随时停止，或应用更改以更新任务。"
       ]
     ],
-    "privacyTitle": "任务留在浏览器，时间留给自己。",
-    "privacyText": "无需注册网页账户。配置保存在浏览器本地，各标签页的任务单独管理。",
-    "mobileNote": "在 iPhone 和 iPad 上，请保持 Safari 在前台。后台运行或锁屏时，系统可能暂停任务。",
+    "privacyTitle": "收藏、已存流程与本机浏览记录",
+    "privacyText": "可以给收藏的网页起名，也可以从历史记录再次打开。访问记录默认保存在本机，直到手动删除。暂停记录或清空历史都不会影响收藏和已存流程。",
     "faqTitle": "先解答几个问题。",
     "faq": [
       [
-        "能在任意 App 里自动点击吗？",
-        "任务在 Safari 网页或桌面 Chrome 扩展中执行，不支持其他 App 或系统界面的自动操作。"
+        "可以在哪里运行网页任务？",
+        "可以在 iPhone、iPad 或 Mac 的 App 内打开网页，也可以在 Safari 标签页中使用扩展。桌面 Chrome 有独立的扩展。"
+      ],
+      [
+        "按钮名称里的编号变了，还能点击吗？",
+        "没有文字的图标可以直接在网页上选取。按名称定位按钮或链接时，如果名称里的编号会变，可启用通配符，用 * 代表变化的部分。找不到唯一可用的匹配项时，任务会停止。"
       ],
       [
         "Mac 的 Safari 中没有看到扩展？",
         "安装后先打开一次 App，再查看 Safari 设置 → 扩展。请使用 Safari 15.4 或更新版本。如果仍未出现，请联系支持，并附上 macOS、Safari、App 版本及安装来源。"
-      ],
-      [
-        "手机锁屏后会继续运行吗？",
-        "无法保证持续后台运行。iOS 和 iPadOS 可能暂停浏览器任务，执行任务时请保持 Safari 在前台。"
       ],
       [
         "运行中可以修改配置吗？",
@@ -167,17 +173,25 @@
       ]
     ],
     "cta": "让下一次刷新，自动完成。",
-    "ctaText": "Safari 适用于 iPhone、iPad 和 Mac，Chrome 扩展适用于电脑。",
+    "ctaText": "iPhone · iPad · Mac | Safari · Chrome",
     "caption": "Mac 上的 Safari 1.10.0 · 在本地演示网页中实际拍摄",
     "previewLabel": "查看 Safari 的三种任务",
     "captureAlt": "Safari 扩展已配置任务，显示运行状态、倒计时和停止按钮",
     "priceNote": "当前价格与兼容性以各商店页面为准。",
-    "releaseStatus": "Safari 版现已支持选择图标按钮和仅重复点击。Chrome 版单独更新，具体功能请查看对应商店的说明。",
     "demo": {
-      "heading": "有时，只需点一下。",
+      "heading": "打开收藏，运行已存步骤",
       "start": "试试重复点击",
       "stop": "停止演示"
-    }
+    },
+    "pageTitle": "网页自动刷新与点击流程",
+    "workflowTitle": "复用已保存的网页流程",
+    "workflowBody": "为同一完整网址保存多套流程并命名。下次回到该网址，载入需要的流程，核对步骤后手动开始。流程保存在设置它的 App 或浏览器中。",
+    "workflowActions": [
+      "收藏",
+      "载入流程",
+      "开始",
+      "停止"
+    ]
   },
   "zh-Hant": {
     "openImage": "查看完整尺寸截圖",
@@ -199,14 +213,14 @@
       "網頁更新，",
       "不必守候。"
     ],
-    "intro": "在 Safari 裡，你可以定時重新整理整頁。只想更新清單？選取清單的重新整理按鈕，讓擴充功能定時點按，保留剛設好的篩選條件。",
+    "intro": "從書籤開啟訂單清單，載入儲存的步驟，定時點選清單本身的更新按鈕。可直接在 App 內操作，也能在 Safari 使用延伸功能。",
     "promise": "在瀏覽器中執行，無須註冊帳號。",
     "skip": "跳至內容",
     "jump": "看看如何運作",
     "guide": "查看完整設定指南",
-    "store": "下載 Safari 版",
+    "store": "下載 iPhone、iPad 和 Mac 版 App",
     "chrome": "安裝 Chrome 擴充功能",
-    "tasks": "一個擴充功能，三種任務。",
+    "tasks": "查看 Safari 的三種任務",
     "tasksIntro": "從持續更新的看板，到需要反覆點擊的按鈕，為目前網頁選擇適合的任務。",
     "tabs": [
       "自動重新整理",
@@ -218,8 +232,8 @@
       "直接選取網頁上的按鈕或超連結，也能輸入標題。每次重新整理後，依你的順序點擊，並在每步之後等待。",
       "只點擊，不重新載入網頁。圖示按鈕也能直接選取，設好間隔，讓清單自己更新。"
     ],
-    "setup": "啟用。設定。開始。",
-    "setupIntro": "幾個步驟完成設定，隨時確認執行狀態。",
+    "setup": "設定 Safari 延伸功能",
+    "setupIntro": "iPhone / iPad · Mac",
     "steps": [
       [
         "啟用擴充功能",
@@ -234,22 +248,21 @@
         "點擊開始，查看執行狀態與倒數計時；隨時停止，或套用變更以更新任務。"
       ]
     ],
-    "privacyTitle": "任務留在瀏覽器，時間留給自己。",
-    "privacyText": "無須註冊網頁帳號。設定儲存在瀏覽器本機，各分頁的任務分別管理。",
-    "mobileNote": "在 iPhone 與 iPad 上，請保持 Safari 在前景。背景執行或鎖定螢幕時，系統可能暫停任務。",
+    "privacyTitle": "書籤、已儲存流程與本機瀏覽記錄",
+    "privacyText": "在 App 內可為書籤命名，或從瀏覽記錄重新開啟網頁。記錄預設會留在本機，直到你手動刪除。可以暫停記錄或清除瀏覽記錄，書籤及已儲存的流程會保留。",
     "faqTitle": "先解答幾個問題。",
     "faq": [
       [
-        "能在任意 App 裡自動點擊嗎？",
-        "任務在 Safari 網頁或桌面版 Chrome 擴充功能中執行，不支援其他 App 或系統介面的自動操作。"
+        "可以在哪裡執行網頁任務？",
+        "可在 iPhone、iPad 或 Mac 的 App 內開啟網頁，也可在 Safari 分頁中使用延伸功能。桌面版 Chrome 另有擴充功能。"
+      ],
+      [
+        "按鈕名稱裡的編號變了，也能點選嗎？",
+        "可直接選取沒有文字的圖示，也可輸入按鈕或連結名稱。若名稱中的編號會改變，可啟用萬用字元，用 * 代表變動的部分。找不到唯一可用的相符項目時，任務就會停止。"
       ],
       [
         "Mac 的 Safari 中沒有看到擴充功能？",
         "安裝後先開啟一次 App，再查看 Safari 設定 → 擴充功能。請使用 Safari 15.4 或更新版本。若仍未出現，請聯絡支援，並提供 macOS、Safari、App 版本及安裝來源。"
-      ],
-      [
-        "手機鎖定後會繼續執行嗎？",
-        "無法保證持續在背景執行。iOS 與 iPadOS 可能暫停瀏覽器任務，執行任務時請保持 Safari 在前景。"
       ],
       [
         "執行時可以修改設定嗎？",
@@ -257,17 +270,25 @@
       ]
     ],
     "cta": "讓下一次重新整理，自動完成。",
-    "ctaText": "Safari 適用於 iPhone、iPad 與 Mac，Chrome 擴充功能適用於電腦。",
+    "ctaText": "iPhone · iPad · Mac | Safari · Chrome",
     "caption": "Mac 上的 Safari 1.10.0 · 在本機示範網頁中實際拍攝",
     "previewLabel": "查看 Safari 的三種任務",
     "captureAlt": "Safari 擴充功能已設定任務，顯示執行狀態、倒數計時與停止按鈕",
     "priceNote": "目前價格與相容性以各商店頁面為準。",
-    "releaseStatus": "Safari 版現已支援選取圖示按鈕與僅重複點擊。Chrome 版另行更新，實際功能請查看對應商店的說明。",
     "demo": {
-      "heading": "有時，只需點一下。",
+      "heading": "開啟書籤，執行已存步驟",
       "start": "試試重複點擊",
       "stop": "停止示範"
-    }
+    },
+    "pageTitle": "網頁自動重新整理與點選流程",
+    "workflowTitle": "重複使用已儲存的流程",
+    "workflowBody": "同一個完整網址可以儲存多組流程並分別命名。再次開啟該網址時，載入需要的流程，確認步驟後再開始。流程儲存在設定時使用的 App 或瀏覽器中。",
+    "workflowActions": [
+      "書籤",
+      "載入流程",
+      "開始",
+      "停止"
+    ]
   },
   "ja": {
     "openImage": "元のサイズで表示",
@@ -289,14 +310,14 @@
       "ページの更新を、",
       "おまかせに。"
     ],
-    "intro": "Safari のページ全体を一定間隔で再読み込みできます。一覧だけ更新したいときは、その更新ボタンを選ぶだけ。拡張機能が繰り返しクリックするので、絞り込み条件はそのままです。",
+    "intro": "ブックマークから注文一覧を開き、保存した手順を読み込んで一覧の更新ボタンを一定間隔でクリック。アプリ内でもSafariの拡張機能でも使えます。",
     "promise": "ブラウザ内で動作。アカウント登録は不要。",
     "skip": "本文へ移動",
     "jump": "動作を見る",
     "guide": "設定ガイドを読む",
-    "store": "Safari 版を入手",
+    "store": "iPhone、iPad、Mac用のアプリを入手",
     "chrome": "Chrome 拡張機能を入手",
-    "tasks": "ひとつの拡張機能。3つの使い方。",
+    "tasks": "Safari のタスクを見る",
     "tasksIntro": "更新されるダッシュボードも、繰り返し押すボタンも。ページに合ったタスクを選べます。",
     "tabs": [
       "自動更新",
@@ -308,8 +329,8 @@
       "ページ上でボタンやリンクを選ぶか、タイトルを入力。更新後は設定した順番と待機時間でクリックします。",
       "ページを再読み込みせず、クリックだけ繰り返し。アイコンも選べます。間隔を決めてリストを更新しましょう。"
     ],
-    "setup": "有効にして、設定して、開始。",
-    "setupIntro": "簡単に設定でき、実行状態もすぐに確認できます。",
+    "setup": "Safariの拡張機能を設定する",
+    "setupIntro": "iPhone / iPad · Mac",
     "steps": [
       [
         "拡張機能を有効に",
@@ -324,22 +345,21 @@
         "開始後は実行状態とカウントダウンを確認。いつでも停止や変更の適用ができます。"
       ]
     ],
-    "privacyTitle": "タスクはブラウザ内で。時間は自分のために。",
-    "privacyText": "Web アカウントは不要。設定はブラウザ内に保存し、タブごとにタスクを管理します。",
-    "mobileNote": "iPhone・iPad では Safari を前面に保ってください。バックグラウンドや画面ロック中は、システムがタスクを一時停止する場合があります。",
+    "privacyTitle": "ブックマーク、保存した手順、端末の履歴",
+    "privacyText": "ブックマークには分かりやすい名前を付けられます。閲覧履歴は削除するまでこの端末に保存されます。記録の一時停止や履歴の消去を行っても、ブックマークと保存した手順は残ります。",
     "faqTitle": "よくある質問。",
     "faq": [
       [
-        "他のアプリも自動でクリックできますか？",
-        "Safari の Web ページまたはデスクトップ Chrome 拡張機能内で動作します。他のアプリやシステム画面は操作できません。"
+        "どこでウェブページを操作できますか？",
+        "iPhone、iPad、Macのアプリ内でページを開くか、Safariのタブで拡張機能を使えます。デスクトップ版Chromeには専用の拡張機能があります。"
+      ],
+      [
+        "ボタン名の番号が毎回変わる場合は？",
+        "アイコンを画面上で選ぶほか、ボタンやリンクの名前も指定できます。名前の一部が変わる場合はワイルドカードを有効にし、その部分に * を入力してください。操作できる対象を1つに絞れないときは停止します。"
       ],
       [
         "Mac の Safari に拡張機能が表示されません。",
         "インストールしたアプリを一度開き、Safari の設定 → 機能拡張をご確認ください。Safari 15.4 以降をご利用ください。表示されない場合は、macOS、Safari、アプリのバージョンと入手元をサポートへお知らせください。"
-      ],
-      [
-        "画面をロックしても動作しますか？",
-        "継続的なバックグラウンド動作は保証されません。iOS・iPadOS がタスクを一時停止する場合があるため、Safari を前面に保ってください。"
       ],
       [
         "実行中に設定を変更できますか？",
@@ -347,17 +367,25 @@
       ]
     ],
     "cta": "次の更新は、自動で。",
-    "ctaText": "iPhone・iPad・Mac の Safari と、デスクトップの Chrome に対応。",
+    "ctaText": "iPhone · iPad · Mac | Safari · Chrome",
     "caption": "Mac 版 Safari 1.10.0 · ローカルデモページでの実際の画面",
     "previewLabel": "Safari のタスクを見る",
     "captureAlt": "タスク設定、実行状態、カウントダウン、停止ボタンを表示した Safari 拡張機能",
     "priceNote": "最新の価格と互換性は各ストアでご確認ください。",
-    "releaseStatus": "Safari版では、アイコンボタンの選択と、再読み込みしない繰り返しクリックが使えます。Chrome版は別途更新されるため、対応機能はストアでご確認ください。",
     "demo": {
-      "heading": "クリックだけで更新。",
+      "heading": "いつもの一覧を、保存した手順で更新",
       "start": "繰り返しクリックを試す",
       "stop": "デモを停止"
-    }
+    },
+    "pageTitle": "ウェブページの自動更新とクリック手順",
+    "workflowTitle": "保存した手順を使う",
+    "workflowBody": "同じURLに複数の手順を名前付きで保存できます。そのURLに戻ったら使いたい手順を読み込み、内容を確認して開始します。手順は設定したアプリまたはブラウザに保存されます。",
+    "workflowActions": [
+      "ブックマーク",
+      "手順を読み込む",
+      "開始",
+      "停止"
+    ]
   },
   "ko": {
     "openImage": "원본 크기로 보기",
@@ -379,14 +407,14 @@
       "페이지는 새롭게,",
       "시간은 여유롭게."
     ],
-    "intro": "Safari 페이지 전체를 일정한 간격으로 새로 고칠 수 있어요. 목록만 업데이트하고 싶다면 목록의 새로 고침 버튼을 선택하세요. 확장 프로그램이 대신 눌러 주니 필터를 그대로 유지할 수 있어요.",
+    "intro": "북마크에서 주문 목록을 열고 저장한 작업 순서를 불러오세요. 목록의 새로 고침 버튼을 일정 간격으로 누를 수 있습니다. 앱 안에서도, Safari 확장 프로그램에서도 사용할 수 있습니다.",
     "promise": "브라우저 안에서 실행. 계정 가입 불필요.",
     "skip": "본문으로 이동",
     "jump": "작동 방식 보기",
     "guide": "설정 가이드 보기",
-    "store": "Safari 앱 받기",
+    "store": "iPhone, iPad 및 Mac용 앱 다운로드",
     "chrome": "Chrome 확장 프로그램 받기",
-    "tasks": "확장 프로그램 하나, 세 가지 작업.",
+    "tasks": "Safari 작업 살펴보기",
     "tasksIntro": "계속 바뀌는 대시보드부터 반복해서 누르는 버튼까지, 페이지에 맞는 작업을 선택하세요.",
     "tabs": [
       "자동 새로고침",
@@ -398,8 +426,8 @@
       "페이지에서 버튼이나 링크를 선택하거나 제목을 입력하세요. 새로고침 후 정한 순서와 대기 시간대로 클릭합니다.",
       "페이지를 다시 불러오지 않고 클릭만 반복하세요. 아이콘 버튼도 고를 수 있어 목록을 업데이트하기 편합니다."
     ],
-    "setup": "활성화. 설정. 시작.",
-    "setupIntro": "간단하게 설정하고 실행 상태를 확인하세요.",
+    "setup": "Safari 확장 프로그램 설정",
+    "setupIntro": "iPhone / iPad · Mac",
     "steps": [
       [
         "확장 프로그램 활성화",
@@ -414,22 +442,21 @@
         "시작 후 실행 상태와 카운트다운을 확인하세요. 언제든 중지하거나 변경 사항을 적용할 수 있습니다."
       ]
     ],
-    "privacyTitle": "작업은 브라우저에, 시간은 나에게.",
-    "privacyText": "웹 계정이 필요 없습니다. 설정은 브라우저에 로컬로 저장되며 탭마다 작업을 따로 관리합니다.",
-    "mobileNote": "iPhone과 iPad에서는 Safari를 전면에 유지하세요. 백그라운드나 잠금 상태에서는 시스템이 작업을 일시 중지할 수 있습니다.",
+    "privacyTitle": "북마크, 저장한 작업 순서 및 기기 방문 기록",
+    "privacyText": "북마크에 이름을 붙이거나 방문 기록에서 페이지를 다시 열 수 있습니다. 기록은 직접 삭제할 때까지 이 기기에 보관됩니다. 기록을 일시 중지하거나 지워도 북마크와 저장한 작업 순서는 남습니다.",
     "faqTitle": "자주 묻는 질문.",
     "faq": [
       [
-        "다른 앱에서도 자동 클릭이 되나요?",
-        "Safari 웹페이지 또는 데스크톱 Chrome 확장 프로그램에서 실행됩니다. 다른 앱이나 시스템 화면을 조작하지 않습니다."
+        "어디에서 웹페이지 작업을 실행할 수 있나요?",
+        "iPhone, iPad, Mac 앱에서 웹페이지를 열거나 Safari 탭에서 확장 프로그램을 사용하세요. 데스크톱 Chrome용 확장 프로그램도 있습니다."
+      ],
+      [
+        "버튼 이름의 번호가 매번 바뀌면 어떻게 하나요?",
+        "아이콘을 직접 고르거나 버튼과 링크의 이름을 입력하세요. 이름의 일부가 바뀐다면 와일드카드를 켜고 바뀌는 부분에 *를 입력하세요. 사용 가능한 대상이 하나로 정해지지 않으면 작업이 중지됩니다."
       ],
       [
         "Mac의 Safari에 확장 프로그램이 없어요.",
         "설치된 앱을 한 번 연 뒤 Safari 설정 → 확장 프로그램을 확인하세요. Safari 15.4 이상을 사용해 주세요. 계속 표시되지 않으면 macOS, Safari, 앱 버전과 설치 출처를 지원팀에 알려주세요."
-      ],
-      [
-        "휴대폰을 잠가도 계속 실행되나요?",
-        "지속적인 백그라운드 실행은 보장되지 않습니다. iOS와 iPadOS가 브라우저 작업을 일시 중지할 수 있으므로 Safari를 전면에 유지하세요."
       ],
       [
         "실행 중 설정을 바꿀 수 있나요?",
@@ -437,17 +464,25 @@
       ]
     ],
     "cta": "다음 새로고침은 자동으로.",
-    "ctaText": "iPhone, iPad, Mac의 Safari와 데스크톱 Chrome에서 사용하세요.",
+    "ctaText": "iPhone · iPad · Mac | Safari · Chrome",
     "caption": "Mac의 Safari 1.10.0 · 로컬 데모 페이지의 실제 화면",
     "previewLabel": "Safari 작업 살펴보기",
     "captureAlt": "작업 설정, 실행 상태, 카운트다운, 중지 버튼이 표시된 Safari 확장 프로그램",
     "priceNote": "현재 가격과 호환성은 각 스토어에서 확인하세요.",
-    "releaseStatus": "Safari 버전에서 아이콘 버튼 선택과 페이지 새로고침 없는 반복 클릭을 사용할 수 있습니다. Chrome 버전은 별도로 업데이트되므로 지원 기능은 해당 스토어에서 확인해 주세요.",
     "demo": {
-      "heading": "클릭만으로 새로 고침.",
+      "heading": "자주 보는 목록을 저장한 순서대로 새로 고치세요",
       "start": "반복 클릭 체험",
       "stop": "데모 중지"
-    }
+    },
+    "pageTitle": "웹페이지 자동 새로 고침과 클릭 자동화",
+    "workflowTitle": "저장한 작업 순서 다시 사용하기",
+    "workflowBody": "같은 전체 URL에 여러 작업 순서를 이름을 붙여 저장할 수 있습니다. 그 주소에 다시 방문하면 필요한 순서를 불러와 확인한 뒤 시작하세요. 작업 순서는 설정한 앱 또는 브라우저에 저장됩니다.",
+    "workflowActions": [
+      "북마크",
+      "작업 순서 불러오기",
+      "시작",
+      "중지"
+    ]
   },
   "de-DE": {
     "openImage": "Aufnahme in voller Größe öffnen",
@@ -469,14 +504,14 @@
       "Seiten aktuell.",
       "Zeit für Sie."
     ],
-    "intro": "Lade eine Safari-Seite in festen Abständen neu. Soll nur die Liste aktualisiert werden? Wähle ihren Aktualisieren-Button aus. Die Erweiterung klickt für dich und deine Filter bleiben erhalten.",
+    "intro": "Öffne die Bestellliste per Lesezeichen. Lade den gespeicherten Ablauf, um das Aktualisieren-Symbol in festen Abständen anzuklicken. Das geht in der App und in Safari.",
     "promise": "Im Browser. Ohne Benutzerkonto.",
     "skip": "Zum Inhalt",
     "jump": "So funktioniert es",
     "guide": "Einrichtungsanleitung lesen",
-    "store": "Safari-App laden",
+    "store": "App für iPhone, iPad und Mac laden",
     "chrome": "Chrome-Erweiterung installieren",
-    "tasks": "Eine Erweiterung. Drei Aufgaben.",
+    "tasks": "Safari-Aufgaben ansehen",
     "tasksIntro": "Vom wechselnden Dashboard bis zur wiederholten Schaltfläche: Wählen Sie die passende Aufgabe für Ihre Seite.",
     "tabs": [
       "Automatische Aktualisierung",
@@ -488,8 +523,8 @@
       "Schaltfläche oder Link auf der Seite wählen oder den Titel eingeben. Nach jedem Neuladen folgen Ihre Klicks mit einer Wartezeit nach jedem Schritt.",
       "Klicks wiederholen, ohne die Seite neu zu laden. Auch Symbolschaltflächen lassen sich auswählen. Intervall einstellen und die Liste aktualisieren lassen."
     ],
-    "setup": "Aktivieren. Einstellen. Starten.",
-    "setupIntro": "In wenigen Schritten eingerichtet, mit klarem Blick auf den Status.",
+    "setup": "Safari-Erweiterung einrichten",
+    "setupIntro": "iPhone / iPad · Mac",
     "steps": [
       [
         "Erweiterung aktivieren",
@@ -504,22 +539,21 @@
         "Starten Sie und prüfen Sie Status und Countdown. Sie können jederzeit stoppen oder Änderungen anwenden."
       ]
     ],
-    "privacyTitle": "Ihre Aufgaben bleiben im Browser.",
-    "privacyText": "Kein Webkonto nötig. Die Einstellungen werden lokal gespeichert; Aufgaben werden pro Tab verwaltet.",
-    "mobileNote": "Lassen Sie Safari auf iPhone und iPad im Vordergrund. Im Hintergrund oder bei gesperrtem Gerät kann das System Aufgaben anhalten.",
+    "privacyTitle": "Lesezeichen, gespeicherte Abläufe und lokaler Verlauf",
+    "privacyText": "Gib Lesezeichen eigene Namen oder öffne besuchte Seiten über den Verlauf. Besuche bleiben auf diesem Gerät gespeichert, bis du sie löschst. Du kannst die Aufzeichnung pausieren oder den Verlauf löschen. Lesezeichen und gespeicherte Abläufe bleiben erhalten.",
     "faqTitle": "Gut zu wissen.",
     "faq": [
       [
-        "Funktionieren Klicks auch in anderen Apps?",
-        "Aufgaben laufen auf Webseiten in Safari oder in der Chrome-Erweiterung auf dem Computer. Andere Apps und Systemoberflächen werden nicht gesteuert."
+        "Wo kann ich eine Aufgabe ausführen?",
+        "Öffne die Webseite in der App auf dem iPhone, iPad oder Mac oder verwende die Erweiterung in einem Safari-Tab. Für Chrome auf dem Desktop gibt es eine eigene Erweiterung."
+      ],
+      [
+        "Was passiert, wenn sich der Name einer Schaltfläche ändert?",
+        "Wähle ein Symbol direkt aus oder gib den Namen einer Schaltfläche oder eines Links ein. Ändert sich ein Teil des Namens, aktiviere Platzhalter und setze dort ein * ein. Ist kein einzelnes bedienbares Element eindeutig zuzuordnen, hält der Ablauf an."
       ],
       [
         "Warum fehlt die Erweiterung auf meinem Mac?",
         "Öffnen Sie die installierte App einmal und prüfen Sie Safari-Einstellungen → Erweiterungen. Verwenden Sie Safari 15.4 oder neuer. Fehlt sie weiterhin, senden Sie dem Support die macOS-, Safari- und App-Version sowie die Installationsquelle."
-      ],
-      [
-        "Läuft die Aufgabe bei gesperrtem iPhone weiter?",
-        "Ein durchgehender Hintergrundbetrieb ist nicht garantiert. iOS und iPadOS können Browseraufgaben anhalten. Lassen Sie Safari im Vordergrund."
       ],
       [
         "Kann ich laufende Aufgaben ändern?",
@@ -527,17 +561,25 @@
       ]
     ],
     "cta": "Das nächste Neuladen? Automatisch.",
-    "ctaText": "Safari auf iPhone, iPad und Mac. Chrome auf dem Computer.",
+    "ctaText": "iPhone · iPad · Mac | Safari · Chrome",
     "caption": "Safari auf dem Mac 1.10.0 · Echte Aufnahmen einer lokalen Demoseite",
     "previewLabel": "Safari-Aufgaben ansehen",
     "captureAlt": "Safari-Erweiterung mit eingestellter Aufgabe, Ausführungsstatus, Countdown und Stopp-Schaltfläche",
     "priceNote": "Aktuelle Preise und Kompatibilität finden Sie im jeweiligen Store.",
-    "releaseStatus": "Die Safari-App unterstützt jetzt die Auswahl von Symbolschaltflächen und wiederholte Klicks ohne Neuladen. Chrome wird separat aktualisiert; die verfügbaren Funktionen stehen im jeweiligen Store.",
     "demo": {
-      "heading": "Oft genügt ein Klick.",
+      "heading": "Öffne deine Liste mit dem passenden Ablauf",
       "start": "Wiederholte Klicks testen",
       "stop": "Demo stoppen"
-    }
+    },
+    "pageTitle": "Webseiten automatisch aktualisieren und Klickabläufe speichern",
+    "workflowTitle": "Einen gespeicherten Ablauf nutzen",
+    "workflowBody": "Speichere für dieselbe vollständige URL mehrere Abläufe unter eigenen Namen. Wenn du zurückkehrst, lade den gewünschten Ablauf, prüfe die Schritte und starte ihn. Die Abläufe bleiben in der App oder im Browser, in dem du sie angelegt hast.",
+    "workflowActions": [
+      "Lesezeichen",
+      "Ablauf laden",
+      "Start",
+      "Stoppen"
+    ]
   },
   "fr-FR": {
     "openImage": "Ouvrir la capture en taille réelle",
@@ -559,14 +601,14 @@
       "Des pages à jour.",
       "Du temps pour vous."
     ],
-    "intro": "Actualisez une page Safari à intervalles réguliers. Seule la liste vous intéresse ? Sélectionnez son bouton d’actualisation. L’extension clique pour vous et vos filtres restent en place.",
+    "intro": "Ouvrez votre liste de commandes depuis les favoris. Chargez les étapes enregistrées pour cliquer sur son bouton d’actualisation à intervalles fixes, dans l’app ou Safari.",
     "promise": "Dans votre navigateur. Sans compte.",
     "skip": "Aller au contenu",
     "jump": "Voir le fonctionnement",
     "guide": "Lire le guide de configuration",
-    "store": "Obtenir l’app Safari",
+    "store": "Télécharger l’app pour iPhone, iPad et Mac",
     "chrome": "Installer l’extension Chrome",
-    "tasks": "Une extension. Trois possibilités.",
+    "tasks": "Découvrir les tâches Safari",
     "tasksIntro": "Un tableau de bord qui évolue, un bouton à cliquer régulièrement : choisissez la tâche adaptée à votre page.",
     "tabs": [
       "Actualisation automatique",
@@ -578,8 +620,8 @@
       "Sélectionnez un bouton ou un lien, ou saisissez son titre. Après l’actualisation, les clics suivent votre ordre, avec une attente après chaque étape.",
       "Répétez les clics sans recharger la page. Même une icône se sélectionne : choisissez le rythme et laissez la liste s’actualiser."
     ],
-    "setup": "Activez. Configurez. Lancez.",
-    "setupIntro": "Quelques étapes, puis un état d’exécution facile à vérifier.",
+    "setup": "Configurer l’extension Safari",
+    "setupIntro": "iPhone / iPad · Mac",
     "steps": [
       [
         "Activer l’extension",
@@ -594,22 +636,21 @@
         "Lancez la tâche et vérifiez son état et le compte à rebours. Arrêtez-la ou appliquez vos modifications à tout moment."
       ]
     ],
-    "privacyTitle": "Vos tâches restent dans le navigateur.",
-    "privacyText": "Aucun compte Web à créer. Les réglages sont stockés localement et les tâches sont gérées séparément par onglet.",
-    "mobileNote": "Sur iPhone et iPad, gardez Safari au premier plan. Le système peut suspendre les tâches en arrière-plan ou lorsque l’appareil est verrouillé.",
+    "privacyTitle": "Favoris, scénarios enregistrés et historique local",
+    "privacyText": "Nommez vos favoris et retrouvez les pages récemment consultées. L’historique reste sur cet appareil jusqu’à sa suppression. Vous pouvez suspendre l’enregistrement ou effacer les visites tout en conservant vos favoris et scénarios.",
     "faqTitle": "Quelques réponses utiles.",
     "faq": [
       [
-        "Peut-il cliquer dans d’autres apps ?",
-        "Les tâches s’exécutent sur des pages Safari ou dans l’extension Chrome pour ordinateur. Les autres apps et interfaces système ne sont pas contrôlées."
+        "Où puis-je lancer une tâche sur une page web ?",
+        "Ouvrez la page dans l’app sur iPhone, iPad ou Mac, ou utilisez l’extension dans un onglet Safari. Chrome sur ordinateur dispose de sa propre extension."
+      ],
+      [
+        "Et si le nom du bouton change ?",
+        "Sélectionnez une icône sur la page ou saisissez le nom du bouton ou du lien. Si une partie du nom change, activez les jokers et remplacez cette partie par *. Le scénario s’arrête si aucun élément utilisable ne correspond ou si plusieurs correspondent."
       ],
       [
         "L’extension n’apparaît pas sur mon Mac.",
         "Ouvrez une fois l’app installée, puis vérifiez Réglages Safari → Extensions. Utilisez Safari 15.4 ou ultérieur. Si elle reste absente, contactez le support en indiquant les versions de macOS, Safari et de l’app, ainsi que la source d’installation."
-      ],
-      [
-        "Continue-t-il lorsque mon téléphone est verrouillé ?",
-        "Le fonctionnement continu en arrière-plan n’est pas garanti. iOS et iPadOS peuvent suspendre les tâches du navigateur. Gardez Safari au premier plan."
       ],
       [
         "Puis-je modifier une tâche en cours ?",
@@ -617,17 +658,25 @@
       ]
     ],
     "cta": "La prochaine actualisation sera automatique.",
-    "ctaText": "Safari sur iPhone, iPad et Mac. Chrome sur ordinateur.",
+    "ctaText": "iPhone · iPad · Mac | Safari · Chrome",
     "caption": "Safari sur Mac 1.10.0 · Captures réelles sur une page de démonstration locale",
     "previewLabel": "Découvrir les tâches Safari",
     "captureAlt": "Extension Safari avec une tâche configurée, son état, un compte à rebours et un bouton d’arrêt",
     "priceNote": "Consultez chaque boutique pour les prix et la compatibilité.",
-    "releaseStatus": "L’app Safari permet désormais de sélectionner des boutons à icône et de répéter les clics sans recharger la page. Chrome est mis à jour séparément : consultez sa fiche pour les fonctions disponibles.",
     "demo": {
-      "heading": "Parfois, un clic suffit.",
+      "heading": "Retrouvez votre liste et relancez vos étapes",
       "start": "Essayer les clics répétés",
       "stop": "Arrêter la démo"
-    }
+    },
+    "pageTitle": "Actualisation automatique et séquences de clics sur le Web",
+    "workflowTitle": "Réutiliser un scénario enregistré",
+    "workflowBody": "Enregistrez plusieurs scénarios nommés pour une même URL complète. À votre prochaine visite, chargez celui qui vous convient, vérifiez les étapes et lancez-le. Les scénarios restent dans l’app ou le navigateur où vous les avez créés.",
+    "workflowActions": [
+      "Favoris",
+      "Charger le scénario",
+      "Démarrer",
+      "Arrêter"
+    ]
   },
   "es-ES": {
     "openImage": "Abrir captura a tamaño completo",
@@ -649,14 +698,14 @@
       "Páginas al día.",
       "Tiempo para ti."
     ],
-    "intro": "Actualiza una página de Safari a intervalos regulares. ¿Solo necesitas actualizar la lista? Selecciona su botón de actualizar. La extensión hará los siguientes clics y conservarás tus filtros.",
+    "intro": "Abre tu lista de pedidos desde Favoritos, carga los pasos guardados y programa clics en su botón de actualizar. Puedes hacerlo en la app o con la extensión de Safari.",
     "promise": "En tu navegador. Sin crear una cuenta.",
     "skip": "Saltar al contenido",
     "jump": "Ver cómo funciona",
     "guide": "Leer la guía de configuración",
-    "store": "Obtener la app para Safari",
+    "store": "Descargar la app para iPhone, iPad y Mac",
     "chrome": "Instalar la extensión de Chrome",
-    "tasks": "Una extensión. Tres tareas.",
+    "tasks": "Explorar las tareas de Safari",
     "tasksIntro": "Desde un panel que cambia hasta un botón que pulsas a menudo: elige la tarea adecuada para cada página.",
     "tabs": [
       "Autoactualizar",
@@ -668,8 +717,8 @@
       "Elige un botón o enlace en la página, o escribe su título. Tras actualizar, los clics siguen tu orden, con una espera después de cada paso.",
       "Repite clics sin recargar la página. Selecciona incluso un icono, ajusta el intervalo y deja que la lista se actualice."
     ],
-    "setup": "Activa. Configura. Inicia.",
-    "setupIntro": "Configura en pocos pasos y comprueba el estado fácilmente.",
+    "setup": "Configurar la extensión de Safari",
+    "setupIntro": "iPhone / iPad · Mac",
     "steps": [
       [
         "Activa la extensión",
@@ -684,22 +733,21 @@
         "Inicia y comprueba el estado y la cuenta atrás. Puedes detener la tarea o aplicar cambios cuando quieras."
       ]
     ],
-    "privacyTitle": "Tus tareas se quedan en el navegador.",
-    "privacyText": "No necesitas una cuenta web. La configuración se guarda localmente y las tareas se gestionan por pestaña.",
-    "mobileNote": "En iPhone y iPad, mantén Safari en primer plano. El sistema puede suspender las tareas en segundo plano o con el dispositivo bloqueado.",
+    "privacyTitle": "Favoritos, flujos guardados e historial local",
+    "privacyText": "Pon nombre a tus favoritos o abre de nuevo una página desde el historial. Las visitas permanecen en el dispositivo hasta que las borres. Puedes pausar el registro o borrar el historial y conservar los favoritos y los flujos.",
     "faqTitle": "Algunas respuestas útiles.",
     "faq": [
       [
-        "¿Puede pulsar dentro de otras apps?",
-        "Las tareas se ejecutan en páginas de Safari o en la extensión de Chrome para ordenador. No controla otras apps ni interfaces del sistema."
+        "¿Dónde puedo ejecutar una tarea web?",
+        "Abre la página en la app para iPhone, iPad o Mac, o usa la extensión en una pestaña de Safari. Chrome para ordenador tiene su propia extensión."
+      ],
+      [
+        "¿Y si cambia el nombre del botón?",
+        "Selecciona un icono en la página o escribe el nombre de un botón o enlace. Si cambia parte del nombre, activa los comodines y sustituye esa parte por *. La tarea se detiene si no hay una única coincidencia disponible."
       ],
       [
         "¿Por qué no aparece la extensión en mi Mac?",
         "Abre una vez la app instalada y revisa Ajustes de Safari → Extensiones. Usa Safari 15.4 o posterior. Si sigue sin aparecer, contacta con soporte e indica las versiones de macOS, Safari y la app, y el origen de instalación."
-      ],
-      [
-        "¿Sigue funcionando con el teléfono bloqueado?",
-        "No se garantiza el funcionamiento continuo en segundo plano. iOS y iPadOS pueden suspender las tareas del navegador. Mantén Safari en primer plano."
       ],
       [
         "¿Puedo modificar una tarea en ejecución?",
@@ -707,17 +755,25 @@
       ]
     ],
     "cta": "Haz automática la próxima actualización.",
-    "ctaText": "Safari en iPhone, iPad y Mac. Chrome en ordenador.",
+    "ctaText": "iPhone · iPad · Mac | Safari · Chrome",
     "caption": "Safari en Mac 1.10.0 · Capturas reales en una página de demostración local",
     "previewLabel": "Explorar las tareas de Safari",
     "captureAlt": "Extensión de Safari con tarea configurada, estado de ejecución, cuenta atrás y botón para detener",
     "priceNote": "Consulta el precio y la compatibilidad en cada tienda.",
-    "releaseStatus": "La app de Safari ya permite seleccionar botones con iconos y repetir clics sin recargar la página. Chrome se actualiza por separado; consulta sus funciones en la tienda correspondiente.",
     "demo": {
-      "heading": "A veces basta un clic.",
+      "heading": "Abre tu lista y repite los pasos guardados",
       "start": "Probar el clic repetido",
       "stop": "Detener la demo"
-    }
+    },
+    "pageTitle": "Actualización automática y secuencias de clics en páginas web",
+    "workflowTitle": "Usar un flujo guardado",
+    "workflowBody": "Guarda varios flujos con nombre para una misma URL completa. Cuando vuelvas a esa dirección, carga el que necesites, revisa los pasos e inícialo. Los flujos se guardan en la app o el navegador donde los has creado.",
+    "workflowActions": [
+      "Favoritos",
+      "Cargar flujo",
+      "Iniciar",
+      "Detener"
+    ]
   },
   "pt-PT": {
     "openImage": "Abrir captura no tamanho original",
@@ -739,14 +795,14 @@
       "Páginas atualizadas.",
       "Tempo para si."
     ],
-    "intro": "Atualize uma página do Safari a intervalos regulares. Quer atualizar apenas a lista? Selecione o botão de atualização da lista. A extensão trata dos próximos cliques e os filtros mantêm-se.",
+    "intro": "Abra a lista de encomendas nos favoritos e carregue os passos guardados. Programe cliques no botão de atualização da lista, na aplicação ou com a extensão do Safari.",
     "promise": "No navegador. Sem criar uma conta.",
     "skip": "Saltar para o conteúdo",
     "jump": "Ver como funciona",
     "guide": "Ler o guia de configuração",
-    "store": "Obter a app para Safari",
+    "store": "Obter a aplicação para iPhone, iPad e Mac",
     "chrome": "Instalar a extensão Chrome",
-    "tasks": "Uma extensão. Três tarefas.",
+    "tasks": "Explorar as tarefas do Safari",
     "tasksIntro": "De um painel em mudança a um botão que usa frequentemente: escolha a tarefa adequada para a página.",
     "tabs": [
       "Atualização Automática",
@@ -758,8 +814,8 @@
       "Escolha um botão ou uma ligação na página, ou escreva o título. Após atualizar, os cliques seguem a sua ordem, com uma espera depois de cada passo.",
       "Repita cliques sem recarregar a página. Selecione até um ícone, defina o intervalo e deixe a lista atualizar-se."
     ],
-    "setup": "Ativar. Configurar. Iniciar.",
-    "setupIntro": "Poucos passos de configuração e um estado fácil de verificar.",
+    "setup": "Configurar a extensão do Safari",
+    "setupIntro": "iPhone / iPad · Mac",
     "steps": [
       [
         "Ativar a extensão",
@@ -774,22 +830,21 @@
         "Inicie e verifique o estado e a contagem decrescente. Pode parar a tarefa ou aplicar alterações a qualquer momento."
       ]
     ],
-    "privacyTitle": "As tarefas ficam no navegador.",
-    "privacyText": "Não precisa de uma conta Web. As definições são guardadas localmente e as tarefas são geridas por separador.",
-    "mobileNote": "No iPhone e iPad, mantenha o Safari em primeiro plano. O sistema pode suspender tarefas em segundo plano ou com o dispositivo bloqueado.",
+    "privacyTitle": "Favoritos, fluxos guardados e histórico local",
+    "privacyText": "Dê um nome aos favoritos ou reabra páginas visitadas a partir do histórico. As visitas ficam neste dispositivo até as apagar. Pode suspender o registo ou limpar o histórico e manter os favoritos e os fluxos guardados.",
     "faqTitle": "Algumas respostas úteis.",
     "faq": [
       [
-        "Pode clicar noutras apps?",
-        "As tarefas são executadas em páginas do Safari ou na extensão Chrome para computador. Não controla outras apps nem interfaces do sistema."
+        "Onde posso executar uma tarefa numa página web?",
+        "Abra a página na aplicação para iPhone, iPad ou Mac, ou utilize a extensão num separador do Safari. O Chrome para computador tem uma extensão própria."
+      ],
+      [
+        "E se o nome do botão mudar?",
+        "Selecione um ícone diretamente na página ou introduza o nome de um botão ou ligação. Se parte do nome mudar, ative os carateres universais e use * nessa posição. A tarefa para se não houver uma única correspondência disponível."
       ],
       [
         "Porque não aparece a extensão no meu Mac?",
         "Abra uma vez a app instalada e veja Definições do Safari → Extensões. Utilize o Safari 15.4 ou posterior. Se continuar ausente, contacte o suporte com as versões do macOS, Safari e da app, e a origem da instalação."
-      ],
-      [
-        "Continua a funcionar com o telefone bloqueado?",
-        "O funcionamento contínuo em segundo plano não é garantido. O iOS e o iPadOS podem suspender tarefas do navegador. Mantenha o Safari em primeiro plano."
       ],
       [
         "Posso alterar uma tarefa em execução?",
@@ -797,17 +852,25 @@
       ]
     ],
     "cta": "Torne automática a próxima atualização.",
-    "ctaText": "Safari no iPhone, iPad e Mac. Chrome no computador.",
+    "ctaText": "iPhone · iPad · Mac | Safari · Chrome",
     "caption": "Safari no Mac 1.10.0 · Capturas reais numa página de demonstração local",
     "previewLabel": "Explorar as tarefas do Safari",
     "captureAlt": "Extensão Safari com tarefa configurada, estado, contagem decrescente e botão de paragem",
     "priceNote": "Consulte os preços e a compatibilidade em cada loja.",
-    "releaseStatus": "A app Safari já permite selecionar botões com ícones e repetir cliques sem recarregar a página. O Chrome é atualizado em separado; consulte as funções disponíveis na respetiva loja.",
     "demo": {
-      "heading": "Às vezes basta um clique.",
+      "heading": "Abra a sua lista e repita os passos guardados",
       "start": "Experimentar cliques repetidos",
       "stop": "Parar a demonstração"
-    }
+    },
+    "pageTitle": "Atualização automática e sequências de cliques em páginas web",
+    "workflowTitle": "Utilizar um fluxo guardado",
+    "workflowBody": "Guarde vários fluxos com nomes diferentes para o mesmo URL completo. Quando voltar a esse endereço, carregue o fluxo pretendido, confirme os passos e inicie-o. Os fluxos ficam na aplicação ou no navegador onde os criou.",
+    "workflowActions": [
+      "Favoritos",
+      "Carregar fluxo",
+      "Iniciar",
+      "Parar"
+    ]
   },
   "ar-SA": {
     "openImage": "افتح اللقطة بالحجم الكامل",
@@ -829,14 +892,14 @@
       "صفحات محدّثة.",
       "ووقت لك."
     ],
-    "intro": "حدّث صفحة Safari كاملة على فترات منتظمة. هل تريد تحديث القائمة وحدها؟ اختر زر التحديث فيها مرة واحدة، وستنقر عليه الإضافة دوريًا مع بقاء خيارات التصفية التي حدّدتها.",
+    "intro": "افتح قائمة الطلبات من المفضلة، وحمّل الخطوات المحفوظة للنقر على زر التحديث في القائمة على فترات منتظمة. يمكنك تنفيذ ذلك داخل التطبيق أو باستخدام إضافة سفاري.",
     "promise": "داخل متصفحك. دون إنشاء حساب.",
     "skip": "انتقل إلى المحتوى",
     "jump": "شاهد طريقة العمل",
     "guide": "اقرأ دليل الإعداد",
-    "store": "احصل على تطبيق Safari",
+    "store": "تنزيل التطبيق لأجهزة iPhone وiPad وMac",
     "chrome": "ثبّت إضافة Chrome",
-    "tasks": "إضافة واحدة. ثلاث مهام.",
+    "tasks": "استكشف مهام Safari",
     "tasksIntro": "من لوحة معلومات متغيرة إلى زر تنقره باستمرار: اختر المهمة المناسبة لصفحتك.",
     "tabs": [
       "تحديث تلقائي",
@@ -848,8 +911,8 @@
       "اختر زرًا أو رابطًا من الصفحة، أو اكتب عنوانه. بعد كل تحديث، تُنفّذ النقرات بترتيبك مع انتظار بعد كل خطوة.",
       "كرّر النقرات دون إعادة تحميل الصفحة. اختر حتى زر الرمز، وحدد الفاصل الزمني لتتجدد قائمتك تلقائيًا."
     ],
-    "setup": "فعّل. اضبط. ابدأ.",
-    "setupIntro": "إعداد قصير وحالة تشغيل واضحة.",
+    "setup": "إعداد إضافة سفاري",
+    "setupIntro": "iPhone / iPad · Mac",
     "steps": [
       [
         "فعّل الإضافة",
@@ -864,22 +927,21 @@
         "ابدأ وتحقق من حالة التشغيل والعد التنازلي. يمكنك الإيقاف أو تطبيق التغييرات في أي وقت."
       ]
     ],
-    "privacyTitle": "مهامك تبقى في المتصفح.",
-    "privacyText": "لا حاجة إلى حساب ويب. تُحفظ الإعدادات محليًا وتُدار المهام لكل علامة تبويب على حدة.",
-    "mobileNote": "على iPhone وiPad، أبقِ Safari في الواجهة. قد يعلّق النظام المهام في الخلفية أو عند قفل الجهاز.",
+    "privacyTitle": "المفضلة والتسلسلات المحفوظة وسجل الزيارات المحلي",
+    "privacyText": "سمِّ صفحاتك المفضلة أو أعد فتح صفحة من سجل الزيارات. يبقى السجل على هذا الجهاز حتى تحذفه. يمكنك إيقاف تسجيل الزيارات مؤقتًا أو مسح السجل مع الاحتفاظ بالمفضلة والتسلسلات المحفوظة.",
     "faqTitle": "إجابات مفيدة.",
     "faq": [
       [
-        "هل تنقر داخل تطبيقات أخرى؟",
-        "تعمل المهام على صفحات Safari أو داخل إضافة Chrome للكمبيوتر. لا تتحكم في التطبيقات الأخرى أو واجهات النظام."
+        "أين يمكنني تشغيل مهمة على صفحة ويب؟",
+        "افتح الصفحة في التطبيق على iPhone أو iPad أو Mac، أو استخدم الإضافة في علامة تبويب في سفاري. ويتوفر لمتصفح Chrome على الكمبيوتر إضافة منفصلة."
+      ],
+      [
+        "ماذا أفعل إذا تغيّر اسم الزر؟",
+        "حدد الأيقونة على الصفحة مباشرة أو اكتب اسم الزر أو الرابط. إذا كان جزء من الاسم يتغير، ففعّل خيار أحرف البدل وضع * مكان ذلك الجزء. تتوقف المهمة إذا لم تجد عنصرًا واحدًا متاحًا يطابق الاسم أو وجدت عدة عناصر."
       ],
       [
         "لماذا لا تظهر الإضافة على Mac؟",
         "افتح التطبيق المثبّت مرة واحدة ثم راجع إعدادات Safari ← الإضافات. استخدم Safari 15.4 أو أحدث. إذا استمرت المشكلة، أرسل للدعم إصدارات macOS وSafari والتطبيق ومصدر التثبيت."
-      ],
-      [
-        "هل تستمر عند قفل الهاتف؟",
-        "لا يمكن ضمان التشغيل المستمر في الخلفية. قد يعلّق iOS وiPadOS مهام المتصفح. أبقِ Safari في الواجهة أثناء التشغيل."
       ],
       [
         "هل يمكن تعديل المهمة أثناء التشغيل؟",
@@ -887,16 +949,24 @@
       ]
     ],
     "cta": "اجعل التحديث القادم تلقائيًا.",
-    "ctaText": "Safari على iPhone وiPad وMac. وChrome على الكمبيوتر.",
+    "ctaText": "iPhone · iPad · Mac | Safari · Chrome",
     "caption": "Safari على Mac 1.10.0 · لقطات فعلية على صفحة عرض محلية",
     "previewLabel": "استكشف مهام Safari",
     "captureAlt": "إضافة Safari تعرض مهمة مُعدّة وحالة التشغيل والعد التنازلي وزر الإيقاف",
     "priceNote": "راجع كل متجر لمعرفة الأسعار والتوافق الحاليين.",
-    "releaseStatus": "يدعم تطبيق Safari الآن اختيار أزرار الأيقونات وتكرار النقر دون إعادة تحميل الصفحة. تُحدَّث إضافة Chrome بشكل منفصل؛ راجع صفحة المتجر لمعرفة الميزات المتاحة.",
     "demo": {
-      "heading": "أحيانًا تكفي نقرة.",
+      "heading": "افتح قائمتك وشغّل الخطوات المحفوظة",
       "start": "جرّب النقر المتكرر",
       "stop": "أوقف العرض"
-    }
+    },
+    "pageTitle": "تحديث صفحات الويب تلقائيًا وحفظ تسلسل النقرات",
+    "workflowTitle": "استخدام تسلسل محفوظ",
+    "workflowBody": "يمكنك حفظ عدة تسلسلات بأسماء مختلفة لعنوان الويب الكامل نفسه. عند العودة إليه، حمّل التسلسل المطلوب وراجع خطواته ثم ابدأ تشغيله. تُحفظ التسلسلات في التطبيق أو المتصفح الذي أعددتها فيه.",
+    "workflowActions": [
+      "المفضلة",
+      "تحميل التسلسل",
+      "بدء",
+      "إيقاف"
+    ]
   }
 }

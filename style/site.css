@@ -51,3 +51,8 @@ h1,h2,h3,p,figure{margin:0}h1{font-size:clamp(40px,5.3vw,72px);font-weight:750;l
 .tutorial .platform-note{margin-top:24px}.help-page .faq-list{margin-top:20px}.help-page summary{padding-inline:0 28px;overflow-wrap:anywhere}
 .help-page .help-contact{padding-top:32px;border-top:1px solid var(--border)}.help-contact .text-link{margin-top:12px}
 .feature-grid .text-link{margin-top:12px;overflow-wrap:anywhere}
+
+.workflow-image { display: block; }
+.workflow-image img { width: 100%; height: auto; display: block; border-radius: var(--radius-l); }
+.tutorial .workflow-image { margin-block: 24px; }
+.tutorial .platform-note h3:not(:first-child) { margin-top: 16px; }

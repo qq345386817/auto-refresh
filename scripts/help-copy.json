@@ -1,10 +1,10 @@
 {
   "en-US": {
-    "title": "Setup and troubleshooting",
-    "description": "Learn to set up Safari auto refresh, click after reloading, or repeat clicks on an icon button without reloading. Includes permissions and troubleshooting.",
-    "intro": "Start with the task your page needs: reload the whole page, click after a reload, or click a list’s own refresh button. Follow the steps below on the webpage you want to use.",
+    "title": "Webpage tasks in the app and Safari",
+    "description": "Webpage tasks in the app and Safari · How do I run yesterday’s steps again? What if the button name changes?",
+    "intro": "Open a page you use every day, such as a filtered order list. Choose “Open a website in the app” on the home screen, or use the extension on a page you already have open in Safari.",
     "toc": "On this page",
-    "enable": "Enable the extension first",
+    "enable": "Safari · Chrome",
     "links": [
       "Set up auto refresh",
       "Set up refresh and click",
@@ -69,14 +69,24 @@
     "contactBody": "Include your device, system and browser versions, app version, task mode and the exact error message. For an internal or private website, describe the button and what happens; you do not need to share its address or confidential data.",
     "contactLink": "Contact support",
     "supportDescription": "Get help with Auto Refresh & Clicker setup, website permissions, purchases and task errors. Find the support email and what to include in your message.",
-    "privacyDescription": "Read the Auto Refresh & Clicker privacy policy for the Safari app and browser extension."
+    "privacyDescription": "Learn how the app keeps visits on this device, how to pause or erase history, and where the extension stores its settings.",
+    "workflowQuestion": "How do I run yesterday’s steps again?",
+    "wildcardQuestion": "What if the button name changes?",
+    "foreground": "The app uses a separate website sign-in from Safari. Keep the app active and its web window visible. If you switch apps or minimize the window, return and start the task again. The Safari extension needs access to the website. Safari may suspend background tabs. The extension requires Safari 15.4 or later.",
+    "wildcards": "Select an icon directly, or enter a button or link name. If part of the name changes, enable wildcard matching and use * for that part. The task stops if it cannot identify a single available match.",
+    "mobileForeground": "The app uses a separate website sign-in from Safari. In-app tasks run in the foreground. After switching apps or locking the device, return and start the task again. The Safari extension needs access to the website. Safari may suspend background tabs.",
+    "workflowSteps": [
+      "Choose “Open a website in the app”. Open your page and add it to Bookmarks.",
+      "Open “Automate this page”. Choose “Repeat click only”, set its interval and select the list’s refresh button. Under “Workflows for this page”, name the workflow and choose “Save current settings”.",
+      "Next time, open the same bookmarked address, including its query and fragment. Choose “Load workflow”, check the steps and press “Start”. Choose “Stop” when you’re done."
+    ]
   },
   "zh-Hans": {
-    "title": "设置教程与故障排查",
-    "description": "了解如何在 Safari 中设置自动刷新、刷新后按步骤点击，以及选择图标按钮、不重载网页地重复点击，并排查权限和运行问题。",
-    "intro": "先看看网页需要哪种操作：重载整个页面、刷新后再点击，还是只点列表自己的刷新按钮。在目标网页打开扩展，按下面的步骤设置即可。",
+    "title": "App 内网页与 Safari 使用指南",
+    "description": "App 内网页与 Safari 使用指南 · 下次打开网页，怎样接着用已存的步骤？ 按钮名称里的编号变了，还能点击吗？",
+    "intro": "每天都要打开同一张订单列表？在首页选择“在 App 内打开网页”，就能从收藏或最近访问回到常用页面。网页已经在 Safari 里打开时，也可以直接使用扩展。",
     "toc": "本页内容",
-    "enable": "先启用扩展",
+    "enable": "Safari · Chrome",
     "links": [
       "设置自动刷新",
       "设置刷新并点击",
@@ -141,14 +151,24 @@
     "contactBody": "请附上设备、系统版本、浏览器版本、App 版本、使用的模式和完整错误提示。如果是内部或私密网站，描述按钮和操作结果即可，不需要提供网址或机密数据。",
     "contactLink": "联系支持",
     "supportDescription": "获取 Auto Refresh & Clicker 的安装、网站权限、购买和任务运行帮助，查看支持邮箱及反馈问题时需要提供的信息。",
-    "privacyDescription": "查看 Auto Refresh & Clicker 的隐私政策，了解 Safari App 和浏览器扩展的相关隐私说明。"
+    "privacyDescription": "了解 App 如何在本机保存访问记录，怎样暂停、逐条删除或清空记录，以及浏览器扩展如何保存设置。",
+    "workflowQuestion": "下次打开网页，怎样接着用已存的步骤？",
+    "wildcardQuestion": "按钮名称里的编号变了，还能点击吗？",
+    "foreground": "App 内的网页登录与 Safari 分开。运行任务时请保持 App 在前台、网页窗口可见。切换 App 或最小化窗口后，返回时需手动重新开始。使用 Safari 扩展时，请允许它访问目标网站。Safari 可能暂停后台标签页的活动。扩展需要 Safari 15.4 或更高版本。",
+    "wildcards": "没有文字的图标可以直接在网页上选取。按名称定位按钮或链接时，如果名称里的编号会变，可启用通配符，用 * 代表变化的部分。找不到唯一可用的匹配项时，任务会停止。",
+    "mobileForeground": "App 内的网页登录与 Safari 分开。网页任务在前台运行，切换 App 或锁屏后，返回时需手动重新开始。使用 Safari 扩展时，请允许它访问目标网站。Safari 可能暂停后台标签页的活动。",
+    "workflowSteps": [
+      "点「在 App 内打开网页」，打开常用网页，把它加到「收藏」。",
+      "打开「自动操作当前网页」，选择「仅重复点击」，设好间隔，再选中列表的刷新按钮。在「此网页的流程」中给流程起名，点「保存当前设置」。",
+      "下次从收藏回到同一完整网址（包括查询参数和 # 后的部分），点「载入流程」，核对步骤后点「开始」。完成后点「停止」。"
+    ]
   },
   "zh-Hant": {
-    "title": "設定教學與疑難排解",
-    "description": "瞭解如何在 Safari 設定自動重新整理、重新整理後依序點擊，以及選取圖示按鈕、不重新載入網頁地重複點擊，並排查權限與執行問題。",
-    "intro": "先看看網頁需要哪種操作：重新載入整個頁面、重新整理後再點擊，還是只點清單自己的更新按鈕。在目標網頁開啟擴充功能，依照下列步驟設定即可。",
+    "title": "App 內網頁與 Safari 使用指南",
+    "description": "App 內網頁與 Safari 使用指南 · 下次開啟網頁，如何載入上次的步驟？ 按鈕名稱裡的編號變了，也能點選嗎？",
+    "intro": "每天都要開啟同一份訂單清單嗎？在首頁選取「在 App 內打開網頁」，即可從書籤或最近瀏覽的網頁回到常用頁面。若網頁已在 Safari 開啟，也可直接使用延伸功能。",
     "toc": "本頁內容",
-    "enable": "先啟用擴充功能",
+    "enable": "Safari · Chrome",
     "links": [
       "設定自動重新整理",
       "設定重新整理並點擊",
@@ -213,14 +233,24 @@
     "contactBody": "請附上裝置、系統版本、瀏覽器版本、App 版本、使用模式與完整錯誤提示。如果是內部或私人網站，描述按鈕和操作結果即可，不必提供網址或機密資料。",
     "contactLink": "聯絡支援",
     "supportDescription": "取得 Auto Refresh & Clicker 的安裝、網站權限、購買與任務執行協助，查看支援信箱及回報問題時需要提供的資訊。",
-    "privacyDescription": "查看 Auto Refresh & Clicker 的隱私權政策與 Safari App、瀏覽器擴充功能的相關隱私說明。"
+    "privacyDescription": "瞭解 App 如何在裝置上儲存瀏覽記錄、如何暫停記錄或清除記錄，以及延伸功能將設定存放在哪裡。",
+    "workflowQuestion": "下次開啟網頁，如何載入上次的步驟？",
+    "wildcardQuestion": "按鈕名稱裡的編號變了，也能點選嗎？",
+    "foreground": "App 內的網站登入狀態與 Safari 分開。請讓 App 保持在前景並讓網頁視窗保持可見。切換 App 或將視窗縮到最小後，返回時請手動重新開始。Safari 延伸功能需要該網站的存取權限。Safari 可能暫停背景分頁的活動。延伸功能需要 Safari 15.4 或更新版本。",
+    "wildcards": "可直接選取沒有文字的圖示，也可輸入按鈕或連結名稱。若名稱中的編號會改變，可啟用萬用字元，用 * 代表變動的部分。找不到唯一可用的相符項目時，任務就會停止。",
+    "mobileForeground": "App 內的網站登入狀態與 Safari 分開。任務在前景執行，切換 App 或鎖定裝置後，返回時請手動重新開始。使用 Safari 延伸功能時，請允許它存取該網站。Safari 可能暫停背景分頁的活動。",
+    "workflowSteps": [
+      "點選「在 App 內打開網頁」，開啟常用網頁，將它加入「書籤」。",
+      "開啟「自動操作目前網頁」，選擇「僅重複點擊」並設定間隔，選取清單的更新按鈕。在「此網頁的流程」為流程命名，再點選「儲存目前設定」。",
+      "下次從書籤回到相同的完整網址（包含查詢參數及 # 後的部分），點選「載入流程」，確認步驟後點「開始」。完成後點「停止」。"
+    ]
   },
   "ja": {
-    "title": "設定ガイドとトラブル解決",
-    "description": "Safariで自動更新、更新後のクリック、ページを再読み込みしないアイコンボタンの繰り返しクリックを設定する手順と、権限や動作の問題への対処方法。",
-    "intro": "ページ全体を更新したいのか、更新後にクリックしたいのか、一覧の更新ボタンだけを押したいのか。目的に合った手順を選び、操作したいページで拡張機能を開いてください。",
+    "title": "アプリ内のページとSafariの使い方",
+    "description": "アプリ内のページとSafariの使い方 · 前回のクリック手順をもう一度使うには？ ボタン名の番号が毎回変わる場合は？",
+    "intro": "毎日確認する注文一覧をすぐに開きたいときは、ホームで「アプリ内でウェブページを開く」を選びます。ブックマークや履歴から目的のページへ。Safariで開いているページでは拡張機能を使えます。",
     "toc": "このページの内容",
-    "enable": "まず拡張機能を有効にする",
+    "enable": "Safari · Chrome",
     "links": [
       "自動更新の設定手順",
       "更新してクリックの設定手順",
@@ -285,14 +315,24 @@
     "contactBody": "端末、OSとブラウザのバージョン、アプリのバージョン、使用モード、エラー全文をお知らせください。社内・非公開サイトの場合は、ボタンと動作の説明だけで構いません。URLや機密情報を共有する必要はありません。",
     "contactLink": "サポートに連絡",
     "supportDescription": "Auto Refresh & Clickerの設定、サイトへのアクセス許可、購入、タスクの問題についてのサポート窓口と、お問い合わせ時に必要な情報。",
-    "privacyDescription": "Auto Refresh & ClickerのSafariアプリとブラウザ拡張機能に関するプライバシーポリシーをご確認ください。"
+    "privacyDescription": "アプリで訪問履歴を端末に保存する仕組み、記録の一時停止や削除の方法、拡張機能の設定の保存先を説明します。",
+    "workflowQuestion": "前回のクリック手順をもう一度使うには？",
+    "wildcardQuestion": "ボタン名の番号が毎回変わる場合は？",
+    "foreground": "アプリ内のサイトへのログイン状態はSafariと別です。実行中はアプリを前面にし、ウェブページのウインドウを表示してください。アプリを切り替えたりウインドウを最小化したりした後は、戻って再度開始します。Safariの拡張機能にはサイトへのアクセス許可が必要です。Safariではバックグラウンドのタブが一時停止することがあります。拡張機能にはSafari 15.4以降が必要です。",
+    "wildcards": "アイコンを画面上で選ぶほか、ボタンやリンクの名前も指定できます。名前の一部が変わる場合はワイルドカードを有効にし、その部分に * を入力してください。操作できる対象を1つに絞れないときは停止します。",
+    "mobileForeground": "アプリ内のサイトへのログイン状態はSafariと別です。アプリ内の操作は前面で実行されます。アプリの切り替えや画面ロックの後は、アプリに戻って再度開始してください。Safariの拡張機能には対象サイトへのアクセス許可が必要です。Safariではバックグラウンドのタブが一時停止することがあります。",
+    "workflowSteps": [
+      "「アプリ内でウェブページを開く」を選び、いつも使うページを開いて「ブックマーク」に追加します。",
+      "「このページを自動化」で「クリックのみ繰り返す」を選んで間隔を設定し、一覧の更新ボタンを選びます。「このページの手順」で名前を付け、「現在の設定を保存」を選びます。",
+      "次回はブックマークから同じURLを開きます。クエリや # 以降の部分も同じにしてください。「手順を読み込む」で内容を確認して「開始」、終わったら「停止」を選びます。"
+    ]
   },
   "ko": {
-    "title": "설정 안내와 문제 해결",
-    "description": "Safari 자동 새로고침, 새로고침 후 순서대로 클릭, 페이지를 새로고침하지 않는 아이콘 버튼 반복 클릭의 설정 방법과 권한 및 실행 문제 해결 안내입니다.",
-    "intro": "페이지 전체를 새로고침할지, 새로고침 후 클릭할지, 목록 자체의 새로고침 버튼만 누를지 먼저 정하세요. 사용하려는 웹페이지에서 확장 프로그램을 열고 아래 단계를 따라 설정하면 됩니다.",
+    "title": "앱과 Safari에서 웹페이지 작업하기",
+    "description": "앱과 Safari에서 웹페이지 작업하기 · 전에 설정한 클릭 순서를 다시 쓰려면 어떻게 하나요? 버튼 이름의 번호가 매번 바뀌면 어떻게 하나요?",
+    "intro": "매일 확인하는 웹페이지가 있나요? 홈에서 ‘앱에서 웹페이지 열기’를 선택하고 북마크나 최근 방문 목록에서 페이지를 여세요. 이미 Safari에서 열어 놓은 페이지라면 확장 프로그램을 이용할 수 있습니다.",
     "toc": "이 페이지의 내용",
-    "enable": "먼저 확장 프로그램 켜기",
+    "enable": "Safari · Chrome",
     "links": [
       "자동 새로고침 설정하기",
       "새로고침 후 클릭 설정하기",
@@ -357,14 +397,24 @@
     "contactBody": "기기, 운영체제 및 브라우저 버전, 앱 버전, 작업 모드와 오류 메시지 전체를 알려 주세요. 내부 또는 비공개 사이트라면 버튼과 실행 결과를 설명해 주시면 됩니다. 주소나 기밀 데이터를 공유할 필요는 없습니다.",
     "contactLink": "지원팀에 문의하기",
     "supportDescription": "Auto Refresh & Clicker 설정, 웹사이트 권한, 구매 및 작업 오류에 관한 지원 이메일과 문의할 때 필요한 정보를 확인하세요.",
-    "privacyDescription": "Auto Refresh & Clicker의 Safari 앱 및 브라우저 확장 프로그램 개인정보 처리방침을 확인하세요."
+    "privacyDescription": "앱이 기기에 방문 기록을 저장하는 방법, 기록을 일시 정지하거나 삭제하는 방법, 브라우저 확장 프로그램의 설정 저장 위치를 확인하세요.",
+    "workflowQuestion": "전에 설정한 클릭 순서를 다시 쓰려면 어떻게 하나요?",
+    "wildcardQuestion": "버튼 이름의 번호가 매번 바뀌면 어떻게 하나요?",
+    "foreground": "앱 안에서의 웹사이트 로그인은 Safari와 별개입니다. 앱을 활성 상태로 두고 웹 창을 열어 두세요. 다른 앱으로 전환하거나 창을 최소화한 뒤에는 돌아와 직접 다시 시작하세요. Safari 확장 프로그램에는 해당 사이트에 대한 접근 권한이 필요합니다. Safari는 백그라운드 탭의 동작을 일시 중지할 수 있습니다. 확장 프로그램을 사용하려면 Safari 15.4 이상이 필요합니다.",
+    "wildcards": "아이콘을 직접 고르거나 버튼과 링크의 이름을 입력하세요. 이름의 일부가 바뀐다면 와일드카드를 켜고 바뀌는 부분에 *를 입력하세요. 사용 가능한 대상이 하나로 정해지지 않으면 작업이 중지됩니다.",
+    "mobileForeground": "앱 안에서의 웹사이트 로그인은 Safari와 별개입니다. 작업은 앱이 화면에 열려 있을 때 실행됩니다. 다른 앱으로 전환하거나 기기를 잠근 뒤에는 돌아와 직접 다시 시작하세요. Safari 확장 프로그램에는 해당 사이트에 대한 접근 권한이 필요합니다. Safari는 백그라운드 탭의 동작을 일시 중지할 수 있습니다.",
+    "workflowSteps": [
+      "‘앱에서 웹페이지 열기’를 선택하고 자주 쓰는 페이지를 연 뒤 ‘북마크’에 추가하세요.",
+      "‘이 페이지 자동화’에서 ‘클릭만 반복’를 선택하고 간격을 정한 다음 목록의 새로 고침 버튼을 선택하세요. ‘이 페이지의 작업 순서’에서 이름을 입력한 뒤 ‘현재 설정 저장’를 누르세요.",
+      "다음에는 북마크에서 같은 주소를 여세요. 쿼리와 # 뒤의 내용도 같아야 합니다. ‘작업 순서 불러오기’로 단계를 확인하고 ‘시작’을 누르세요. 마치면 ‘중지’를 누르세요."
+    ]
   },
   "de-DE": {
-    "title": "Einrichtung und Fehlerbehebung",
-    "description": "Safari-Seiten automatisch aktualisieren, nach dem Neuladen klicken oder Symbolschaltflächen ohne Neuladen wiederholt anklicken: Anleitung und Fehlerbehebung.",
-    "intro": "Soll die ganze Seite neu laden, danach eine Klickfolge ausführen oder nur die Aktualisierungsschaltfläche einer Liste betätigen? Wählen Sie die passende Anleitung und öffnen Sie die Erweiterung auf Ihrer gewünschten Webseite.",
+    "title": "Webseiten in der App und in Safari bedienen",
+    "description": "Webseiten in der App und in Safari bedienen · Wie verwende ich die Schritte vom letzten Mal? Was passiert, wenn sich der Name einer Schaltfläche ändert?",
+    "intro": "Eine Bestellliste gehört zu deinem Alltag? Wähle auf der Startseite „Webseite in der App öffnen“ und rufe die Liste über ein Lesezeichen oder den Verlauf auf. Für eine bereits in Safari geöffnete Seite kannst du die Erweiterung nutzen.",
     "toc": "Auf dieser Seite",
-    "enable": "Zuerst die Erweiterung aktivieren",
+    "enable": "Safari · Chrome",
     "links": [
       "Automatische Aktualisierung einrichten",
       "Aktualisieren und Klicken einrichten",
@@ -429,14 +479,24 @@
     "contactBody": "Nennen Sie Gerät, System-, Browser- und App-Version, Aufgabenmodus und die vollständige Fehlermeldung. Bei internen oder privaten Websites genügt eine Beschreibung der Schaltfläche und des Verhaltens. Die Adresse oder vertrauliche Daten müssen Sie nicht teilen.",
     "contactLink": "Support kontaktieren",
     "supportDescription": "Hilfe zu Einrichtung, Website-Berechtigungen, Käufen und Aufgabenfehlern in Auto Refresh & Clicker. Supportadresse und Angaben für Ihre Anfrage.",
-    "privacyDescription": "Lesen Sie die Datenschutzerklärung von Auto Refresh & Clicker für die Safari-App und Browsererweiterung."
+    "privacyDescription": "Wie die App Besuche auf deinem Gerät speichert, wie du den Verlauf pausierst oder löschst und wo die Browser-Erweiterung ihre Einstellungen speichert.",
+    "workflowQuestion": "Wie verwende ich die Schritte vom letzten Mal?",
+    "wildcardQuestion": "Was passiert, wenn sich der Name einer Schaltfläche ändert?",
+    "foreground": "Die Anmeldung auf Websites in der App ist von Safari getrennt. Lass die App aktiv und das Webfenster sichtbar. Nach einem App-Wechsel oder dem Minimieren des Fensters startest du den Ablauf erneut. Die Safari-Erweiterung benötigt Zugriff auf die Website. Safari kann Tabs im Hintergrund anhalten. Die Erweiterung setzt Safari 15.4 oder neuer voraus.",
+    "wildcards": "Wähle ein Symbol direkt aus oder gib den Namen einer Schaltfläche oder eines Links ein. Ändert sich ein Teil des Namens, aktiviere Platzhalter und setze dort ein * ein. Ist kein einzelnes bedienbares Element eindeutig zuzuordnen, hält der Ablauf an.",
+    "mobileForeground": "Die Anmeldung auf Websites in der App ist von Safari getrennt. Lass die App während eines Ablaufs im Vordergrund. Nach einem App-Wechsel oder dem Sperren des Geräts musst du den Ablauf erneut starten. Die Safari-Erweiterung benötigt Zugriff auf die Website. Safari kann Tabs im Hintergrund anhalten.",
+    "workflowSteps": [
+      "Wähle „Webseite in der App öffnen“, öffne deine Seite und füge sie unter „Lesezeichen“ hinzu.",
+      "Öffne „Diese Seite automatisieren“. Wähle „Wiederholt klicken“, lege das Intervall fest und wähle das Aktualisieren-Symbol der Liste. Gib dem Ablauf unter „Abläufe für diese Seite“ einen Namen und wähle „Aktuelle Einstellungen speichern“.",
+      "Rufe beim nächsten Mal dieselbe Adresse über das Lesezeichen auf, einschließlich Suchparametern und URL-Fragment. Wähle „Ablauf laden“, prüfe die Schritte und klicke auf „Start“. Mit „Stoppen“ beendest du den Ablauf."
+    ]
   },
   "fr-FR": {
-    "title": "Configuration et dépannage",
-    "description": "Configurez l’actualisation Safari, les clics après rechargement ou les clics sur une icône sans recharger la page. Guide des autorisations et dépannage.",
-    "intro": "Faut-il recharger toute la page, cliquer après son actualisation ou simplement appuyer sur le bouton d’actualisation d’une liste ? Choisissez le guide adapté et ouvrez l’extension sur la page concernée.",
+    "title": "Utiliser les pages web dans l’app et dans Safari",
+    "description": "Utiliser les pages web dans l’app et dans Safari · Comment reprendre les étapes de la dernière visite ? Et si le nom du bouton change ?",
+    "intro": "Vous consultez souvent la même liste de commandes ? Sur l’écran d’accueil, touchez « Ouvrir un site dans l’app » et retrouvez la page dans vos favoris ou votre historique. Si elle est déjà ouverte dans Safari, utilisez l’extension.",
     "toc": "Sur cette page",
-    "enable": "Commencez par activer l’extension",
+    "enable": "Safari · Chrome",
     "links": [
       "Configurer l’actualisation automatique",
       "Configurer l’actualisation avec clics",
@@ -501,14 +561,24 @@
     "contactBody": "Indiquez l’appareil, les versions du système, du navigateur et de l’app, le mode utilisé et le message d’erreur complet. Pour un site interne ou privé, décrivez le bouton et le résultat : il n’est pas nécessaire de partager son adresse ou des données confidentielles.",
     "contactLink": "Contacter le support",
     "supportDescription": "Aide pour la configuration, les autorisations, les achats et les erreurs de tâche d’Auto Refresh & Clicker. Adresse du support et informations utiles à fournir.",
-    "privacyDescription": "Consultez la politique de confidentialité d’Auto Refresh & Clicker pour l’app Safari et l’extension de navigateur."
+    "privacyDescription": "Découvrez où sont conservés les réglages de l’extension et comment suspendre ou effacer l’historique enregistré sur votre appareil.",
+    "workflowQuestion": "Comment reprendre les étapes de la dernière visite ?",
+    "wildcardQuestion": "Et si le nom du bouton change ?",
+    "foreground": "L’app et Safari ont des sessions de connexion distinctes sur les sites. Gardez l’app active et la fenêtre web visible. Après avoir changé d’app ou réduit la fenêtre, revenez et relancez le scénario. L’extension Safari a besoin d’une autorisation d’accès au site. Safari peut suspendre les onglets en arrière-plan. L’extension nécessite Safari 15.4 ou une version ultérieure.",
+    "wildcards": "Sélectionnez une icône sur la page ou saisissez le nom du bouton ou du lien. Si une partie du nom change, activez les jokers et remplacez cette partie par *. Le scénario s’arrête si aucun élément utilisable ne correspond ou si plusieurs correspondent.",
+    "mobileForeground": "L’app et Safari ont des sessions de connexion distinctes sur les sites. Gardez l’app au premier plan pendant un scénario. Après avoir changé d’app ou verrouillé l’appareil, revenez et relancez-le. L’extension Safari a besoin d’une autorisation d’accès au site. Safari peut suspendre les onglets en arrière-plan.",
+    "workflowSteps": [
+      "Choisissez « Ouvrir un site dans l’app », ouvrez votre page habituelle et ajoutez-la aux favoris.",
+      "Dans « Automatiser cette page », choisissez « Clics seuls répétés » et réglez l’intervalle, puis sélectionnez le bouton d’actualisation de la liste. Nommez le scénario sous « Scénarios pour cette page » et choisissez « Enregistrer les réglages actuels ».",
+      "Rouvrez le favori à la même adresse, paramètres et fragment compris. Choisissez « Charger le scénario », vérifiez les étapes et touchez « Démarrer ». Pour terminer, choisissez « Arrêter »."
+    ]
   },
   "es-ES": {
-    "title": "Configuración y solución de problemas",
-    "description": "Aprende a actualizar Safari, hacer clic tras recargar o pulsar un icono repetidamente sin recargar la página. Incluye permisos y solución de problemas.",
-    "intro": "¿Necesitas recargar toda la página, hacer clic después o pulsar solo el botón de actualización de una lista? Elige la guía adecuada y abre la extensión en la página que quieras usar.",
+    "title": "Guía para páginas web en la app y en Safari",
+    "description": "Guía para páginas web en la app y en Safari · ¿Cómo repito los pasos de mi última visita? ¿Y si cambia el nombre del botón?",
+    "intro": "¿Consultas la misma lista de pedidos a diario? En la pantalla de inicio, selecciona «Abrir un sitio en la app» y ábrela desde tus favoritos o el historial. Si ya tienes la página abierta en Safari, puedes usar la extensión.",
     "toc": "En esta página",
-    "enable": "Primero, activa la extensión",
+    "enable": "Safari · Chrome",
     "links": [
       "Configurar la actualización automática",
       "Configurar la actualización con clics",
@@ -573,14 +643,24 @@
     "contactBody": "Indica el dispositivo, las versiones del sistema, del navegador y de la app, el modo de tarea y el error completo. Si se trata de un sitio interno o privado, describe el botón y el resultado; no hace falta compartir su dirección ni datos confidenciales.",
     "contactLink": "Contactar con soporte",
     "supportDescription": "Ayuda con la configuración, los permisos, las compras y los errores de Auto Refresh & Clicker. Correo de soporte e información que conviene incluir al escribir.",
-    "privacyDescription": "Consulta la política de privacidad de Auto Refresh & Clicker para la app de Safari y la extensión del navegador."
+    "privacyDescription": "Consulta dónde se guardan los ajustes de la extensión y cómo pausar o borrar el historial que la app conserva en este dispositivo.",
+    "workflowQuestion": "¿Cómo repito los pasos de mi última visita?",
+    "wildcardQuestion": "¿Y si cambia el nombre del botón?",
+    "foreground": "La app y Safari usan sesiones distintas para iniciar sesión en los sitios web. Mantén la app activa y la ventana web visible. Si cambias de app o minimizas la ventana, vuelve e inicia la tarea de nuevo. La extensión de Safari necesita permiso para acceder al sitio. Safari puede pausar las pestañas en segundo plano. La extensión requiere Safari 15.4 o posterior.",
+    "wildcards": "Selecciona un icono en la página o escribe el nombre de un botón o enlace. Si cambia parte del nombre, activa los comodines y sustituye esa parte por *. La tarea se detiene si no hay una única coincidencia disponible.",
+    "mobileForeground": "La app y Safari usan sesiones distintas para iniciar sesión en los sitios web. Mantén la app en primer plano mientras se ejecuta la tarea. Si cambias de app o bloqueas el dispositivo, vuelve e inicia la tarea de nuevo. La extensión de Safari necesita permiso para acceder al sitio. Safari puede pausar las pestañas en segundo plano.",
+    "workflowSteps": [
+      "Elige «Abrir un sitio en la app», abre tu página y añádela a «Favoritos».",
+      "En «Automatiza esta página», elige «Solo clics repetidos», ajusta el intervalo y selecciona el botón de actualizar de la lista. Asigna un nombre al flujo en «Flujos de esta página» y pulsa «Guardar la configuración actual».",
+      "Vuelve a la misma dirección desde Favoritos, incluidos los parámetros y el fragmento. Elige «Cargar flujo», revisa los pasos y pulsa «Iniciar». Cuando termines, pulsa «Detener»."
+    ]
   },
   "pt-PT": {
-    "title": "Configuração e resolução de problemas",
-    "description": "Saiba como atualizar páginas no Safari, clicar após recarregar ou repetir cliques num ícone sem recarregar a página. Inclui permissões e resolução de problemas.",
-    "intro": "Precisa de recarregar a página inteira, clicar depois da atualização ou apenas usar o botão de atualização de uma lista? Escolha o guia adequado e abra a extensão na página que pretende utilizar.",
+    "title": "Guia de páginas web na aplicação e no Safari",
+    "description": "Guia de páginas web na aplicação e no Safari · Como posso repetir os passos da visita anterior? E se o nome do botão mudar?",
+    "intro": "Consulta a mesma lista de encomendas todos os dias? No ecrã inicial, escolha «Abrir um site na aplicação» e encontre a página nos favoritos ou no histórico. Se já estiver aberta no Safari, pode usar a extensão.",
     "toc": "Nesta página",
-    "enable": "Comece por ativar a extensão",
+    "enable": "Safari · Chrome",
     "links": [
       "Configurar a atualização automática",
       "Configurar a atualização com cliques",
@@ -645,14 +725,24 @@
     "contactBody": "Indique o dispositivo, as versões do sistema, do navegador e da app, o modo de tarefa e a mensagem de erro completa. Num site interno ou privado, descreva o botão e o resultado; não precisa de partilhar o endereço nem dados confidenciais.",
     "contactLink": "Contactar o suporte",
     "supportDescription": "Ajuda com a configuração, permissões, compras e erros de tarefas do Auto Refresh & Clicker. Email de suporte e informações a incluir no contacto.",
-    "privacyDescription": "Consulte a política de privacidade do Auto Refresh & Clicker para a app Safari e a extensão do navegador."
+    "privacyDescription": "Saiba onde ficam as definições da extensão e como interromper ou apagar o histórico de visitas que a aplicação guarda no dispositivo.",
+    "workflowQuestion": "Como posso repetir os passos da visita anterior?",
+    "wildcardQuestion": "E se o nome do botão mudar?",
+    "foreground": "A sessão iniciada nos sites dentro da aplicação é independente da do Safari. Mantenha a aplicação ativa e a janela da página visível. Se mudar de aplicação ou minimizar a janela, volte a iniciar a tarefa quando regressar. A extensão do Safari precisa de acesso ao site. O Safari pode suspender os separadores em segundo plano. A extensão requer o Safari 15.4 ou posterior.",
+    "wildcards": "Selecione um ícone diretamente na página ou introduza o nome de um botão ou ligação. Se parte do nome mudar, ative os carateres universais e use * nessa posição. A tarefa para se não houver uma única correspondência disponível.",
+    "mobileForeground": "A sessão iniciada nos sites dentro da aplicação é independente da do Safari. Mantenha a aplicação em primeiro plano durante a tarefa. Se mudar de aplicação ou bloquear o dispositivo, volte a iniciar a tarefa quando regressar. A extensão do Safari precisa de acesso ao site. O Safari pode suspender os separadores em segundo plano.",
+    "workflowSteps": [
+      "Escolha «Abrir um site na aplicação», abra a página que costuma utilizar e adicione-a aos favoritos.",
+      "Em «Automatizar esta página», escolha «Apenas cliques repetidos», defina o intervalo e selecione o botão de atualização da lista. Dê um nome ao fluxo em «Fluxos desta página» e escolha «Guardar as definições atuais».",
+      "Da próxima vez, abra o favorito no mesmo endereço, incluindo os parâmetros e o fragmento. Escolha «Carregar fluxo», confirme os passos e prima «Iniciar». Para terminar, prima «Parar»."
+    ]
   },
   "ar-SA": {
-    "title": "الإعداد وحل المشكلات",
-    "description": "تعرّف على إعداد التحديث التلقائي في Safari، والنقر بعد إعادة التحميل، وتكرار النقر على زر أيقونة دون إعادة تحميل الصفحة، مع خطوات الأذونات وحل المشكلات.",
-    "intro": "هل تحتاج إلى إعادة تحميل الصفحة كاملة، أم النقر بعد تحديثها، أم الضغط على زر التحديث الخاص بالقائمة فقط؟ اختر الخطوات المناسبة وافتح الإضافة على صفحة الويب التي تريد استخدامها.",
+    "title": "دليل استخدام صفحات الويب داخل التطبيق وفي سفاري",
+    "description": "دليل استخدام صفحات الويب داخل التطبيق وفي سفاري · كيف أكرر خطوات زيارتي السابقة؟ ماذا أفعل إذا تغيّر اسم الزر؟",
+    "intro": "هل تفتح قائمة الطلبات نفسها كل يوم؟ اختر «فتح موقع داخل التطبيق» من الشاشة الرئيسية وافتح الصفحة من المفضلة أو سجل الزيارات. وإذا كانت مفتوحة في سفاري، يمكنك استخدام الإضافة مباشرة.",
     "toc": "في هذه الصفحة",
-    "enable": "فعّل الإضافة أولاً",
+    "enable": "Safari · Chrome",
     "links": [
       "إعداد التحديث التلقائي",
       "إعداد التحديث والنقر",
@@ -717,6 +807,16 @@
     "contactBody": "اذكر الجهاز وإصدارات النظام والمتصفح والتطبيق ووضع المهمة ونص الخطأ كاملاً. إذا كان الموقع داخلياً أو خاصاً، فصف الزر والنتيجة؛ لا تحتاج إلى مشاركة عنوانه أو بيانات سرية.",
     "contactLink": "التواصل مع الدعم",
     "supportDescription": "مساعدة في إعداد Auto Refresh & Clicker وأذونات المواقع والمشتريات وأخطاء المهام، مع بريد الدعم والمعلومات المفيدة عند التواصل.",
-    "privacyDescription": "اقرأ سياسة خصوصية Auto Refresh & Clicker لتطبيق Safari وإضافة المتصفح."
+    "privacyDescription": "تعرّف على كيفية حفظ سجل الزيارات على جهازك وإيقاف التسجيل مؤقتًا أو حذفه، وعلى مكان حفظ إعدادات إضافة المتصفح.",
+    "workflowQuestion": "كيف أكرر خطوات زيارتي السابقة؟",
+    "wildcardQuestion": "ماذا أفعل إذا تغيّر اسم الزر؟",
+    "foreground": "تسجيل الدخول إلى المواقع داخل التطبيق مستقل عن سفاري. أبقِ التطبيق نشطًا ونافذة الصفحة ظاهرة أثناء المهمة. إذا انتقلت إلى تطبيق آخر أو صغّرت النافذة، فارجع وابدأ المهمة من جديد. تحتاج إضافة سفاري إلى إذن للوصول إلى الموقع. قد يوقف سفاري نشاط علامات التبويب في الخلفية مؤقتًا. تتطلب الإضافة سفاري 15.4 أو أحدث.",
+    "wildcards": "حدد الأيقونة على الصفحة مباشرة أو اكتب اسم الزر أو الرابط. إذا كان جزء من الاسم يتغير، ففعّل خيار أحرف البدل وضع * مكان ذلك الجزء. تتوقف المهمة إذا لم تجد عنصرًا واحدًا متاحًا يطابق الاسم أو وجدت عدة عناصر.",
+    "mobileForeground": "تسجيل الدخول إلى المواقع داخل التطبيق مستقل عن سفاري. أبقِ التطبيق في الواجهة أثناء المهمة. إذا انتقلت إلى تطبيق آخر أو قفلت الجهاز، فارجع وابدأ المهمة من جديد. تحتاج إضافة سفاري إلى إذن للوصول إلى الموقع. قد يوقف سفاري نشاط علامات التبويب في الخلفية مؤقتًا.",
+    "workflowSteps": [
+      "اختر «فتح موقع داخل التطبيق»، وافتح الصفحة التي تستخدمها ثم أضفها إلى «المفضلة».",
+      "افتح «أتمتة هذه الصفحة»، واختر «تكرار النقر فقط» وحدّد الفاصل الزمني واختر زر التحديث في القائمة. اكتب اسمًا للتسلسل ضمن «تسلسلات المهام لهذه الصفحة» ثم اختر «حفظ الإعدادات الحالية».",
+      "في المرة التالية افتح العنوان نفسه من المفضلة، بما في ذلك معاملات الاستعلام والجزء الذي يلي علامة #. اختر «تحميل التسلسل»، وراجع الخطوات ثم اضغط على «بدء». عند الانتهاء اضغط على «إيقاف»."
+    ]
   }
 }
