@@ -21,3 +21,9 @@ playwright-report/
 blob-report/
 *.log
 
+
+# App Store and browser-store exports belong in the app workspace.
+/store-assets/
+/preview_raw/
+/release/
+*.zip
