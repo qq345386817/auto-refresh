@@ -4,7 +4,7 @@ Static website for Auto Refresh & Clicker. The Apple app runs webpage tasks on i
 
 The homepage opens with a playable order-list example. Visitors can change the filter, refresh once, or start and stop repeated clicks every three seconds. The timer stops when the demo leaves view or the page is hidden. Order labels and products use the existing localized preview data.
 
-The landing pages also show original Safari on Mac 1.10.0 (80) captures, with three selectable tasks in each language. The captions identify Safari on Mac and the local demonstration page. The 2.0 workflow images in `images/web-workflows-v2/` are localized web copies of the reviewed Mac candidate and the native load-workflow capture, sourced from the app project’s 2.0.0 local review. The older Safari captures illustrate the extension separately. Source paths, dimensions, and SHA-256 values are in `images/safari-tasks/provenance.json`. Each mode pairs its full Safari capture with its instructions and guide link. Selecting the image opens the original at full size.
+The landing pages offer three task guides. Where localized Safari captures are available, the mode selector shows the original image at full size. The Safari on Mac 1.10.0 (80) capture dimensions and SHA-256 values are in `images/safari-tasks/provenance.json`. Workflow images in `images/web-workflows-v2/` show the Mac app. The Hindi and Russian images come from the 2.0.1 macOS preview recordings.
 
 Download links have localized accessible names and explicit App Store / Chrome Web Store destinations. Prices are left to the stores.
 
@@ -12,7 +12,7 @@ Download links have localized accessible names and explicit App Store / Chrome W
 
 The shared design system is in `../website-design-system/` and the earlier editable design draft is in `../website-design/`. The system preserves the product blue, system typography, and original icon, and adds website semantic colors and layout rules. `style/foundations.css` is generated from that system; `style/site.css` owns the shared layout and `style/landing.css` defines the homepage composition. No frontend framework or build dependencies are needed.
 
-Localized landing-page copy lives in `scripts/site-copy.json`; step-by-step help, troubleshooting and page-specific descriptions live in `scripts/help-copy.json`. To regenerate the 40 localized pages and four default pages:
+Localized landing-page copy lives in `scripts/site-copy.json`. Step-by-step help, troubleshooting and page descriptions live in `scripts/help-copy.json`. To regenerate the 48 localized pages and four default pages:
 
 ```sh
 python3 scripts/build_site.py
@@ -44,18 +44,20 @@ The vertical mode selector supports click, Up, Down, Home and End. Without JavaS
 | Español | https://auto-rc.luopeike.com/es-ES/ | https://auto-rc.luopeike.com/es-ES/help | https://auto-rc.luopeike.com/es-ES/support | https://auto-rc.luopeike.com/es-ES/privacy-policy |
 | Português | https://auto-rc.luopeike.com/pt-PT/ | https://auto-rc.luopeike.com/pt-PT/help | https://auto-rc.luopeike.com/pt-PT/support | https://auto-rc.luopeike.com/pt-PT/privacy-policy |
 | العربية | https://auto-rc.luopeike.com/ar-SA/ | https://auto-rc.luopeike.com/ar-SA/help | https://auto-rc.luopeike.com/ar-SA/support | https://auto-rc.luopeike.com/ar-SA/privacy-policy |
+| हिन्दी | https://auto-rc.luopeike.com/hi/ | https://auto-rc.luopeike.com/hi/help | https://auto-rc.luopeike.com/hi/support | https://auto-rc.luopeike.com/hi/privacy-policy |
+| Русский | https://auto-rc.luopeike.com/ru/ | https://auto-rc.luopeike.com/ru/help | https://auto-rc.luopeike.com/ru/support | https://auto-rc.luopeike.com/ru/privacy-policy |
 
 Sitemap: https://auto-rc.luopeike.com/sitemap.xml
 
-The ten localized URL sets are the canonical search pages. The four unprefixed
+The twelve localized URL sets are the canonical search pages. The four unprefixed
 English pages remain available as fallbacks and point to their `/en-US/`
-counterparts as canonical URLs. The sitemap lists only the 40 localized pages;
+counterparts as canonical URLs. The sitemap lists only the 48 localized pages.
 `hreflang="x-default"` also points to the English pages. Run
 `python3 scripts/check_seo.py` before deploying SEO changes.
 
 Language menus use native HTML disclosure controls with ordinary links to the
-equivalent page in all ten languages. They work without JavaScript, preserve the
-current page when switching languages, and connect all 40 canonical pages through
+equivalent page in all twelve languages. They work without JavaScript, preserve the
+current page when switching languages, and connect all 48 canonical pages through
 HTML navigation. The SEO check verifies those links and their current-language
 indicators in addition to canonical and hreflang metadata.
 

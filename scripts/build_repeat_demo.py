@@ -4,6 +4,7 @@ import hashlib
 import json
 from html import escape
 from pathlib import Path
+from build_site import LANGUAGES
 
 ROOT = Path(__file__).resolve().parents[1]
 DEST = ROOT / 'preview_demo'
@@ -13,7 +14,7 @@ refresh = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-wid
 search = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg>'
 for locale, c in copy.items():
     e = escape
-    options = ''.join(f'<option value="{key}"{" selected" if key == locale else ""}>{name}</option>' for key, name in [('en-US','English'),('zh-Hans','简体中文'),('zh-Hant','繁體中文'),('ja','日本語'),('ko','한국어'),('de-DE','Deutsch'),('fr-FR','Français'),('es-ES','Español'),('pt-PT','Português'),('ar-SA','العربية')])
+    options = ''.join(f'<option value="{key}"{" selected" if key == locale else ""}>{name}</option>' for key, name in LANGUAGES)
     data = json.dumps(c, ensure_ascii=False).replace('<', '\\u003c')
     page = f'''<!doctype html>
 <html lang="{locale}" dir="{'rtl' if locale == 'ar-SA' else 'ltr'}">
@@ -27,4 +28,20 @@ for locale, c in copy.items():
 <footer class="table-footer"><p id="showing" role="status" aria-live="polite"></p><div><button id="loadMore" type="button">{e(c['more'])}</button></div></footer></section></main>
 <script type="application/json" id="demoCopy">{data}</script><script src="./repeat-demo.js?v={digest}" defer></script></body></html>'''
     (DEST / f'repeat-{locale.lower()}.html').write_text(page)
-print('Built ten localized orders demos; existing news previews are unchanged.')
+
+video_copy = json.loads((DEST / 'video-copy.json').read_text())
+template = (DEST / 'video-en-us.html').read_text()
+version = hashlib.sha256((DEST / 'video-demo.js').read_bytes()).hexdigest()[:12]
+for locale, c in video_copy.items():
+    page = template.replace('lang="en-US" data-locale="en-US"', f'lang="{locale}" data-locale="{locale}"')
+    for original, value in {
+        'Today Brief': c['title'], 'Updated just now': c['now'], 'Sections': c['sectionsLabel'],
+        'Live coverage': c['kicker'], 'Latest stories': c['latest'], '>More<': f'>{escape(c["more"])}<',
+        'More stories loaded': c['toast'],
+    }.items():
+        page = page.replace(original, value if original == '>More<' else escape(value))
+    data = json.dumps(c, ensure_ascii=False).replace('<', '\\u003c')
+    page = page.replace('<script src="./video-demo.js?v=20260611-1">',
+                        f'<script type="application/json" id="videoLocaleCopy">{data}</script>\n  <script src="./video-demo.js?v={version}">')
+    (DEST / f'video-{locale.lower()}.html').write_text(page)
+print(f'Built {len(copy)} localized orders demos and {len(video_copy)} new news demos.')

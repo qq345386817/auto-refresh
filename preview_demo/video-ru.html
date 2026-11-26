@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ru" data-locale="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Новости дня</title>
+  <link rel="stylesheet" href="./video-demo.css?v=20260611-2">
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <div class="brand"><span class="mark" id="brandMark">T</span><span id="brandName">Новости дня</span></div>
+      <div class="live" id="liveText">Обновлено только что</div>
+    </div>
+    <nav id="sectionsNav" aria-label="Разделы"></nav>
+  </header>
+  <main>
+    <article class="lead-card">
+      <div class="hero-art" aria-hidden="true"></div>
+      <div class="lead-copy">
+        <p class="kicker" id="kicker">В прямом эфире</p>
+        <h1 id="headline"></h1>
+        <p class="lead" id="summary"></p>
+      </div>
+    </article>
+    <section class="feed" aria-label="Последние новости">
+      <div class="feed-head">
+        <b id="latestLabel">Последние новости</b>
+        <span class="page-count" id="pageCount"></span>
+      </div>
+      <div id="storyList"></div>
+      <div class="more-wrap">
+        <button class="more-button" id="moreButton" type="button">Ещё</button>
+      </div>
+    </section>
+  </main>
+  <div class="toast" id="toast">Новые статьи загружены</div>
+  <script type="application/json" id="videoLocaleCopy">{"lang": "ru", "dir": "ltr", "title": "Новости дня", "mark": "Н", "sectionsLabel": "Разделы", "sections": ["Главное", "Запуски", "Дизайн", "ИИ", "Рынки", "Инструменты"], "kicker": "В прямом эфире", "latest": "Последние новости", "more": "Ещё", "done": "Вы прочли все новости", "toast": "Новые статьи загружены", "comments": "комм.", "points": "балл.", "page": "Страница {n} из 8", "now": "Обновлено только что", "updated": "Обновлено {n} с назад", "summary": "Подборка запусков, небольших проектов и рабочих инструментов.", "headlines": ["Небольшие команды ускоряют выпуск мобильных приложений.", "Новые сервисы открываются для всех после листа ожидания.", "Руководство для разработчиков пополнилось примерами.", "В новом инструменте проще читать примечания к релизам.", "Дизайнеры опробовали новый способ ускорить загрузку.", "Малый бизнес получил новый способ следить за заказами.", "Проверка перед релизом подсказала несколько улучшений.", "Читатели поделились любимыми новыми инструментами."], "stories": ["Компактный редактор для примечаний к релизу", "Как маленькая команда выпускает обновление ночью", "Панель для наблюдения за листом ожидания", "Детали дизайна, которые ускорили небольшое приложение", "Разработчики проверяют более простой способ оплаты", "Уроки с презентации новых продуктов"]}</script>
+  <script src="./video-demo.js?v=c5f9dbe396de"></script>
+</body>
+</html>

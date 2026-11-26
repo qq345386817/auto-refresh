@@ -465,6 +465,23 @@ function translatedPages(locale, commentsWord) {
   }));
 }
 
+const embeddedLocale = document.getElementById("videoLocaleCopy");
+if (embeddedLocale) {
+  const copy = JSON.parse(embeddedLocale.textContent);
+  copy.pages = copy.headlines.map((headline, pageIndex) => ({
+    count: copy.page.replace("{n}", pageIndex + 1),
+    live: pageIndex === 0 ? copy.now : copy.updated.replace("{n}", pageIndex * 5),
+    headline,
+    summary: copy.summary,
+    stories: copy.stories.map((_, index) => [
+      copy.stories[(index + pageIndex) % copy.stories.length],
+      `${42 + pageIndex - index * 3} ${copy.points}`,
+      `${18 + pageIndex - index * 2} ${copy.comments}`
+    ])
+  }));
+  I18N[copy.lang] = copy;
+}
+
 function detectLocale() {
   const explicit = document.documentElement.dataset.locale;
   if (explicit && I18N[explicit]) return explicit;

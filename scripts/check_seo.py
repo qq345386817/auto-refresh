@@ -5,14 +5,12 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
 from xml.etree import ElementTree
+from build_site import LANGUAGES
 
 
 ROOT = Path(__file__).resolve().parents[1]
 ORIGIN = "https://auto-rc.luopeike.com"
-LOCALES = (
-    "ar-SA", "de-DE", "en-US", "es-ES", "fr-FR",
-    "ja", "ko", "pt-PT", "zh-Hans", "zh-Hant",
-)
+LOCALES = tuple(code for code, _ in LANGUAGES)
 PAGES = ("/", "/help", "/support", "/privacy-policy")
 
 

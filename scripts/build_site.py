@@ -17,12 +17,14 @@ SCENES = ('02-auto-refresh', '01-refresh-click', '04-repeat-click')
 GUIDE_IDS = ('auto-refresh', 'refresh-click', 'repeat-click')
 APP_STORE = 'https://apps.apple.com/app/id6502815806'
 CHROME_STORE = 'https://chromewebstore.google.com/detail/auto-refresh-clicker/npnkajomnfmgoakdnjcafbnmcgfkgghc'
+ORIGIN = 'https://auto-rc.luopeike.com'
+PAGES = ('index', 'help', 'support', 'privacy-policy')
 ARROW = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"></path></svg>'
 LANGUAGES = (
     ('en-US', 'English'), ('zh-Hans', '简体中文'), ('zh-Hant', '繁體中文'),
     ('ja', '日本語'), ('ko', '한국어'), ('de-DE', 'Deutsch'),
     ('fr-FR', 'Français'), ('es-ES', 'Español'), ('pt-PT', 'Português'),
-    ('ar-SA', 'العربية'),
+    ('ar-SA', 'العربية'), ('hi', 'हिन्दी'), ('ru', 'Русский'),
 )
 
 
@@ -156,12 +158,14 @@ def showcase(c, h, locale, prefix, assets):
     choices, panels = [], []
     for i, scene in enumerate(SCENES):
         label = e(c['tabs'][i])
-        asset = assets[(locale, scene)]
-        file = prefix + asset['file']
+        asset = assets.get((locale, scene))
+        figure = ''
+        if asset:
+            file = prefix + asset['file']
+            figure = f'''<figure><a href="{file}" target="_blank" rel="noopener" aria-label="{e(c['openImage'])}"><img src="{file}" alt="{e(c['tabs'][i] + ' — ' + c['captureAlt'])}" width="{asset['width']}" height="{asset['height']}" loading="lazy" decoding="async"></a>
+          <figcaption>{e(c['caption'])}</figcaption></figure>'''
         choices.append(f'<a id="task-tab-{i}" href="#task-panel-{i}">{label}</a>')
-        panels.append(f'''<article id="task-panel-{i}" class="mode-panel">
-          <figure><a href="{file}" target="_blank" rel="noopener" aria-label="{e(c['openImage'])}"><img src="{file}" alt="{e(c['tabs'][i] + ' — ' + c['captureAlt'])}" width="{asset['width']}" height="{asset['height']}" loading="lazy" decoding="async"></a>
-          <figcaption>{e(c['caption'])}</figcaption></figure>
+        panels.append(f'''<article id="task-panel-{i}" class="mode-panel">{figure}
           <h3>{label}</h3><p>{e(c['modes'][i])}</p><a class="text-link" href="help#{GUIDE_IDS[i]}">{e(h['links'][i])}{ARROW}</a></article>''')
     return f'''<section id="tasks" class="showcase" data-viewer aria-labelledby="tasks-title">
         <div class="showcase-menu"><h2 id="tasks-title">{e(c['tasks'])}</h2>
@@ -173,13 +177,25 @@ def footer(c, links):
     return f'<footer class="site-footer"><a class="footer-brand" href="./">Auto Refresh &amp; Clicker</a><nav aria-label="{e(c["guide"])}">{links}</nav></footer>'
 
 
+def page_path(locale, page):
+    return f'/{locale}/' if page == 'index' else f'/{locale}/{page}'
+
+
+def build_sitemap():
+    urls = [f'  <url><loc>{ORIGIN}{page_path(locale, page)}</loc></url>'
+            for locale, _ in LANGUAGES for page in PAGES]
+    (ROOT / 'sitemap.xml').write_text('\n'.join([
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">', *urls, '</urlset>', '',
+    ]))
+
+
 def language_switch(locale, page, label):
-    suffix = '/' if page == 'index' else f'/{page}'
     current = dict(LANGUAGES)[locale]
     items = []
     for code, name in LANGUAGES:
         current_attribute = ' aria-current="page"' if code == locale else ''
-        items.append(f'<a href="/{code}{suffix}" hreflang="{code}" lang="{code}" dir="auto"{current_attribute}>{e(name)}</a>')
+        items.append(f'<a href="{page_path(code, page)}" hreflang="{code}" lang="{code}" dir="auto"{current_attribute}>{e(name)}</a>')
     links = ''.join(items)
     chevron = '<svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>'
     return (f'<details class="language-switch"><summary aria-label="{e(label + ": " + current)}">'
@@ -209,6 +225,14 @@ def build_not_found():
 
 def build_page(path, locale, page, assets):
     document = path.read_text()
+    canonical = ORIGIN + page_path(locale, page)
+    document = re.sub(r'<link rel="canonical" href="[^"]*">', f'<link rel="canonical" href="{canonical}">', document)
+    document = re.sub(r'<meta property="og:url" content="[^"]*">', f'<meta property="og:url" content="{canonical}">', document)
+    variants = [(code, ORIGIN + page_path(code, page)) for code, _ in LANGUAGES]
+    variants.append(('x-default', ORIGIN + page_path('en-US', page)))
+    tags = [f'<link rel="alternate" hreflang="{code}" href="{url}">' for code, url in variants]
+    document = re.sub(r'<link rel="alternate" hreflang="[^"]+" href="[^"]+">(?:\n  <link rel="alternate" hreflang="[^"]+" href="[^"]+">)*',
+                      lambda _: '\n  '.join(tags), document)
     c = COPY[locale]
     h = HELP[locale]
     prefix = '' if path.parent == ROOT else '../'
@@ -294,13 +318,15 @@ def main():
         import_captures(args.import_captures)
     manifest = json.loads((ROOT / 'images/safari-tasks/provenance.json').read_text())
     assets = {(asset['locale'], asset['scene']): asset for asset in manifest['assets']}
+    assert set(COPY) == set(HELP) == set(DEMO) == set(dict(LANGUAGES))
     for locale in COPY:
-        for page in ('index', 'help', 'support', 'privacy-policy'):
+        for page in PAGES:
             build_page(ROOT / locale / f'{page}.html', locale, page, assets)
-    for page in ('index', 'help', 'support', 'privacy-policy'):
+    for page in PAGES:
         build_page(ROOT / f'{page}.html', 'en-US', page, assets)
     build_not_found()
-    print('Built 40 localized pages, 4 English fallbacks, and a 404 page.')
+    build_sitemap()
+    print(f'Built {len(COPY) * len(PAGES)} localized pages, {len(PAGES)} English fallbacks, and a 404 page.')
 
 
 if __name__ == '__main__':
