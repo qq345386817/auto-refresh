@@ -3,6 +3,7 @@
 
 from html.parser import HTMLParser
 from pathlib import Path
+import re
 from urllib.parse import urljoin, urlparse
 from xml.etree import ElementTree
 from build_site import LANGUAGES
@@ -70,11 +71,28 @@ def check_language_links(document, url, variants, locale):
     assert len(selected) == 1 and selected[0]['hreflang'] == locale, f'Wrong current language: {url}'
 
 
+def check_internal_page_links(document, url, expected, fallbacks):
+    for href in document.anchor_hrefs:
+        if href.startswith(("mailto:", "#")):
+            continue
+        target = urljoin(url, href).split("#")[0]
+        if urlparse(target).netloc != urlparse(ORIGIN).netloc:
+            continue
+        assert not target.endswith(".html"), f"Non-clean .html internal link on {url}: {href}"
+        assert target not in fallbacks, f"Non-canonical fallback link on {url}: {href} -> {target}"
+        if "/images/" not in urlparse(target).path:
+            assert target in expected, f"Unexpected internal page link on {url}: {href} -> {target}"
+
+
 def main():
     sitemap = ElementTree.parse(ROOT / "sitemap.xml").getroot()
-    urls = [node.text for node in sitemap.findall(".//{*}loc")]
+    url_nodes = sitemap.findall(".//{*}url")
+    urls = [node.findtext("{*}loc") for node in url_nodes]
+    lastmods = [node.findtext("{*}lastmod") for node in url_nodes]
     expected = {ORIGIN + f"/{locale}{page}" for locale in LOCALES for page in PAGES}
+    fallbacks = {ORIGIN + page for page in PAGES}
     assert len(urls) == len(expected) and set(urls) == expected, "Sitemap URLs differ from localized canonical pages"
+    assert all(m is None or re.fullmatch(r"\d{4}-\d{2}-\d{2}", m) for m in lastmods), "Invalid sitemap lastmod format"
 
     for page in PAGES:
         variants = {locale: ORIGIN + f"/{locale}{page}" for locale in LOCALES}
@@ -82,10 +100,12 @@ def main():
         for locale in LOCALES:
             url = variants[locale]
             document = links(url)
+            assert 'noindex' not in document.robots.lower(), f'Canonical page blocks indexing: {url}'
             assert document.canonical == [url], f"Wrong canonical: {url}"
             assert document.og_urls == [url], f"Wrong og:url: {url}"
             assert document.alternates == variants, f"Wrong hreflang group: {url}"
             check_language_links(document, url, variants, locale)
+            check_internal_page_links(document, url, expected, fallbacks)
 
         fallback = ORIGIN + page
         document = links(fallback)
@@ -93,6 +113,19 @@ def main():
         assert document.og_urls == [variants["en-US"]], f"Wrong fallback og:url: {fallback}"
         assert document.alternates == variants, f"Wrong fallback hreflang group: {fallback}"
         check_language_links(document, fallback, variants, 'en-US')
+        check_internal_page_links(document, fallback, expected, fallbacks)
+
+    for legacy in ("help_win.html", "how_to_use.html"):
+        assert not (ROOT / legacy).exists(), f"Legacy file {legacy} shadows _redirects on Cloudflare Pages"
+    redirects_text = (ROOT / "_redirects").read_text(encoding="utf-8")
+    for line in redirects_text.splitlines():
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        source, target, status = line.split()
+        assert not target.endswith(".html"), f"Redirect target must not end with .html: {line}"
+    for legacy_path in ("/help_win", "/help_win.html", "/how_to_use", "/how_to_use.html"):
+        assert f"{legacy_path} /en-US/help 301" in redirects_text, f"Missing 301 redirect for {legacy_path}"
 
     reachable = {ORIGIN + '/en-US/'}
     pending = list(reachable)

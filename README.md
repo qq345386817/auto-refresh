@@ -1,5 +1,7 @@
 # Auto Refresh & Clicker Website
 
+[Auto Refresh & Clicker product website](https://auto-rc.luopeike.com/en-US/) · [简体中文官网](https://auto-rc.luopeike.com/zh-Hans/)
+
 Static website for Auto Refresh & Clicker. The Apple app runs webpage tasks on iPhone, iPad, and Mac, either in its own browser or through the Safari extension. The homepage shows how to reopen a bookmark and run saved steps. Desktop Chrome has a separate extension.
 
 The homepage opens with a playable order-list example. Visitors can change the filter, refresh once, or start and stop repeated clicks every three seconds. The timer stops when the demo leaves view or the page is hidden. Order labels and products use the existing localized preview data.

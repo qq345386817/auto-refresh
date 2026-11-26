@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """Build plain-HTML localized pages; optionally import original Safari captures."""
 import argparse
+from datetime import date
 import hashlib
 import json
 import re
 import shutil
 import struct
+import subprocess
 from html import escape, unescape
 from pathlib import Path
 
@@ -84,9 +86,9 @@ def stores(c):
     return f'''<div class="actions store-actions"><a class="button button-primary" href="{APP_STORE}" aria-label="{e(c['store'])}"><span>App Store</span>{ARROW}</a><a class="button button-secondary" href="{CHROME_STORE}" aria-label="{e(c['chrome'])}"><span>Chrome Web Store</span>{ARROW}</a></div>'''
 
 
-def setup(c, guide=True):
+def setup(c, guide=True, link_prefix=''):
     rows = ''.join(f'<li><span class="step-number" aria-hidden="true">0{i+1}</span><h3>{e(title)}</h3><p>{e(body)}</p></li>' for i, (title, body) in enumerate(c['steps']))
-    link = f'<a class="text-link" href="help">{e(c["guide"])}{ARROW}</a>' if guide else ''
+    link = f'<a class="text-link" href="{link_prefix}help">{e(c["guide"])}{ARROW}</a>' if guide else ''
     return f'<section class="section setup-section" id="setup" aria-labelledby="setup-title"><div class="section-heading"><h2 id="setup-title">{e(c["setup"])}</h2><p>{e(c["setupIntro"])}</p></div><ol class="setup-grid">{rows}</ol>{link}</section>'
 
 
@@ -102,14 +104,14 @@ def workflow_image(locale, scene, alt, prefix):
             f'alt="{e(alt)}" loading="lazy" decoding="async"></a>')
 
 
-def workflow_section(c, locale, prefix):
+def workflow_section(c, locale, prefix, link_prefix=''):
     steps = ' · '.join(c['workflowActions'])
     return (f'<section class="section workflow-feature" id="workflows"><div><h2>{e(c["workflowTitle"])}</h2>'
-            f'<p>{e(c["workflowBody"])}</p><a class="text-link" href="help#workflows">{e(c["guide"])}{ARROW}</a></div>'
+            f'<p>{e(c["workflowBody"])}</p><a class="text-link" href="{link_prefix}help#workflows">{e(c["guide"])}{ARROW}</a></div>'
             f'{workflow_image(locale, "overview", steps, prefix)}</section>')
 
 
-def help_page(c, h, locale, prefix):
+def help_page(c, h, locale, prefix, link_prefix=''):
     sections = [('workflows', c['workflowTitle']), ('enable', h['enable'])] + list(zip(GUIDE_IDS, c['tabs'])) + [
         ('troubleshooting', h['troubleshooting']), ('contact', h['contactTitle'])]
     contents = ''.join(f'<a href="#{anchor}">{e(label)}</a>' for anchor, label in sections)
@@ -131,7 +133,7 @@ def help_page(c, h, locale, prefix):
             f'<section class="section" id="enable" aria-labelledby="enable-title"><h2 id="enable-title">{e(h["enable"])}</h2><div class="platform-guides">{platforms}</div></section>'
             + ''.join(tutorials)
             + f'<section class="section" id="troubleshooting" aria-labelledby="troubleshooting-title"><h2 id="troubleshooting-title">{e(h["troubleshooting"])}</h2><div class="faq-list">{issues}</div></section>'
-            f'<section class="section help-contact" id="contact" aria-labelledby="contact-title"><h2 id="contact-title">{e(h["contactTitle"])}</h2><p>{e(h["contactBody"])}</p><a class="text-link" href="support">{e(h["contactLink"])}{ARROW}</a></section></main>')
+            f'<section class="section help-contact" id="contact" aria-labelledby="contact-title"><h2 id="contact-title">{e(h["contactTitle"])}</h2><p>{e(h["contactBody"])}</p><a class="text-link" href="{link_prefix}support">{e(h["contactLink"])}{ARROW}</a></section></main>')
 
 
 def order_demo(c, locale):
@@ -154,7 +156,7 @@ def order_demo(c, locale):
     </section>'''
 
 
-def showcase(c, h, locale, prefix, assets):
+def showcase(c, h, locale, prefix, assets, link_prefix=''):
     choices, panels = [], []
     for i, scene in enumerate(SCENES):
         label = e(c['tabs'][i])
@@ -166,24 +168,44 @@ def showcase(c, h, locale, prefix, assets):
           <figcaption>{e(c['caption'])}</figcaption></figure>'''
         choices.append(f'<a id="task-tab-{i}" href="#task-panel-{i}">{label}</a>')
         panels.append(f'''<article id="task-panel-{i}" class="mode-panel">{figure}
-          <h3>{label}</h3><p>{e(c['modes'][i])}</p><a class="text-link" href="help#{GUIDE_IDS[i]}">{e(h['links'][i])}{ARROW}</a></article>''')
+          <h3>{label}</h3><p>{e(c['modes'][i])}</p><a class="text-link" href="{link_prefix}help#{GUIDE_IDS[i]}">{e(h['links'][i])}{ARROW}</a></article>''')
     return f'''<section id="tasks" class="showcase" data-viewer aria-labelledby="tasks-title">
         <div class="showcase-menu"><h2 id="tasks-title">{e(c['tasks'])}</h2>
         <nav class="mode-list" aria-label="{e(c['previewLabel'])}">{''.join(choices)}</nav></div>
         <div class="showcase-media">{''.join(panels)}</div></section>'''
 
 
-def footer(c, links):
-    return f'<footer class="site-footer"><a class="footer-brand" href="./">Auto Refresh &amp; Clicker</a><nav aria-label="{e(c["guide"])}">{links}</nav></footer>'
+def footer(c, links, home_href='./'):
+    return f'<footer class="site-footer"><a class="footer-brand" href="{home_href}">Auto Refresh &amp; Clicker</a><nav aria-label="{e(c["guide"])}">{links}</nav></footer>'
 
 
 def page_path(locale, page):
     return f'/{locale}/' if page == 'index' else f'/{locale}/{page}'
 
 
+def page_lastmod(locale, page):
+    rel = f'{locale}/{page}.html'
+    try:
+        dirty = subprocess.run(['git', '-C', str(ROOT), 'status', '--porcelain', '--', rel],
+                               check=True, capture_output=True, text=True).stdout.strip()
+        if dirty:
+            return date.fromtimestamp((ROOT / rel).stat().st_mtime).isoformat()
+        committed = subprocess.run(['git', '-C', str(ROOT), 'log', '-1', '--format=%cs', '--', rel],
+                                   check=True, capture_output=True, text=True).stdout.strip()
+        if committed:
+            return committed
+    except (OSError, subprocess.SubprocessError):
+        pass
+    return None
+
+
 def build_sitemap():
-    urls = [f'  <url><loc>{ORIGIN}{page_path(locale, page)}</loc></url>'
-            for locale, _ in LANGUAGES for page in PAGES]
+    urls = []
+    for locale, _ in LANGUAGES:
+        for page in PAGES:
+            modified = page_lastmod(locale, page)
+            lastmod = f'<lastmod>{modified}</lastmod>' if modified else ''
+            urls.append(f'  <url><loc>{ORIGIN}{page_path(locale, page)}</loc>{lastmod}</url>')
     (ROOT / 'sitemap.xml').write_text('\n'.join([
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">', *urls, '</urlset>', '',
@@ -235,24 +257,31 @@ def build_page(path, locale, page, assets):
                       lambda _: '\n  '.join(tags), document)
     c = COPY[locale]
     h = HELP[locale]
-    prefix = '' if path.parent == ROOT else '../'
+    is_root = path.parent == ROOT
+    prefix = '' if is_root else '../'
+    link_prefix = f'{locale}/' if is_root else ''
+    home_href = f'{locale}/' if is_root else './'
     header = re.search(r'<header\b[\s\S]*?</header>', document).group()
     header = re.sub(r'aria-label="Primary"', f'aria-label="{e(c["guide"])}"', header)
+    if is_root:
+        header = re.sub(r'(<a class="brand" href=")[^"]*(")', rf'\g<1>{home_href}\2', header)
+        for target in ('help', 'support', 'privacy-policy'):
+            header = re.sub(rf'<a href="{target}"(\s+aria-current="page")?>', f'<a href="{link_prefix}{target}">', header)
     switch_pattern = r'<(?:label|details)\b[^>]*class="language-switch"[^>]*>[\s\S]*?</(?:label|details)>'
     switch = re.search(switch_pattern, header)
     assert switch, f'Missing language navigation: {path}'
     label = unescape(re.search(r'<(?:select|nav)\b[^>]*aria-label="([^"]+)"', switch.group()).group(1))
     header = re.sub(switch_pattern, lambda _: language_switch(locale, page, label), header)
     if page != 'index':
-        header = header.replace(f'<a href="{page}">', f'<a href="{page}" aria-current="page">')
+        header = header.replace(f'<a href="{link_prefix}{page}">', f'<a href="{link_prefix}{page}" aria-current="page">')
     links = re.search(r'<nav\b[^>]*>([\s\S]*?)</nav>', header).group(1)
     privacy_label = unescape(re.search(r'href="(?:en-US/)?privacy-policy"[^>]*>(.*?)</a>', header).group(1))
     if page == 'index':
         headline = e(c['demo']['heading']).replace('，', '，<wbr>') if locale in ('zh-Hans', 'zh-Hant') else e(c['demo']['heading'])
         main = f'''<main id="main-content" class="landing"><section class="opening" aria-labelledby="hero-title"><div class="opening-copy"><h1 id="hero-title">{headline}</h1><p class="lead">{e(c['intro'])}</p></div>{order_demo(c, locale)}<div class="opening-actions">{stores(c)}<p class="hero-note">{e(c['ctaText'])}</p><a class="text-link" href="#workflows">{e(c['jump'])}{ARROW}</a></div></section>
-          {workflow_section(c, locale, prefix)}{showcase(c, h, locale, prefix, assets)}{setup(c)}<section class="section privacy-section"><h2>{e(c['privacyTitle'])}</h2><div><p>{e(c['privacyText'])}</p><a class="text-link" href="privacy-policy">{e(privacy_label)}{ARROW}</a></div></section>{faq(c)}<section class="section closing"><div><h2>{e(c['cta'])}</h2></div><div>{stores(c)}<p class="capture-caption">{e(c['priceNote'])}</p></div></section></main>'''
+          {workflow_section(c, locale, prefix, link_prefix)}{showcase(c, h, locale, prefix, assets, link_prefix)}{setup(c, link_prefix=link_prefix)}<section class="section privacy-section"><h2>{e(c['privacyTitle'])}</h2><div><p>{e(c['privacyText'])}</p><a class="text-link" href="{link_prefix}privacy-policy">{e(privacy_label)}{ARROW}</a></div></section>{faq(c)}<section class="section closing"><div><h2>{e(c['cta'])}</h2></div><div>{stores(c)}<p class="capture-caption">{e(c['priceNote'])}</p></div></section></main>'''
     elif page == 'help':
-        main = help_page(c, h, locale, prefix)
+        main = help_page(c, h, locale, prefix, link_prefix)
     else:
         main = re.search(r'<main\b[\s\S]*?</main>', document).group()
         if 'id="main-content"' not in main:
@@ -263,12 +292,14 @@ def build_page(path, locale, page, assets):
             pattern = r'<section class="section support-list">([\s\S]*?)</section>'
             section = re.search(pattern, main)
             articles = re.findall(r'<article>[\s\S]*?</article>', section[1])[:4]
-            articles[0] = f'<article><h2>{e(c["workflowTitle"])}</h2><p>{e(h["workflowSteps"][-1])}</p><a class="text-link" href="help#workflows">{e(c["guide"])}{ARROW}</a></article>'
+            articles[0] = f'<article><h2>{e(c["workflowTitle"])}</h2><p>{e(h["workflowSteps"][-1])}</p><a class="text-link" href="{link_prefix}help#workflows">{e(c["guide"])}{ARROW}</a></article>'
             articles[2] = f'<article><h2>{e(h["wildcardQuestion"])}</h2><p>{e(h["wildcards"])}</p></article>'
+            if is_root:
+                articles[3] = articles[3].replace('href="help"', f'href="{link_prefix}help"')
             main = re.sub(r'<p class="lead small">.*?</p>', lambda _: f'<p class="lead small">{e(h["supportDescription"])}</p>', main, count=1)
-            articles.append(f'<article><h2>{e(h["contactTitle"])}</h2><p>{e(h["contactBody"])}</p><a class="text-link" href="help#troubleshooting">{e(h["troubleshooting"])}{ARROW}</a></article>')
+            articles.append(f'<article><h2>{e(h["contactTitle"])}</h2><p>{e(h["contactBody"])}</p><a class="text-link" href="{link_prefix}help#troubleshooting">{e(h["troubleshooting"])}{ARROW}</a></article>')
             main = re.sub(pattern, lambda _: '<section class="section support-list">' + ''.join(articles) + '</section>', main)
-    body = f'<body><a class="skip-link" href="#main-content">{e(c["skip"])}</a><div class="page"><div class="container{" narrow" if page != "index" else ""}">{header}{main}{footer(c, links)}</div></div>'
+    body = f'<body><a class="skip-link" href="#main-content">{e(c["skip"])}</a><div class="page"><div class="container{" narrow" if page != "index" else ""}">{header}{main}{footer(c, links, home_href)}</div></div>'
     if page == 'index':
         version = hashlib.sha256((ROOT / 'script/site.js').read_bytes()).hexdigest()[:12]
         body += f'<script src="{prefix}script/site.js?v={version}" defer></script>'
@@ -304,7 +335,8 @@ def build_page(path, locale, page, assets):
         document = re.sub(r'<script type="application/ld\+json">.*?</script>\s*', '', document, flags=re.S)
         markup = json.dumps(schema, ensure_ascii=False).replace('<', '\\u003c')
         document = document.replace('</head>', f'<script type="application/ld+json">{markup}</script>\n</head>')
-    path.write_text(document)
+    if path.read_text() != document:
+        path.write_text(document)
 
 
 def main():
